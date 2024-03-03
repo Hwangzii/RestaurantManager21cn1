@@ -1,11 +1,28 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using System.Globalization;
+using System.Windows.Data;
 
 
 namespace loginPage
 {
-    
+
+    public class StringEmptyToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string str = value as string;
+            return string.IsNullOrEmpty(str) ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
     public partial class MainWindow : Window
     {
         public MainWindow()

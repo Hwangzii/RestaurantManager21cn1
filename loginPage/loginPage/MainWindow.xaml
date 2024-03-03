@@ -10,6 +10,8 @@
         <BooleanToVisibilityConverter x:Key="BoolTovis"/>
     </Window.Resources>
 
+    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -48,15 +50,15 @@
                     <ColumnDefinition Width="405*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.Background>
-                    <ImageBrush ImageSource="/Images/img1.jpg" Opacity="0.5"/>
+                    <ImageBrush ImageSource="Images/img1.jpg" Opacity="0.5"/>
                 </Grid.Background>
             </Grid>
         </Grid>
 
 
         <!--input form-->
-        <Border Width="300" VerticalAlignment="Top" HorizontalAlignment="Center" BorderBrush="#E2E9E9"
-                BorderThickness="2" CornerRadius="10" Padding="30" Background="White" Margin="0,263,0,0" Grid.Row="1">
+        <Border Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#E2E9E9"
+                BorderThickness="2" CornerRadius="10" Padding="30" Background="White" Grid.Row="1">
             <StackPanel>
                 <TextBlock Foreground="#5a5a5a" FontWeight="SemiBold" FontSize="16" Margin="0 0 0 10" Text="Login or Register"/>
                 <!--Email textbox-->
@@ -109,8 +111,9 @@
 
                     </Grid.ColumnDefinitions>
 
-                    <Separator Background="#dfdfdf"/>
-                    <TextBlock Text="Or" Foreground="#5a5a5a" Grid.Column="1" Margin="5 0 5 2" />
+                    <Separator Background="#dfdfdf" Margin="0 0 10 0"/>
+                    <TextBlock Text="or" Foreground="#5a5a5a" Grid.Column="1" Margin="5 0 5 2" />
+                    <Separator Background="#dfdfdf" Grid.Column="2"/>
                 </Grid>
                 <!--Long button-->
                 <Button Style="{StaticResource mainButtonLong}" Content="Login as Guest"/>
