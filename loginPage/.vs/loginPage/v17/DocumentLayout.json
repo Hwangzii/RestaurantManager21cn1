@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\",
+  "WorkspaceRootPath": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|d:\\chung\\jobs\\git\\test3\\restaurantmanager21cn1\\loginpage\\loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\homework\\cs\\git\\restaurantmanager21cn1\\loginpage\\loginpage\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test3\\restaurantmanager21cn1\\loginpage\\loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\homework\\cs\\git\\restaurantmanager21cn1\\loginpage\\loginpage\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +23,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "loginPage\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml.cs",
-              "RelativeToolTip": "loginPage\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAABDAAAA",
+              "Title": "Menu.xaml.cs",
+              "DocumentMoniker": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml.cs",
+              "RelativeDocumentMoniker": "loginPage\\Menu.xaml.cs",
+              "ToolTip": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml.cs",
+              "RelativeToolTip": "loginPage\\Menu.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T06:22:28.594Z",
+              "WhenOpened": "2024-03-03T06:58:03.492Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "loginPage\\MainWindow.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
-              "RelativeToolTip": "loginPage\\MainWindow.xaml",
+              "Title": "Menu.xaml",
+              "DocumentMoniker": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml",
+              "RelativeDocumentMoniker": "loginPage\\Menu.xaml",
+              "ToolTip": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml",
+              "RelativeToolTip": "loginPage\\Menu.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-03T05:32:29.404Z",
+              "WhenOpened": "2024-03-03T06:56:36.755Z",
               "EditorCaption": ""
             }
           ]
