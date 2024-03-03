@@ -1,22 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\",
+  "WorkspaceRootPath": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\App.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|solutionrelative:loginPage\\App.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|d:\\chung\\jobs\\git\\test3\\restaurantmanager21cn1\\loginpage\\loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\MainWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|solutionrelative:loginPage\\MainWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|d:\\chung\\jobs\\c#\\new folder\\loginpage\\loginpage\\loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\loginPage.csproj|solutionrelative:loginPage\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test3\\restaurantmanager21cn1\\loginpage\\loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,51 +22,27 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "App.config",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\App.config",
-              "RelativeDocumentMoniker": "loginPage\\App.config",
-              "ToolTip": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\App.config",
-              "RelativeToolTip": "loginPage\\App.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-03-01T15:56:14.121Z"
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "loginPage\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml.cs",
+              "RelativeToolTip": "loginPage\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T06:22:28.594Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\App.xaml",
-              "RelativeDocumentMoniker": "loginPage\\App.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\App.xaml",
-              "RelativeToolTip": "loginPage\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-02-28T10:49:34.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\MainWindow.xaml",
+              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
               "RelativeDocumentMoniker": "loginPage\\MainWindow.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\MainWindow.xaml",
+              "ToolTip": "D:\\Chung\\JOBS\\git\\test3\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
               "RelativeToolTip": "loginPage\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-02-28T10:16:45.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "loginPage\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\Chung\\JOBS\\C#\\New folder\\loginPage\\loginPage\\loginPage\\MainWindow.xaml.cs",
-              "RelativeToolTip": "loginPage\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T10:16:43.942Z",
+              "WhenOpened": "2024-03-03T05:32:29.404Z",
               "EditorCaption": ""
             }
           ]
