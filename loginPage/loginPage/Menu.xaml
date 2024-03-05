@@ -3,10 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:loginPage"
         mc:Ignorable="d"
         Title="Menu" Height="1080" Width="1920">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="10,10,0,0" TextWrapping="Wrap" Text="Page 1" VerticalAlignment="Center" Height="110" Width="325" FontSize="72"/>
+        <Button Content="Bàn 1" HorizontalAlignment="Left" Margin="320,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 2" HorizontalAlignment="Left" Margin="640,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 3" HorizontalAlignment="Left" Margin="960,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 4" HorizontalAlignment="Left" Margin="1280,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 5" HorizontalAlignment="Left" Margin="1600,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 6" HorizontalAlignment="Left" Margin="320,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 7" HorizontalAlignment="Left" Margin="640,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 8" HorizontalAlignment="Left" Margin="960,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 9" HorizontalAlignment="Left" Margin="1280,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Button Content="Bàn 10" HorizontalAlignment="Left" Margin="1600,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
+        <Rectangle x:Name="tabPane" Fill="Red" HorizontalAlignment="Left" Height="1064" Stroke="Black" VerticalAlignment="Center" Width="160"/>
+        <Icon:PackIconMaterial Kind="Home" Width="50" Height="50" Foreground="Black" Margin="55,74,0,0"/>
+        <Icon:PackIconMaterial Kind="ViewList" Width="50" Height="50" Foreground="Black" Margin="55,364,0,0"/>
+        <Icon:PackIconMaterial Kind="SearchWeb" Width="50" Height="50" Foreground="Black" Margin="55,219,0,0"/>
+        <Icon:PackIconMaterial Kind="Logout" Width="50" Height="50" Foreground="Black" Margin="55,899,0,0"/>
+
     </Grid>
 </Window>
