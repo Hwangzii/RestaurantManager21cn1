@@ -1,0 +1,97 @@
+﻿<Window x:Class="signupPage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:signupPage"            
+        mc:Ignorable="d"        
+        Title="Register" Height="550" Width="800">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\PC\source\repos\signupPage\signupPage\Images\img1.jpg" Opacity="0.6"/>
+        </Grid.Background>
+        <Border Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#E2E9E9"
+              BorderThickness="2" CornerRadius="10" Padding="30" Background="White" Grid.Row="1" Height="385">
+            <StackPanel>
+                <TextBlock Foreground="#5a5a5a" FontWeight="SemiBold" FontSize="25
+                           " Margin="0 0 0 10" Text=" Đăng ký"/>
+                <Grid>
+                    <TextBlock Text="Nhập email" Margin="0,4,10,10"
+                               Foreground="#5a5a5a"
+                               FontWeight="SemiBold"
+                               FontSize="8"
+                               />
+                    <TextBox x:Name="textUser"
+                             FontSize="10"
+                             FontWeight="Light"
+                             Background="Transparent"
+                             BorderThickness="0,0,0,1"
+                             Margin="0,16,0,-5" TextChanged="textUser_TextChanged"
+                             />
+                    <TextBlock Text="Nhập lại email" Margin="0,51,10,-36"
+                        Foreground="#5a5a5a"
+                        FontWeight="SemiBold"
+                        FontSize="8"
+                               />
+                    <TextBox x:Name="textUser_Copy"
+                        FontSize="10"
+                        FontWeight="Light"
+                        Background="Transparent"
+                        BorderThickness="0,0,0,1"
+                        Margin="0,62,0,-50" TextChanged="textUser_TextChanged"
+                             />
+                    <TextBlock Text="Nhập lại mật khẩu" Margin="0,94,10,-79"
+                        Foreground="#5a5a5a"
+                        FontWeight="SemiBold"
+                        FontSize="8"
+                               />
+                    <TextBox x:Name="textUser_Copy1"
+                        FontSize="10"
+                        FontWeight="Light"
+                        Background="Transparent"
+                        BorderThickness="0,0,0,1"
+                        Margin="0,105,0,-93" TextChanged="textUser_TextChanged"
+                             />
+                    <TextBlock Text="Nhập lại tên đăng nhập" Margin="0,141,20,-128"
+                        Foreground="#5a5a5a"
+                        FontWeight="SemiBold"
+                        FontSize="8"
+                               />
+                    <TextBox x:Name="textUser_Copy2"
+                        FontSize="10"
+                        FontWeight="Light"
+                        Background="Transparent"
+                        BorderThickness="0,0,0,1"
+                        Margin="0,152,0,-142" TextChanged="textUser_TextChanged">
+                    </TextBox>
+                    <Button Content="Đăng ký"
+                            Margin="0,200,0,-200" 
+                            BorderBrush="#FF131E"
+                            Background="#FF131E" 
+                            Foreground="#FFFFFF" 
+                            Click="Button_Click" 
+                            HorizontalAlignment="Center" 
+                            Width="236">
+
+                    </Button>
+                    <Button Content="quay lại"
+                        Margin="0,231,0,-232" 
+                        BorderBrush="White"
+                        Background="White" 
+                        Foreground="Gray" 
+                        Click="Button_Click" 
+                        HorizontalAlignment="Center" 
+                        Width="236"/>
+
+
+
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+
+
+
+
+</Window>

@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\",
+  "WorkspaceRootPath": "E:\\Git\\QLNH\\RestaurantManager21cn1\\loginPage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\homework\\cs\\git\\restaurantmanager21cn1\\loginpage\\loginpage\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|e:\\git\\qlnh\\restaurantmanager21cn1\\loginpage\\loginpage\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\homework\\cs\\git\\restaurantmanager21cn1\\loginpage\\loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|E:\\Git\\QLNH\\RestaurantManager21cn1\\loginPage\\loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|e:\\git\\qlnh\\restaurantmanager21cn1\\loginpage\\loginpage\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,15 +22,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "registerPage.xaml",
+              "DocumentMoniker": "E:\\Git\\QLNH\\RestaurantManager21cn1\\loginPage\\loginPage\\registerPage.xaml",
+              "RelativeDocumentMoniker": "loginPage\\registerPage.xaml",
+              "ToolTip": "E:\\Git\\QLNH\\RestaurantManager21cn1\\loginPage\\loginPage\\registerPage.xaml",
+              "RelativeToolTip": "loginPage\\registerPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-05T14:39:52.09Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
+              "DocumentMoniker": "E:\\Git\\QLNH\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
               "RelativeDocumentMoniker": "loginPage\\MainWindow.xaml",
-              "ToolTip": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
+              "ToolTip": "E:\\Git\\QLNH\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
               "RelativeToolTip": "loginPage\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-03-05T13:45:52.658Z",
@@ -34,11 +50,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Menu.xaml",
-              "DocumentMoniker": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml",
+              "DocumentMoniker": "E:\\Git\\QLNH\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml",
               "RelativeDocumentMoniker": "loginPage\\Menu.xaml",
-              "ToolTip": "D:\\Homework\\CS\\Git\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml",
+              "ToolTip": "E:\\Git\\QLNH\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml",
               "RelativeToolTip": "loginPage\\Menu.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-03-05T13:43:01.046Z",
