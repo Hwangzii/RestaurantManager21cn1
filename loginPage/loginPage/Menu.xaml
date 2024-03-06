@@ -55,41 +55,40 @@
             </Grid>
         </Border>
 
-        <Border BorderThickness="0 0 0 2" BorderBrush="#E2E9E9" CornerRadius="5 5 0 0" Background="#FF5733"
+        <Border BorderThickness="0 0 0 2" BorderBrush="#E2E9E9" CornerRadius="5 5 0 0" Background="#FF131E"
                 Padding="10"   MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseDown" Margin="0,0,0,950">
             <Grid Margin="30,0,30,0">
                 <TextBlock Text="Cơ sở 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" 
                            Foreground="White"/>
 
-                <TextBox x:Name="txtsearch" Style="{StaticResource searchTextbox}"/>
+                <TextBox x:Name="txtsearch" Style="{StaticResource searchTextbox}" Margin="1400,0,170,0"/>
 
                 <Icon:PackIconMaterial Kind="ArrowLeft" Width="30" Height="30" HorizontalAlignment="Left"
                                        VerticalAlignment="Center" Foreground="White"/>
                 
                 
-                <!--
-                <Icon:PackIconMaterial Kind="Account" Width="40" Height="40" HorizontalAlignment="Right"
+                
+                <Icon:PackIconMaterial Kind="Menu" Width="40" Height="40" HorizontalAlignment="Right"
                        VerticalAlignment="Center" Foreground="White"/>
+                
                 <Icon:PackIconMaterial Kind="BellBadge" Width="40" Height="40"
                     VerticalAlignment="Center" Foreground="White" Margin="1720,0,0,0"/>
-                <Button Style="{StaticResource topButton}" Margin="1500,0,0,0">
-                    <Icon:PackIconMaterial Kind="Magnify" Style="{StaticResource topButtonIcon}" Foreground="White"
-                                           Height="35" Width="35"/>
-                </Button>
-                -->
                 
                 
                 <!--Search TextBox-->
-                <TextBlock Margin="1500,0,0,0" VerticalAlignment="Center" Foreground="White"
-                           IsHitTestVisible="False" Panel.ZIndex="1" Text="Search..."
-                           Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+                <TextBlock Margin="1430,0,0,0" VerticalAlignment="Center" Foreground="#bdbdbd"
+                IsHitTestVisible="False" Panel.ZIndex="1" Text="Search..." FontSize="14"
+                Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
 
-                <Icon:PackIconMaterial Kind="Magnify" Width="14" Height="14" Foreground="White"
-                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1480 0 0 0"/>
+                <Icon:PackIconMaterial Kind="Magnify" Width="14" Height="14" Foreground="#bdbdbd"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1410 0 0 0"/>
+
+
 
 
 
             </Grid>
+            
 
         </Border>
         
