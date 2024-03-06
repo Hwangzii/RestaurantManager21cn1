@@ -7,7 +7,7 @@
         mc:Ignorable="d" Height="720" Width="1024" Background="Transparent" ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
     <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BoolTovis"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </Window.Resources>
 
     
@@ -65,7 +65,7 @@
                 <Grid>
                     <TextBlock Margin="35 0 5 0" VerticalAlignment="Center" Foreground="#bdbdbd"
                                Panel.ZIndex="1" IsHitTestVisible="False" Text="Enter Email"
-                               Visibility="{Binding ElementName=txtEmail,Path=Text.IsEmpty, Converter={StaticResource BoolTovis}}"/>
+                               Visibility="{Binding ElementName=txtEmail,Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
 
                     <TextBlock x:Name="txtEmail"/>
                     <Icon:PackIconMaterial Kind="EmailVariant" Width="15" Foreground="#c7c7c7" VerticalAlignment="Center" Margin="10 0 0 0"/>
@@ -80,13 +80,13 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Margin="35,16,5,0" VerticalAlignment="Top" Foreground="#bdbdbd"
                     Panel.ZIndex="1" IsHitTestVisible="False" Text="Enter Password"
-                    Visibility="{Binding ElementName=txtPassword,Path=Text.IsEmpty, Converter={StaticResource BoolTovis}}" Grid.ColumnSpan="3"/>
+                    Visibility="{Binding ElementName=txtPassword,Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" Grid.ColumnSpan="3"/>
 
                     <TextBlock x:Name="txtPassword" Grid.ColumnSpan="3" Margin="0,16,0,0"/>
                     <Icon:PackIconMaterial Kind="LockOutline" Width="15" Foreground="#c7c7c7" Margin="10,16,0,0"/>
                 </Grid>
 
-                <CheckBox Style="{DynamicResource CheckBoxStyle1}" Content="Remember me" Margin="0 10 0 5" IsChecked="True"/>
+                <CheckBox Style="{DynamicResource CheckBoxStyle2}" Content="Remember me" Margin="0 10 0 5" IsChecked="True"/>
 
                 <!--Buttons-->
                 <Grid Margin="0 10 0 0">
@@ -122,11 +122,6 @@
         </Border>
 
 
-        <!-- Bottom Section-->
-
-
-
-
-        <!-- -->
+        
     </Grid>
 </Window>

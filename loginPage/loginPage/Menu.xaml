@@ -6,23 +6,95 @@
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:loginPage"
         mc:Ignorable="d"
-        Title="Menu" Height="1080" Width="1920">
-    <Grid>
-        <Button Content="Bàn 1" HorizontalAlignment="Left" Margin="320,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 2" HorizontalAlignment="Left" Margin="640,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 3" HorizontalAlignment="Left" Margin="960,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 4" HorizontalAlignment="Left" Margin="1280,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 5" HorizontalAlignment="Left" Margin="1600,144,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 6" HorizontalAlignment="Left" Margin="320,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 7" HorizontalAlignment="Left" Margin="640,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 8" HorizontalAlignment="Left" Margin="960,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 9" HorizontalAlignment="Left" Margin="1280,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Button Content="Bàn 10" HorizontalAlignment="Left" Margin="1600,704,0,0" VerticalAlignment="Top" Height="240" Width="240" FontSize="48"/>
-        <Rectangle x:Name="tabPane" Fill="Red" HorizontalAlignment="Left" Height="1064" Stroke="Black" VerticalAlignment="Center" Width="160"/>
-        <Icon:PackIconMaterial Kind="Home" Width="50" Height="50" Foreground="Black" Margin="55,74,0,0"/>
-        <Icon:PackIconMaterial Kind="ViewList" Width="50" Height="50" Foreground="Black" Margin="55,364,0,0"/>
-        <Icon:PackIconMaterial Kind="SearchWeb" Width="50" Height="50" Foreground="Black" Margin="55,219,0,0"/>
-        <Icon:PackIconMaterial Kind="Logout" Width="50" Height="50" Foreground="Black" Margin="55,899,0,0"/>
+        Title="Menu" Height="1080" Width="1920" Background="White" >
+
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#E2E3E4" />
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Window.Resources>
+
+    <Grid >
+
+        <Border Grid.Row="1">
+            <Grid Margin="60 150 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="300"/>
+
+                </Grid.RowDefinitions >
+                <!-- Buttons -->
+                <Button Grid.Column="0" Grid.Row="0" Content="Bàn 1" FontSize="50"/>
+                <Button Grid.Column="1" Grid.Row="0" Content="Bàn 2" FontSize="50" Margin="24,0,0,0"/>
+                <Button Grid.Column="2" Grid.Row="0" Content="Bàn 3" FontSize="50" Margin="24,0,0,0"/>
+                <Button Grid.Column="3" Grid.Row="0" Content="Bàn 4" FontSize="50" Margin="24,0,0,0"/>
+                <Button Grid.Column="4" Grid.Row="0" Content="Bàn 5" FontSize="50" Margin="24,0,0,0"/>
+                <Button Grid.Column="5" Grid.Row="0" Content="Bàn 6" FontSize="50" Margin="24,0,0,0"/>
+
+                <Button Grid.Column="0" Grid.Row="1" Content="Bàn 7" FontSize="50" Margin="0,50,0,-50"/>
+                <Button Grid.Column="1" Grid.Row="1" Content="Bàn 8" FontSize="50" Margin="24,50,0,-50"/>
+                <Button Grid.Column="2" Grid.Row="1" Content="Bàn 9" FontSize="50" Margin="24,50,0,-50"/>
+                <Button Grid.Column="3" Grid.Row="1" Content="Bàn 10" FontSize="50" Margin="24,50,0,-50"/>
+                <Button Grid.Column="4" Grid.Row="1" Content="Bàn 11" FontSize="50" Margin="24,50,0,-50"/>
+                <Button Grid.Column="5" Grid.Row="1" Content="Bàn 12" FontSize="50" Margin="24,50,0,-50"/>
+
+
+
+            </Grid>
+        </Border>
+
+        <Border BorderThickness="0 0 0 2" BorderBrush="#E2E9E9" CornerRadius="5 5 0 0" Background="#FF5733"
+                Padding="10"   MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseDown" Margin="0,0,0,950">
+            <Grid Margin="30,0,30,0">
+                <TextBlock Text="Cơ sở 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" 
+                           Foreground="White"/>
+
+                <TextBox x:Name="txtsearch" Style="{StaticResource searchTextbox}"/>
+
+                <Icon:PackIconMaterial Kind="ArrowLeft" Width="30" Height="30" HorizontalAlignment="Left"
+                                       VerticalAlignment="Center" Foreground="White"/>
+                
+                
+                <!--
+                <Icon:PackIconMaterial Kind="Account" Width="40" Height="40" HorizontalAlignment="Right"
+                       VerticalAlignment="Center" Foreground="White"/>
+                <Icon:PackIconMaterial Kind="BellBadge" Width="40" Height="40"
+                    VerticalAlignment="Center" Foreground="White" Margin="1720,0,0,0"/>
+                <Button Style="{StaticResource topButton}" Margin="1500,0,0,0">
+                    <Icon:PackIconMaterial Kind="Magnify" Style="{StaticResource topButtonIcon}" Foreground="White"
+                                           Height="35" Width="35"/>
+                </Button>
+                -->
+                
+                
+                <!--Search TextBox-->
+                <TextBlock Margin="1500,0,0,0" VerticalAlignment="Center" Foreground="White"
+                           IsHitTestVisible="False" Panel.ZIndex="1" Text="Search..."
+                           Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+
+                <Icon:PackIconMaterial Kind="Magnify" Width="14" Height="14" Foreground="White"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1480 0 0 0"/>
+
+
+
+            </Grid>
+
+        </Border>
+        
+
+
 
     </Grid>
 </Window>

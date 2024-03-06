@@ -9,7 +9,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\PC\source\repos\signupPage\signupPage\Images\img1.jpg" Opacity="0.6"/>
+            <ImageBrush ImageSource="Images/img1.jpg" Opacity="0.5"/>
         </Grid.Background>
         <Border Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#E2E9E9"
               BorderThickness="2" CornerRadius="10" Padding="30" Background="White" Grid.Row="1" Height="385">
@@ -66,23 +66,25 @@
                         Margin="0,152,0,-142" TextChanged="textUser_TextChanged">
                     </TextBox>
                     <Button Content="Đăng ký"
-                            Margin="0,200,0,-200" 
+                            Margin="0,200,0,-187" 
                             BorderBrush="#FF131E"
                             Background="#FF131E" 
                             Foreground="#FFFFFF" 
                             Click="Button_Click" 
                             HorizontalAlignment="Center" 
-                            Width="236">
+                            Width="236"
+                            Height="30">
 
                     </Button>
                     <Button Content="quay lại"
-                        Margin="0,231,0,-232" 
+                        Margin="0,246,0,-232" 
                         BorderBrush="White"
                         Background="White" 
                         Foreground="Gray" 
                         Click="Button_Click" 
                         HorizontalAlignment="Center" 
-                        Width="236"/>
+                        Width="236"
+                        Height="30"/>
 
 
 

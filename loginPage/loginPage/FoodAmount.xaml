@@ -11,16 +11,17 @@
             <ColumnDefinition Width="17*"/>
             <ColumnDefinition Width="113*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="218,84,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="80" Height="96" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="218,84,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" FontSize="80" Height="96" Grid.Column="1"/>
         <Button x:Name="AddButton" Content="+" HorizontalAlignment="Left" Margin="323,82,0,0" VerticalAlignment="Top" FontSize="70" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.518,0.159" Cursor="Hand" Grid.Column="1"/>
         <Button x:Name="SubButton" Content="-" HorizontalAlignment="Left" Margin="98,66,0,0" VerticalAlignment="Top" FontSize="90" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Grid.Column="1" Height="82"/>
         <Label Content="Tên món ăn" HorizontalAlignment="Left" Margin="132,34,0,0" VerticalAlignment="Top" FontSize="40" Background="{x:Null}" Grid.Column="1"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="96,255,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="24" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="96,255,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="120" FontSize="24" />
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="263,255,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120" FontSize="24"/>
         <Label Grid.Column="1" Content="Số lượng" HorizontalAlignment="Left" Margin="98,219,0,0" VerticalAlignment="Top" Width="118" FontSize="16"/>
         <Label Grid.Column="1" Content="Bàn" HorizontalAlignment="Left" Margin="265,219,0,0" VerticalAlignment="Top" Width="118" FontSize="16"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Width="310" Height="33" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="Black"/>
         <Button Grid.Column="1" Content="Save" HorizontalAlignment="Left" Margin="245,341,0,0" VerticalAlignment="Top" Width="310" Height="33" Background="#FF7E99D8" BorderBrush="{x:Null}"/>
+        <Label Grid.Column="1" Content="Label" HorizontalAlignment="Left" Margin="731,118,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
