@@ -14,21 +14,14 @@ using System.Windows.Shapes;
 
 namespace loginPage
 {
-    public partial class Menu : Window
+    /// <summary>
+    /// Interaction logic for test1.xaml
+    /// </summary>
+    public partial class test1 : Window
     {
-        public Menu()
+        public test1()
         {
             InitializeComponent();
-        }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
