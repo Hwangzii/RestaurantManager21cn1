@@ -1,0 +1,17 @@
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\bin\Debug\designpro.exe.config
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\bin\Debug\designpro.exe
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\bin\Debug\designpro.pdb
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro.csproj.AssemblyReference.cache
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\Templates.baml
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\MainWindow.g.cs
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\App.g.cs
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro_MarkupCompile.cache
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro_MarkupCompile.lref
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\App.baml
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\MainWindow.baml
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro.g.resources
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro.Properties.Resources.resources
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro.csproj.GenerateResource.cache
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro.csproj.CoreCompileInputs.cache
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro.exe
+D:\Chung\JOBS\C#\DesignProHazii\designpro\designpro\obj\Debug\designpro.pdb
