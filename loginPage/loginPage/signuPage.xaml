@@ -1,0 +1,164 @@
+﻿<Window x:Class="loginPage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d" 
+        Title="Login" Height="720" Width="1024" 
+        Background="{x:Null}" 
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        AllowsTransparency="True">
+
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Top section-->
+        <Border BorderThickness="0 0 0 2" BorderBrush="#E2E9E9" CornerRadius="5 5 0 0" Background="White" Padding="10"
+                MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid>
+
+
+                <Icon:PackIconMaterial Kind="Microsoft" Width="22" Height="22" HorizontalAlignment="Left"
+                                       VerticalAlignment="Center" Foreground="#FF131E"/>
+
+                <TextBlock Text="Microsoft C#" VerticalAlignment="Center" Margin="30,0,0,0" Foreground="#FF131E"/>
+                <Button Style="{StaticResource topButton}" HorizontalAlignment="Right">
+                    <Icon:PackIconMaterial Kind="Close" Style="{StaticResource topButtonIcon}" Foreground="#FF131E"/>
+                </Button>
+            </Grid>
+        </Border>
+        <!--Bottom section-->
+        <Border Grid.Row="2" BorderThickness="0 2 0 0" BorderBrush="#E2E9E9" CornerRadius="0 0 5 5" Padding="10"
+                Background="White">
+            <Grid>
+                <!--copyright text-->
+                <TextBlock Margin="15 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13" Foreground="#909090"
+                Text="Copyright 2023. All right reserved."/>
+
+                <!--Menu buttons-->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" >
+                    <Button Style="{StaticResource bottomButton}" Content="Home" Width="40"/>
+                    <Button Style="{StaticResource bottomButton}" Content="Feattures" Width="60"/>
+                    <Button Style="{StaticResource bottomButton}" Content="Solutions" Width="60"/>
+                    <Button Style="{StaticResource bottomButton}" Content="Videos" Width="50"/>
+                    <Button Style="{StaticResource bottomButton}" Content="About" Width="50"/>
+                    <Button Style="{StaticResource bottomButton}" Content="Login" Foreground="#FF131E" Width="50"/>
+
+                </StackPanel>
+            </Grid>
+
+        </Border>
+
+
+        <!-- Middle Section-->
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <SolidColorBrush Color="WhiteSmoke"/>
+            </Grid.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="619*"/>
+                    <ColumnDefinition Width="405*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <ImageBrush ImageSource="Images/img1.jpg" Opacity="0.5"/>
+                </Grid.Background>
+            </Grid>
+        </Grid>
+
+
+        <!--input form-->
+        <Border Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#E2E9E9"
+                BorderThickness="2" CornerRadius="10" Padding="30" Background="White" Grid.Row="1" Height="460">
+            <StackPanel>
+                <TextBlock Foreground="#5a5a5a" FontWeight="SemiBold" FontSize="25
+" Margin="0 0 0 10" Text="Đăng Ký"/>
+
+                <TextBlock Foreground="#5a5a5a" FontWeight="SemiBold" FontSize="16" Margin="0 0 0 10" Text="Login or Register"/>
+
+
+                <!--Username Textbox-->
+                <Grid>
+                    <TextBlock Margin="35,21,0,0" VerticalAlignment="Top" Foreground="#bdbdbd" IsHitTestVisible="False"
+   Panel.ZIndex="1" Text="Nhập tên đăng nhập"
+               Visibility="{Binding ElementName=txtusername, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+
+                    <TextBox x:Name="txtusername" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                    <Icon:PackIconMaterial Kind="AccountOutline" Width="15" Foreground="#c7c7c7" Margin="10,21,0,0"/>
+                    <TextBlock Margin="35,81,0,0" VerticalAlignment="Top" Foreground="#bdbdbd" IsHitTestVisible="False"
+                        Panel.ZIndex="1" Text="Nhập tên đăng nhập"
+                        Visibility="{Binding Text.IsEmpty, Converter={StaticResource BoolToVis}, ElementName=txtusername}"/>
+                    <TextBox x:Name="txtusername_Copy" Margin="0,70,0,0" VerticalAlignment="Top"/>
+                    <Icon:PackIconMaterial Kind="AccountOutline" Width="15" Foreground="#c7c7c7" Margin="10,81,0,0"/>
+                </Grid>
+
+                <!--Password Textbox-->
+                <Grid>
+                    <TextBlock Margin="35,36,0,0" VerticalAlignment="Top" Foreground="#bdbdbd" IsHitTestVisible="False"
+   Panel.ZIndex="1" Text="Nhập mật khẩu"
+               Visibility="{Binding ElementName=txtpassword, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+
+                    <TextBox x:Name="txtpassword" Margin="0,23,0,0" VerticalAlignment="Top"/>
+                    <Icon:PackIconMaterial Kind="LockOutline" Width="15" Foreground="#c7c7c7" Margin="10,36,0,0"/>
+                    <TextBlock Margin="35,96,0,0" VerticalAlignment="Top" Foreground="#bdbdbd" IsHitTestVisible="False"
+                        Panel.ZIndex="1" Text="Nhập lại mật khẩu"
+                        Visibility="{Binding Text.IsEmpty, Converter={StaticResource BoolToVis}, ElementName=txtpassword}"/>
+                    <TextBox x:Name="txtpassword_Copy" Margin="0,85,0,0" VerticalAlignment="Top"/>
+                    <Icon:PackIconMaterial Kind="LockOutline" Width="15" Foreground="#c7c7c7" Margin="10,96,0,0"/>
+
+                    <Button Content="Đăng ký"
+        x:Name="btnLogin"
+        Margin="0,145,0,-59" 
+        BorderBrush="#FF131E"
+        Background="#FF131E" 
+        Foreground="#FFFFFF" 
+        Click="Button_Click"
+        FontWeight="SemiBold"
+        HorizontalAlignment="Center" 
+        Width="160">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                    CornerRadius="20">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                    <Button Content="quay lại"
+    Margin="0,180,0,-83" 
+    BorderBrush="White"
+    Background="White" 
+    Foreground="Red" 
+    Click="Button_Click"
+    FontSize="10"
+    HorizontalAlignment="Center" 
+    Width="236"
+    Height="25"/>
+                </Grid>
+
+
+
+            </StackPanel>
+
+
+        </Border>
+
+
+
+    </Grid>
+</Window>
