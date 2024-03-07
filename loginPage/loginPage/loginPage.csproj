@@ -165,6 +165,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="NumberAmount.xaml.cs">
+      <DependentUpon>NumberAmount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderFood.xaml.cs">
       <DependentUpon>OrderFood.xaml</DependentUpon>
     </Compile>
@@ -184,6 +187,10 @@
     <Page Include="Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NumberAmount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="OrderFood.xaml">
       <SubType>Designer</SubType>
