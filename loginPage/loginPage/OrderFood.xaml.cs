@@ -28,9 +28,23 @@ namespace loginPage
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        
 
+        
+
+        
+
+        
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Kiểm tra xem cửa sổ chủ có tồn tại không
+            if (this.Owner != null)
+            {
+                // Đặt cửa sổ chủ là cửa sổ hiện tại và đóng cửa sổ hiện tại
+                this.Owner.Show();
+                this.Close();
+            }
         }
     }
 }

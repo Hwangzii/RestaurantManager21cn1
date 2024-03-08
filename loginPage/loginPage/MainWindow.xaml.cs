@@ -29,6 +29,7 @@ namespace loginPage
             InitializeComponent();
         }
 
+
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
@@ -84,6 +85,7 @@ namespace loginPage
                         if (count == 1)
                         {
                             Menu dashboarch = new Menu();
+                            dashboarch.WindowState = WindowState.Maximized;
                             dashboarch.Show();
                             this.Close();
                         }

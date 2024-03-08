@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,14 +22,37 @@ namespace loginPage
             InitializeComponent();
         }
 
+
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            // Xử lý logic khi Border được click
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void ban1Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            var test = new backtest();
+            test.Show();
+            this.Hide();
+            this.Close();
+        }
+        
+
+
+        private void menuButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        
+
+        private void ban2Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var test = new danhsachbanan();
+            test.Show();
+            this.Hide();
+            this.Close();
         }
     }
 }

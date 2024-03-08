@@ -31,35 +31,15 @@
 
 
                 <Icon:PackIconMaterial Kind="Microsoft" Width="25" Height="25" HorizontalAlignment="Left"
-                                       VerticalAlignment="Center" Foreground="#FF131E"/>
+                                       VerticalAlignment="Center" Foreground="#FF5733"/>
 
-                <TextBlock Text="Microsoft C#" FontSize="25" VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#FF131E"/>
+                <TextBlock Text="Microsoft C#" FontSize="25" VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#FF5733"/>
                 <Button Click="button_Close" Style="{StaticResource topButton}" HorizontalAlignment="Right">
-                    <Icon:PackIconMaterial Kind="Close" Style="{StaticResource topButtonIcon}" Foreground="#FF131E"/>
+                    <Icon:PackIconMaterial Kind="Close" Style="{StaticResource topButtonIcon}" Foreground="#FF5733"/>
                 </Button>
             </Grid>
         </Border>
-        <!--Bottom section-->
-        <Border Grid.Row="2" BorderThickness="0 2 0 0" BorderBrush="#E2E9E9" CornerRadius="0 0 5 5" Padding="10"
-                Background="White">
-            <Grid>
-                <!--copyright text-->
-                <TextBlock Margin="15 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13" Foreground="#909090"
-                Text="Copyright 2023. All right reserved."/>
-
-                <!--Menu buttons-->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" >
-                    <Button Style="{StaticResource bottomButton}" Content="Home" Width="40"/>
-                    <Button Style="{StaticResource bottomButton}" Content="Feattures" Width="60"/>
-                    <Button Style="{StaticResource bottomButton}" Content="Solutions" Width="60"/>
-                    <Button Style="{StaticResource bottomButton}" Content="Videos" Width="50"/>
-                    <Button Style="{StaticResource bottomButton}" Content="About" Width="50"/>
-                    <Button Style="{StaticResource bottomButton}" Content="Login" Foreground="#FF131E" Width="50"/>
-
-                </StackPanel>
-            </Grid>
-
-        </Border>
+        
 
 
         <!-- Middle Section-->
@@ -69,10 +49,6 @@
             </Grid.Background>
 
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="619*"/>
-                    <ColumnDefinition Width="405*"/>
-                </Grid.ColumnDefinitions>
                 <Grid.Background>
                     <ImageBrush ImageSource="Images/img1.jpg" Opacity="0.5"/>
                 </Grid.Background>
@@ -119,18 +95,11 @@
 
                 <!--Buttons-->
                 <Grid Margin="0 10 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
 
                     <Button Content="Đăng nhập" FontSize="20" Style="{StaticResource mainButton}" 
-                            BorderBrush="#FF131E" Margin="0 0 5 0" Grid.Column="0"
+                            BorderBrush="#FF5733" Margin="0 0 5 0" Grid.Column="0"
                             Click="LoginButton_Click"/>
-                    <Button Content="Đăng ký" FontSize="20" Style="{StaticResource mainButton}" 
-                    BorderBrush="Transparent" Margin="0 0 5 0" Grid.Column="2"
-                    Click="signupButton_Click"/>
+                    
 
                 </Grid>
                 <!-- Or next-->

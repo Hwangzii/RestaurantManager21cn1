@@ -165,9 +165,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="backtest.xaml.cs">
+      <DependentUpon>backtest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="danhsachbanan.xaml.cs">
+      <DependentUpon>danhsachbanan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="menuDes.xaml.cs">
+      <DependentUpon>menuDes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderFood.xaml.cs">
       <DependentUpon>OrderFood.xaml</DependentUpon>
     </Compile>
+    <Page Include="backtest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="danhsachbanan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -185,9 +202,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="menuDes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OrderFood.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +236,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fonts\Orbitron-Medium.ttf" />
+    <Resource Include="Fonts\Roboto-Light.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -222,6 +249,39 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\img1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\img_about.png" />
+    <Resource Include="Assets\img_acoustic.png" />
+    <Resource Include="Assets\img_album.png" />
+    <Resource Include="Assets\img_arrow.png" />
+    <Resource Include="Assets\img_artist.png" />
+    <Resource Include="Assets\img_electronic.png" />
+    <Resource Include="Assets\img_exit.png" />
+    <Resource Include="Assets\img_folder.png" />
+    <Resource Include="Assets\img_genre.png" />
+    <Resource Include="Assets\img_hiphop.png" />
+    <Resource Include="Assets\img_history.png" />
+    <Resource Include="Assets\img_home.png" />
+    <Resource Include="Assets\img_hotkey.png" />
+    <Resource Include="Assets\img_input.png" />
+    <Resource Include="Assets\img_jazz.png" />
+    <Resource Include="Assets\img_metal.png" />
+    <Resource Include="Assets\img_movies.png" />
+    <Resource Include="Assets\img_music.png" />
+    <Resource Include="Assets\img_playlist.png" />
+    <Resource Include="Assets\img_pop.png" />
+    <Resource Include="Assets\img_rock.png" />
+    <Resource Include="Assets\img_search.png" />
+    <Resource Include="Assets\img_setting.png" />
+    <Resource Include="Assets\img_songs.png" />
+    <Resource Include="Assets\max_def.png" />
+    <Resource Include="Assets\max_mo.png" />
+    <Resource Include="Assets\shutdown_def.png" />
+    <Resource Include="Assets\shutdown_mo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\img_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" />
