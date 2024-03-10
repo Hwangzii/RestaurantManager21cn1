@@ -168,6 +168,9 @@
     <Compile Include="AddAmount.xaml.cs">
       <DependentUpon>AddAmount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="billForm.xaml.cs">
+      <DependentUpon>billForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="menuDes.xaml.cs">
       <DependentUpon>menuDes.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <DependentUpon>trangchu.xaml</DependentUpon>
     </Compile>
     <Page Include="AddAmount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="billForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
