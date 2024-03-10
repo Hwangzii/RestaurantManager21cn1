@@ -165,12 +165,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="billForm.xaml.cs">
+      <DependentUpon>billForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="menuDes.xaml.cs">
       <DependentUpon>menuDes.xaml</DependentUpon>
     </Compile>
     <Compile Include="trangchu.xaml.cs">
       <DependentUpon>trangchu.xaml</DependentUpon>
     </Compile>
+    <Page Include="billForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
