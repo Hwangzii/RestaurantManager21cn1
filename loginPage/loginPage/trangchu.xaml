@@ -1,0 +1,241 @@
+﻿<Window x:Class="loginPage.trangchu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:loginPage"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="trangchu" Height="1080" Width="1920">
+    <Grid>
+        <!-- chia 3 khung doc -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+            <ColumnDefinition Width="46*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Cơ sở  1 -->
+            <Grid Grid.Row="0" Background="#FF5733">
+                <Border>
+                    <Grid>
+                        <Icon:PackIconMaterial Kind="Home" Width="50" Height="50" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center"
+                                               Foreground="#FFFFFF" Margin="0 0 200 0"/>
+
+                        <TextBlock Text="cơ sở 1"  FontSize="50" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"  Margin="50 0 0 0"
+                                   Foreground="#FFFFFF"/>
+                    </Grid>
+                </Border>
+            </Grid>
+
+
+            <Grid Grid.Row="1">
+                <TabControl >
+                    <!-- Tầng 1-->
+                    <TabItem Height="40" Width="200">
+                        <TabItem.Template>
+                            <!-- bo góc khung -->
+                            <ControlTemplate TargetType="TabItem">
+                                <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15"
+                                        BorderThickness="1">
+                                    <ContentPresenter Content="Tầng 1" ContentSource="Header" HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center">
+                                        <ContentPresenter.Resources>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="FontSize" Value="20"/>
+                                            </Style>
+                                        </ContentPresenter.Resources>
+                                    </ContentPresenter>
+                                </Border>
+                                
+                                <!-- chuyển màu khi chọn-->
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="borderTang1" Property="Background" Value="#FF9966"/>
+                                        
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </TabItem.Template>
+                        
+                        <ScrollViewer>
+                            <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="150"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                    </Grid.RowDefinitions>
+
+
+
+                                    <Button Grid.Column="0" Grid.Row="0" FontSize="20" Margin="10">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  CornerRadius="10" Background="{TemplateBinding Background}">
+                                                    <ContentPresenter Content="101" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button Grid.Column="1" Grid.Row="0" Content="102" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="0" Content="103" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="1" Content="104" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="1" Content="105" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="1" Content="106" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="2" Content="107" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="2" Content="108" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="2" Content="109" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="3" Content="110" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="3" Content="111" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="3" Content="112" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="4" Content="113" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="4" Content="114" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="4" Content="115" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="5" Content="116" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="5" Content="117" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="5" Content="118" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="6" Content="119" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="6" Content="120" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="6" Content="121" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+
+                                </Grid>
+
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+                    <!-- Tâng 2-->
+                    <TabItem Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="200">
+                        <TabItem.Template>
+                            <!-- bo góc khung -->
+                            <ControlTemplate TargetType="TabItem">
+                                <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15"
+                                BorderThickness="1">
+                                    <ContentPresenter Content="Tầng 2" ContentSource="Header" HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
+                                        <ContentPresenter.Resources>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="FontSize" Value="20"/>
+                                            </Style>
+                                        </ContentPresenter.Resources>
+                                    </ContentPresenter>
+                                </Border>
+
+                                <!-- chuyển màu khi chọn-->
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="borderTang1" Property="Background" Value="#FF9966"/>
+
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </TabItem.Template>
+
+                        <ScrollViewer>
+                            <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="150"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                        <RowDefinition Height="150"/>
+                                    </Grid.RowDefinitions>
+
+
+
+                                    <Button Grid.Column="0" Grid.Row="0" Content="201" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="0" Content="202" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="0" Content="203" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="1" Content="204" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="1" Content="205" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="1" Content="206" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="2" Content="207" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="2" Content="208" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="2" Content="209" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="3" Content="210" FontSize="20" Margin="10"  Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="3" Content="211" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="3" Content="212" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="4" Content="213" FontSize="20" Margin="10"  Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="4" Content="214" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="4" Content="215" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="5" Content="216" FontSize="20" Margin="10"  Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="5" Content="217" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="5" Content="218" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+                                    <Button Grid.Column="0" Grid.Row="6" Content="219" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="1" Grid.Row="6" Content="220" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+                                    <Button Grid.Column="2" Grid.Row="6" Content="221" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
+
+
+                                </Grid>
+
+                            </StackPanel>
+                        </ScrollViewer>
+                    </TabItem>
+
+
+
+                </TabControl>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#FF5733"></Grid>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#FF5733"></Grid>
+        </Grid>
+
+
+
+    </Grid>
+</Window>
