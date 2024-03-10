@@ -3,40 +3,27 @@
   "WorkspaceRootPath": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test7\\restaurantmanager21cn1\\loginpage\\loginpage\\danhsachbanan.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\danhsachbanan.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test7\\restaurantmanager21cn1\\loginpage\\loginpage\\trangchu.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\trangchu.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginpage\\danhsachbanan.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\danhsachbanan.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test7\\restaurantmanager21cn1\\loginpage\\loginpage\\trangchu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\trangchu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginpage\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test7\\restaurantmanager21cn1\\loginpage\\loginpage\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginpage\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginpage\\backtest.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\backtest.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginpage\\backtest.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\backtest.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test7\\restaurantmanager21cn1\\loginpage\\loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginpage\\menudes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\menudes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test7\\restaurantmanager21cn1\\loginpage\\loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.WinFx.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,45 +32,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 169,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "danhsachbanan.xaml.cs",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\danhsachbanan.xaml.cs",
-              "RelativeDocumentMoniker": "loginPage\\danhsachbanan.xaml.cs",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\danhsachbanan.xaml.cs",
-              "RelativeToolTip": "loginPage\\danhsachbanan.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T03:01:36.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "danhsachbanan.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\danhsachbanan.xaml",
-              "RelativeDocumentMoniker": "loginPage\\danhsachbanan.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\danhsachbanan.xaml",
-              "RelativeToolTip": "loginPage\\danhsachbanan.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-07T21:41:21.965Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "backtest.xaml.cs",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\backtest.xaml.cs",
-              "RelativeDocumentMoniker": "loginPage\\backtest.xaml.cs",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\backtest.xaml.cs",
-              "RelativeToolTip": "loginPage\\backtest.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T21:32:21.499Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -92,65 +43,76 @@
               "RelativeDocumentMoniker": "loginPage\\MainWindow.xaml.cs",
               "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml.cs",
               "RelativeToolTip": "loginPage\\MainWindow.xaml.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAlwCEAAAAJAAAA",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAGsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T21:31:43.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "backtest.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\backtest.xaml",
-              "RelativeDocumentMoniker": "loginPage\\backtest.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\backtest.xaml",
-              "RelativeToolTip": "loginPage\\backtest.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-07T21:31:33.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Menu.xaml.cs",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml.cs",
-              "RelativeDocumentMoniker": "loginPage\\Menu.xaml.cs",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml.cs",
-              "RelativeToolTip": "loginPage\\Menu.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T21:30:14.454Z"
+              "WhenOpened": "2024-03-10T02:31:05.571Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Menu.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml",
-              "RelativeDocumentMoniker": "loginPage\\Menu.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\Menu.xaml",
-              "RelativeToolTip": "loginPage\\Menu.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-07T21:27:39.242Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "menuDes.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\menuDes.xaml",
-              "RelativeDocumentMoniker": "loginPage\\menuDes.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\menuDes.xaml",
-              "RelativeToolTip": "loginPage\\menuDes.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-07T21:27:30.509Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
               "RelativeDocumentMoniker": "loginPage\\MainWindow.xaml",
               "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\MainWindow.xaml",
               "RelativeToolTip": "loginPage\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-07T21:20:50.298Z"
+              "WhenOpened": "2024-03-10T02:31:01.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "trangchu.xaml",
+              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml",
+              "RelativeDocumentMoniker": "loginPage\\trangchu.xaml",
+              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml*",
+              "RelativeToolTip": "loginPage\\trangchu.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-10T00:17:01.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Microsoft.WinFx.targets",
+              "DocumentMoniker": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.WinFx.targets",
+              "ToolTip": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\Microsoft.WinFx.targets",
+              "ViewState": "AQIAAPcAAAAAAAAAAAAvwBEBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-03-10T02:33:10.928Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 281,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\App.xaml",
+              "RelativeDocumentMoniker": "loginPage\\App.xaml",
+              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\App.xaml",
+              "RelativeToolTip": "loginPage\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-10T02:45:52.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "trangchu.xaml",
+              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml",
+              "RelativeDocumentMoniker": "loginPage\\trangchu.xaml",
+              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml*",
+              "RelativeToolTip": "loginPage\\trangchu.xaml*",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAqwG4AAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-10T00:20:48.455Z",
+              "EditorCaption": ""
             }
           ]
         }

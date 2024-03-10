@@ -27,7 +27,10 @@ namespace loginPage
         public MainWindow()
         {
             InitializeComponent();
+            
         }
+
+        
 
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -84,7 +87,7 @@ namespace loginPage
                         int count = (int)cmd.ExecuteScalar();
                         if (count == 1)
                         {
-                            Menu dashboarch = new Menu();
+                            trangchu dashboarch = new trangchu();
                             dashboarch.WindowState = WindowState.Maximized;
                             dashboarch.Show();
                             this.Close();
@@ -113,6 +116,17 @@ namespace loginPage
         private void signupButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("hiện chưa có tính năng đăng ký","thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void loginUI_Loaded(object sender, RoutedEventArgs e)
+        {
+            double w = SystemParameters.PrimaryScreenWidth;
+            double h = SystemParameters.PrimaryScreenHeight;
+
+            this.Left = 0;
+            this.Top = 0;
+            this.Width = w;
+            this.Height = h;
         }
     }
 }

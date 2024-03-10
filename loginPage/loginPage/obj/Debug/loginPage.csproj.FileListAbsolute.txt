@@ -413,13 +413,9 @@ D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Mai
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Templates.baml
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\App.baml
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\MainWindow.g.cs
-D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Menu.g.cs
-D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\OrderFood.g.cs
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\App.g.cs
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage_MarkupCompile.cache
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage_MarkupCompile.lref
-D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Menu.baml
-D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\OrderFood.baml
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.g.resources
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.Properties.Resources.resources
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\LoginPage.csproj.GenerateResource.cache
@@ -429,7 +425,5 @@ D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\log
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.pdb
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\menuDes.g.cs
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\menuDes.baml
-D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\backtest.g.cs
-D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\backtest.baml
-D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\danhsachbanan.g.cs
-D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\danhsachbanan.baml
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\trangchu.g.cs
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\trangchu.baml
