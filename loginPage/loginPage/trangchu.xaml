@@ -230,7 +230,7 @@
                     <ComboBox SelectedIndex="0" FontSize="22" VerticalAlignment="Center"
                               x:Name="comboBoxMenu" Style="{DynamicResource ComboBoxStyle}" SelectionChanged="comboBoxMenu_SelectionChanged"
                               >
-                        <ComboBoxItem Content="Menu (All)"/>
+                        <ComboBoxItem Content="Page1"/>
                         <ComboBoxItem Content="Món nóng"/>
                         <ComboBoxItem Content="Món lẩu"/>
                         <ComboBoxItem Content="Đồ uống"/>
