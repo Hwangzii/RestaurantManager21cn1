@@ -9,6 +9,7 @@
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Templates.xaml"/>
+                <ResourceDictionary Source="Styles/ComboBoxStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
 
@@ -21,7 +22,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="20" 
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10" 
                                     BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
                                 <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Border>
@@ -272,14 +273,10 @@
             </Style>
 
 
+            
+
+
+
         </ResourceDictionary>
-
-
-
-
-        
-
-
-
     </Application.Resources>
 </Application>

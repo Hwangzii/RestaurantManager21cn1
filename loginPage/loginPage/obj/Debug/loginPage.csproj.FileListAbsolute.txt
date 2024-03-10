@@ -427,3 +427,10 @@ D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\men
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\menuDes.baml
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\trangchu.g.cs
 D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\trangchu.baml
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Styles\ComboBoxStyles.baml
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\page1.g.cs
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\page1.baml
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\AddAmount.g.cs
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\BillForm.g.cs
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\AddAmount.baml
+D:\Chung\JOBS\git\test7\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\BillForm.baml
