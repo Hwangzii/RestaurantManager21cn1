@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace loginPage
 {
     /// <summary>
-    /// Interaction logic for billForm.xaml
+    /// Interaction logic for BillForm.xaml
     /// </summary>
-    public partial class billForm : Window
+    public partial class BillForm : Window
     {
-        public billForm()
+        public BillForm()
         {
             InitializeComponent();
         }

@@ -168,11 +168,23 @@
     <Compile Include="AddAmount.xaml.cs">
       <DependentUpon>AddAmount.xaml</DependentUpon>
     </Compile>
-    <Compile Include="billForm.xaml.cs">
-      <DependentUpon>billForm.xaml</DependentUpon>
+    <Compile Include="BillForm.xaml.cs">
+      <DependentUpon>BillForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="menuDes.xaml.cs">
-      <DependentUpon>menuDes.xaml</DependentUpon>
+    <Compile Include="page1.xaml.cs">
+      <DependentUpon>page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page2.xaml.cs">
+      <DependentUpon>page2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page3.xaml.cs">
+      <DependentUpon>page3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page4.xaml.cs">
+      <DependentUpon>page4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page5.xaml.cs">
+      <DependentUpon>page5.xaml</DependentUpon>
     </Compile>
     <Compile Include="trangchu.xaml.cs">
       <DependentUpon>trangchu.xaml</DependentUpon>
@@ -181,7 +193,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="billForm.xaml">
+    <Page Include="BillForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,9 +210,29 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="menuDes.xaml">
+    <Page Include="page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ComboBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Templates.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -244,37 +276,16 @@
     <Resource Include="Images\img1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\img_about.png" />
-    <Resource Include="Assets\img_acoustic.png" />
-    <Resource Include="Assets\img_album.png" />
-    <Resource Include="Assets\img_arrow.png" />
-    <Resource Include="Assets\img_artist.png" />
-    <Resource Include="Assets\img_electronic.png" />
-    <Resource Include="Assets\img_exit.png" />
-    <Resource Include="Assets\img_folder.png" />
-    <Resource Include="Assets\img_genre.png" />
-    <Resource Include="Assets\img_hiphop.png" />
-    <Resource Include="Assets\img_history.png" />
-    <Resource Include="Assets\img_home.png" />
-    <Resource Include="Assets\img_hotkey.png" />
-    <Resource Include="Assets\img_input.png" />
-    <Resource Include="Assets\img_jazz.png" />
-    <Resource Include="Assets\img_metal.png" />
-    <Resource Include="Assets\img_movies.png" />
-    <Resource Include="Assets\img_music.png" />
-    <Resource Include="Assets\img_playlist.png" />
-    <Resource Include="Assets\img_pop.png" />
-    <Resource Include="Assets\img_rock.png" />
-    <Resource Include="Assets\img_search.png" />
-    <Resource Include="Assets\img_setting.png" />
-    <Resource Include="Assets\img_songs.png" />
-    <Resource Include="Assets\max_def.png" />
-    <Resource Include="Assets\max_mo.png" />
-    <Resource Include="Assets\shutdown_def.png" />
-    <Resource Include="Assets\shutdown_mo.png" />
+    <Resource Include="Images\img_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\img_logo.png" />
+    <Resource Include="Images\food.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\go.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\diet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" />
