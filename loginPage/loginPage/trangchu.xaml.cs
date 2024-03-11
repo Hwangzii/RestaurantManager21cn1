@@ -26,7 +26,7 @@ namespace loginPage
         {
             InitializeComponent();
 
-            
+            pageContainer.Children.Add(new page5());
 
         }
 
@@ -40,11 +40,6 @@ namespace loginPage
             // kiểm tra mục được chọn và thực hiện hành động tương tự
             switch (selectedMenu)
             {
-                case "chọn món":
-                    
-                    break;
-
-
                 case "All":
                     // hiển thị nội dung tương ứng với món nóng trong pageContainer
                     pageContainer.Children.Clear();
@@ -70,8 +65,19 @@ namespace loginPage
                     pageContainer.Children.Clear();
                     pageContainer.Children.Add(new page1());
                     break;
+                case "test":
+                    pageContainer.Children.Clear();
+                    pageContainer.Children.Add(new pagetest());
+                    break;
                 default:
-                    
+                    /*if (1>0)
+                    {
+                        
+                    }
+                    else
+                    {
+
+                    }*/
                     break;
             }
         }
@@ -118,6 +124,12 @@ namespace loginPage
         {
             pageContainer.Children.Clear();
             pageContainer.Children.Add(new page1());
+        }
+
+        private void pageFood7_Selected(object sender, RoutedEventArgs e)
+        {
+            pageContainer.Children.Clear();
+            pageContainer.Children.Add(new pagetest());
         }
     }
 

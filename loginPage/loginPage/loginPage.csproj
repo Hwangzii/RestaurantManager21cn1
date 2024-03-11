@@ -186,6 +186,9 @@
     <Compile Include="page5.xaml.cs">
       <DependentUpon>page5.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pagetest.xaml.cs">
+      <DependentUpon>pagetest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="trangchu.xaml.cs">
       <DependentUpon>trangchu.xaml</DependentUpon>
     </Compile>
@@ -227,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="page5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pagetest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

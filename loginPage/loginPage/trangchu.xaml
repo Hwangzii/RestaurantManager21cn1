@@ -85,38 +85,6 @@
                                         <RowDefinition Height="150"/>
                                     </Grid.RowDefinitions>
 
-
-
-
-                                    <Button Grid.Column="0" Grid.Row="0" Content="101" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="1" Grid.Row="0" Content="102" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="2" Grid.Row="0" Content="103" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-
-                                    <Button Grid.Column="0" Grid.Row="1" Content="104" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="1" Grid.Row="1" Content="105" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="2" Grid.Row="1" Content="106" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-
-                                    <Button Grid.Column="0" Grid.Row="2" Content="107" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="1" Grid.Row="2" Content="108" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="2" Grid.Row="2" Content="109" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-
-                                    <Button Grid.Column="0" Grid.Row="3" Content="110" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="1" Grid.Row="3" Content="111" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="2" Grid.Row="3" Content="112" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-
-                                    <Button Grid.Column="0" Grid.Row="4" Content="113" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="1" Grid.Row="4" Content="114" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="2" Grid.Row="4" Content="115" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-
-                                    <Button Grid.Column="0" Grid.Row="5" Content="116" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="1" Grid.Row="5" Content="117" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="2" Grid.Row="5" Content="118" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-
-                                    <Button Grid.Column="0" Grid.Row="6" Content="119" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    <Button Grid.Column="1" Grid.Row="6" Content="120" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    
-
-
                                 </Grid>
 
                             </StackPanel>
@@ -238,6 +206,7 @@
                         <ComboBoxItem x:Name="pageFood4" Content="Món Lẩu" Selected="pageFood4_Selected"/>
                         <ComboBoxItem x:Name="pageFood5" Content="Món nóng" Selected="pageFood5_Selected"/>
                         <ComboBoxItem x:Name="pageFood6" Content="Đồ uống" Selected="pageFood6_Selected"/>
+                        <ComboBoxItem x:Name="pageFood7" Content="test" Selected="pageFood7_Selected"/>
                     </ComboBox>
                 </Grid>
                 
