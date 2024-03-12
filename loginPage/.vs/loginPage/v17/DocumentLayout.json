@@ -1,86 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\homework\\cs\\git\\new13\\restaurantmanager21cn1\\loginpage\\loginpage\\pagetest.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\pagetest.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginpage\\trangchu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\trangchu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginpage\\pagetest.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\pagetest.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginpage\\trangchu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\trangchu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "pagetest.xaml",
-              "DocumentMoniker": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\pagetest.xaml",
-              "RelativeDocumentMoniker": "loginPage\\pagetest.xaml",
-              "ToolTip": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\pagetest.xaml",
-              "RelativeToolTip": "loginPage\\pagetest.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-11T03:25:47.107Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "pagetest.xaml.cs",
-              "DocumentMoniker": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\pagetest.xaml.cs",
-              "RelativeDocumentMoniker": "loginPage\\pagetest.xaml.cs",
-              "ToolTip": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\pagetest.xaml.cs",
-              "RelativeToolTip": "loginPage\\pagetest.xaml.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAA0AAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T02:03:56.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "trangchu.xaml.cs",
-              "DocumentMoniker": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml.cs",
-              "RelativeDocumentMoniker": "loginPage\\trangchu.xaml.cs",
-              "ToolTip": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml.cs",
-              "RelativeToolTip": "loginPage\\trangchu.xaml.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwE8AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T14:30:19.526Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "trangchu.xaml",
-              "DocumentMoniker": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml",
-              "RelativeDocumentMoniker": "loginPage\\trangchu.xaml",
-              "ToolTip": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml",
-              "RelativeToolTip": "loginPage\\trangchu.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-11T03:11:09.383Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

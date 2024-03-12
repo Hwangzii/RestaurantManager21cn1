@@ -38,9 +38,9 @@
 
             <!-- tầng 1 + tầng 2-->
             <Grid Grid.Row="1">
-                <TabControl >
+                <TabControl>
                     <!-- Tầng 1-->
-                    <TabItem Height="40" Width="230">
+                    <TabItem x:Name="tang1TabItem" Height="40" Width="230">
                         <TabItem.Template>
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
@@ -60,7 +60,6 @@
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsSelected" Value="True">
                                         <Setter TargetName="borderTang1" Property="Background" Value="#FF9966"/>
-
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -68,7 +67,7 @@
 
                         <ScrollViewer>
                             <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid x:Name="banTang1Grid" HorizontalAlignment="Center" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="150"/>
                                         <ColumnDefinition Width="150"/>
@@ -84,14 +83,13 @@
                                         <RowDefinition Height="150"/>
                                         <RowDefinition Height="150"/>
                                     </Grid.RowDefinitions>
-
                                 </Grid>
 
                             </StackPanel>
                         </ScrollViewer>
                     </TabItem>
                     <!-- Tâng 2-->
-                    <TabItem Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
+                    <TabItem x:Name="tang2TabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
                         <TabItem.Template>
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
@@ -111,7 +109,6 @@
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsSelected" Value="True">
                                         <Setter TargetName="borderTang1" Property="Background" Value="#FF9966"/>
-
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -119,7 +116,7 @@
 
                         <ScrollViewer>
                             <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid x:Name="banTang2Grid" HorizontalAlignment="Center" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="150"/>
                                         <ColumnDefinition Width="150"/>
@@ -135,9 +132,7 @@
                                         <RowDefinition Height="150"/>
                                         <RowDefinition Height="150"/>
                                     </Grid.RowDefinitions>
-
-
-
+<!--
                                     <Button Grid.Column="0" Grid.Row="0" Content="201" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
                                     <Button Grid.Column="1" Grid.Row="0" Content="202" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
                                     <Button Grid.Column="2" Grid.Row="0" Content="203" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
@@ -164,23 +159,14 @@
 
                                     <Button Grid.Column="0" Grid.Row="6" Content="219" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
                                     <Button Grid.Column="1" Grid.Row="6" Content="220" FontSize="20" Margin="10" Style="{StaticResource buttondes}"/>
-                                    
-
-
+-->
                                 </Grid>
-
                             </StackPanel>
                         </ScrollViewer>
                     </TabItem>
-
-
-
                 </TabControl>
             </Grid>
-
         </Grid>
-
-
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -206,7 +192,6 @@
                         <ComboBoxItem x:Name="pageFood4" Content="Món Lẩu" Selected="pageFood4_Selected"/>
                         <ComboBoxItem x:Name="pageFood5" Content="Món nóng" Selected="pageFood5_Selected"/>
                         <ComboBoxItem x:Name="pageFood6" Content="Đồ uống" Selected="pageFood6_Selected"/>
-                        <ComboBoxItem x:Name="pageFood7" Content="test" Selected="pageFood7_Selected"/>
                     </ComboBox>
                 </Grid>
                 
