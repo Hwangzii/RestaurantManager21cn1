@@ -23,9 +23,8 @@ namespace loginPage
         {
             InitializeComponent();
             int maMonAn = 0;
-            int count = 11;
             SqlConnection con = new SqlConnection(connectstring);
-            SqlCommand command = new SqlCommand("select top 10 * from monan_TB where MaLoaiMA = 1", con);
+            SqlCommand command = new SqlCommand("select top 10 * from monan_TB", con);
             con.Open();
             using (SqlDataReader read = command.ExecuteReader())
             {
@@ -83,7 +82,6 @@ namespace loginPage
                     }
                 }
             }
-            count++;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace loginPage
             int maMonAn = 0;
             int count = 11;
             SqlConnection con = new SqlConnection(connectstring);
-            SqlCommand command = new SqlCommand(string.Format("select * from monan_TB where MaLoaiMA = 2 and MaMA not in (Select top 10 MaMA from monan_TB)", count), con);
+            SqlCommand command = new SqlCommand("select * from monan_TB", con);
             con.Open();
             using (SqlDataReader read = command.ExecuteReader())
             {

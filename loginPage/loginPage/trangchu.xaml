@@ -38,7 +38,7 @@
 
             <!-- tầng 1 + tầng 2-->
             <Grid Grid.Row="1">
-                <TabControl>
+                <TabControl x:Name="tangTabControl" SelectionChanged="tangTabControl_SelectionChanged">
                     <!-- Tầng 1-->
                     <TabItem x:Name="tang1TabItem" Height="40" Width="230">
                         <TabItem.Template>

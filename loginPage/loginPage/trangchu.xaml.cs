@@ -12,7 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 namespace loginPage
 {
 
@@ -30,7 +29,7 @@ namespace loginPage
 
         }
 
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void tangTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (tang1TabItem.IsSelected)
             {
@@ -82,7 +81,7 @@ namespace loginPage
             {
                 int maBanAn = 0;
                 SqlConnection con = new SqlConnection(connectstring);
-                SqlCommand command = new SqlCommand("select * from banan_TB not in (select top 20 * from banan_TB)", con);
+                SqlCommand command = new SqlCommand("select * from banan_TB", con);
                 con.Open();
                 using (SqlDataReader read = command.ExecuteReader())
                 {
@@ -118,7 +117,7 @@ namespace loginPage
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
 
-                                banTang1Grid.Children.Add(dynamicBtn);
+                                banTang2Grid.Children.Add(dynamicBtn);
                             }
                         }
                     }
@@ -144,7 +143,7 @@ namespace loginPage
                     pageContainer.Children.Clear();
                     pageContainer.Children.Add(new page4());
                     break;
-                case "Đồ Lẩu":
+                case "Món Lẩu":
                     // hiển thị nội dung tương ứng với đồ uống trong pageContainer
                     pageContainer.Children.Clear();
                     pageContainer.Children.Add(new page3());
