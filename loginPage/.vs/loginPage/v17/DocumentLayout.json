@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\homework\\cs\\git\\new13\\restaurantmanager21cn1\\loginpage\\loginpage\\trangchu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\trangchu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "trangchu.xaml.cs",
+              "DocumentMoniker": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml.cs",
+              "RelativeDocumentMoniker": "loginPage\\trangchu.xaml.cs",
+              "ToolTip": "D:\\Homework\\CS\\Git\\new13\\RestaurantManager21cn1\\loginPage\\loginPage\\trangchu.xaml.cs",
+              "RelativeToolTip": "loginPage\\trangchu.xaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T10:39:26.941Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
