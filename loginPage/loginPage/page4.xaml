@@ -6,16 +6,16 @@
              xmlns:local="clr-namespace:loginPage"
              mc:Ignorable="d" 
              d:DesignHeight="987.253608247423" d:DesignWidth="920" Background="White">
-    <Grid >
+    <Grid>
         <ScrollViewer>
             <StackPanel VerticalAlignment="Top">
-                <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid x:Name="page4Grid" HorizontalAlignment="Center" VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="260"/>
                         <ColumnDefinition Width="260"/>
                         <ColumnDefinition Width="260"/>
-
                     </Grid.ColumnDefinitions>
+
                     <Grid.RowDefinitions>
                         <RowDefinition Height="260"/>
                         <RowDefinition Height="260"/>
@@ -26,85 +26,6 @@
                         <RowDefinition Height="260"/>
                         <RowDefinition Height="260"/>
                     </Grid.RowDefinitions>
-
-                    <Button Background="Transparent" Width="250" Height="250" 
-                   Grid.Column="0" Grid.Row="0">
-                        <StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <Grid VerticalAlignment="Top">
-                                    <Image VerticalAlignment="Top" Source="Images/diet.png" Height="180" Width="180" />
-                                </Grid>
-                                <TextBlock FontSize="20" Text="Food 1" HorizontalAlignment="Center"/>
-                                <TextBlock Text="100.000" Foreground="Gray" FontSize="14" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
-
-                    <Button Background="Transparent" Width="250" Height="250" 
-                    Grid.Row="0" Grid.Column="1">
-                        <StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <Grid VerticalAlignment="Top">
-                                    <Image VerticalAlignment="Top" Source="Images/diet.png" Height="180" Width="180" />
-                                </Grid>
-                                <TextBlock FontSize="20" Text="Food 2" HorizontalAlignment="Center"/>
-                                <TextBlock Text="100.000" Foreground="Gray" FontSize="14" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
-
-                    <Button Background="Transparent" Width="250" Height="250" 
-Grid.Row="0" Grid.Column="2">
-                        <StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <Grid VerticalAlignment="Top">
-                                    <Image VerticalAlignment="Top" Source="Images/diet.png" Height="180" Width="180" />
-                                </Grid>
-                                <TextBlock FontSize="20" Text="Food 3" HorizontalAlignment="Center"/>
-                                <TextBlock Text="100.000" Foreground="Gray" FontSize="14" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
-
-
-                    <Button Background="Transparent" Width="250" Height="250" 
-                   Grid.Column="0" Grid.Row="1">
-                        <StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <Grid VerticalAlignment="Top">
-                                    <Image VerticalAlignment="Top" Source="Images/diet.png" Height="180" Width="180" />
-                                </Grid>
-                                <TextBlock FontSize="20" Text="Food 1" HorizontalAlignment="Center"/>
-                                <TextBlock Text="100.000" Foreground="Gray" FontSize="14" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
-
-                    <Button Background="Transparent" Width="250" Height="250" Grid.Column="1" Grid.Row="1">
-                        <StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <Grid VerticalAlignment="Top">
-                                    <Image VerticalAlignment="Top" Source="Images/diet.png" Height="180" Width="180" />
-                                </Grid>
-                                <TextBlock FontSize="20" Text="Food 1" HorizontalAlignment="Center"/>
-                                <TextBlock Text="100.000" Foreground="Gray" FontSize="14" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
-
-
-                    <Button Background="Transparent" Width="250" Height="250" Grid.Column="2" Grid.Row="1">
-                        <StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <Grid VerticalAlignment="Top">
-                                    <Image VerticalAlignment="Top" Source="Images/diet.png" Height="180" Width="180" />
-                                </Grid>
-                                <TextBlock FontSize="20" Text="Food 1" HorizontalAlignment="Center"/>
-                                <TextBlock Text="100.000" Foreground="Gray" FontSize="14" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
-
                 </Grid>
             </StackPanel>
         </ScrollViewer>
