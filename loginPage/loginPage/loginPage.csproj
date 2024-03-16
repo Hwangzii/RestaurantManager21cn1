@@ -171,6 +171,7 @@
     <Compile Include="BillForm.xaml.cs">
       <DependentUpon>BillForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FoodItem.cs" />
     <Compile Include="OderMonAn.xaml.cs">
       <DependentUpon>OderMonAn.xaml</DependentUpon>
     </Compile>

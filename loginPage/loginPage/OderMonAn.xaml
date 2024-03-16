@@ -340,7 +340,7 @@
                             <GridView>
                                 <GridViewColumn Width="260" Header="Tên món" DisplayMemberBinding="{Binding Name}"/>
                                 <GridViewColumn Width="70" Header="Số lượng" DisplayMemberBinding="{Binding Qty}"/>
-                                <GridViewColumn Width="150" Header="Đơn giá" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Width="150" Header="Đơn giá" DisplayMemberBinding="{Binding Price}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
