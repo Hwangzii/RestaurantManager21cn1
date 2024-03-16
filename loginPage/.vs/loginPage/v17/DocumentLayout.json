@@ -1,36 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\test7\\restaurantmanager21cn1\\loginpage\\loginpage\\amoutfood.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\amoutfood.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\Homework\\CS\\Git\\new15\\RestaurantManager21cn1\\loginPage\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedHeight": 254,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AmoutFood.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\AmoutFood.xaml",
-              "RelativeDocumentMoniker": "loginPage\\AmoutFood.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\test7\\RestaurantManager21cn1\\loginPage\\loginPage\\AmoutFood.xaml",
-              "RelativeToolTip": "loginPage\\AmoutFood.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-16T03:48:28.441Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
