@@ -34,8 +34,8 @@
                 <TabControl x:Name="goimonTabControl" SelectionChanged="goimonTabControl_SelectionChanged">
                     
                     
-                    <!-- Mon Nuong-->
-                    <TabItem x:Name="MonNuongTabItem" Height="40" Width="230">
+                    <!-- All -->
+                    <TabItem x:Name="AllTabItem" Height="40" Width="230">
                         <TabItem.Template>
                             
                             
@@ -63,7 +63,7 @@
 
                         <ScrollViewer>
                             <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid x:Name="monNuongGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid x:Name="AllGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="270"/>
                                         <ColumnDefinition Width="270"/>
@@ -90,8 +90,8 @@
 
                     </TabItem>
                     
-                    <!-- Lẩu -->
-                    <TabItem x:Name="MonLauTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
+                    <!-- Mon nuong -->
+                    <TabItem x:Name="MonNuongTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
                         <TabItem.Template>
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
@@ -122,7 +122,7 @@
 
                         <ScrollViewer>
                             <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid x:Name="monLauGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid x:Name="MonNuongGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="270"/>
                                         <ColumnDefinition Width="270"/>
@@ -149,8 +149,8 @@
 
                     </TabItem>
                     
-                    <!-- Món chín-->
-                    <TabItem x:Name="monChinTabItem" Margin="0 0 0 0" Header="Tầng 3" Height="40" Width="230">
+                    <!-- Món lau-->
+                    <TabItem x:Name="MonLauTabItem" Margin="0 0 0 0" Header="Tầng 3" Height="40" Width="230">
                         <TabItem.Template>
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
@@ -174,7 +174,7 @@
                         </TabItem.Template>
                         <ScrollViewer>
                             <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid x:Name="monChinGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid x:Name="MonLauGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="270"/>
                                         <ColumnDefinition Width="270"/>
@@ -203,13 +203,66 @@
 
                     </TabItem>
 
-                    <!-- Đồ Uống-->
-                    <TabItem x:Name="DoUongTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
+                    <!-- Mon chin-->
+                    <TabItem x:Name="MonChinTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
                         <TabItem.Template>
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
                                 <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15" BorderThickness="1">
                                     <ContentPresenter Content="Tầng 4" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <ContentPresenter.Resources>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="FontSize" Value="20"/>
+                                            </Style>
+                                        </ContentPresenter.Resources>
+                                    </ContentPresenter>
+                                </Border>
+
+                                <!-- chuyển màu khi chọn-->
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="borderTang1" Property="Background" Value="#FF9966"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </TabItem.Template>
+
+                        <ScrollViewer>
+                            <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
+                                <Grid x:Name="MonChinGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="270"/>
+                                        <ColumnDefinition Width="270"/>
+                                        <ColumnDefinition Width="270"/>
+                                        <ColumnDefinition Width="270"/>
+                                        <ColumnDefinition Width="270"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="270"/>
+                                        <RowDefinition Height="270"/>
+                                        <RowDefinition Height="270"/>
+                                        <RowDefinition Height="270"/>
+                                        <RowDefinition Height="270"/>
+                                        <RowDefinition Height="270"/>
+                                        <RowDefinition Height="270"/>
+                                        <RowDefinition Height="270"/>
+                                        <RowDefinition Height="270"/>
+
+                                    </Grid.RowDefinitions>
+                                </Grid>
+
+                            </StackPanel>
+                        </ScrollViewer>
+
+                    </TabItem>
+
+                    <!-- Do uong-->
+                    <TabItem x:Name="DoUongTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
+                        <TabItem.Template>
+                            <!-- bo góc khung -->
+                            <ControlTemplate TargetType="TabItem">
+                                <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15" BorderThickness="1">
+                                    <ContentPresenter Content="Tầng 5" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <ContentPresenter.Resources>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="FontSize" Value="20"/>
@@ -253,33 +306,6 @@
 
                             </StackPanel>
                         </ScrollViewer>
-
-                    </TabItem>
-
-                    <!-- Tang 5-->
-                    <TabItem Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
-                        <TabItem.Template>
-                            <!-- bo góc khung -->
-                            <ControlTemplate TargetType="TabItem">
-                                <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15" BorderThickness="1">
-                                    <ContentPresenter Content="Tầng 5" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                        <ContentPresenter.Resources>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="FontSize" Value="20"/>
-                                            </Style>
-                                        </ContentPresenter.Resources>
-                                    </ContentPresenter>
-                                </Border>
-
-                                <!-- chuyển màu khi chọn-->
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="borderTang1" Property="Background" Value="#FF9966"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </TabItem.Template>
-
                     </TabItem>
                 </TabControl>
 
