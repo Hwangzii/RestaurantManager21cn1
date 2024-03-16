@@ -165,31 +165,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddAmount.xaml.cs">
-      <DependentUpon>AddAmount.xaml</DependentUpon>
+    <Compile Include="AmoutFood.xaml.cs">
+      <DependentUpon>AmoutFood.xaml</DependentUpon>
     </Compile>
     <Compile Include="BillForm.xaml.cs">
       <DependentUpon>BillForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="page1.xaml.cs">
-      <DependentUpon>page1.xaml</DependentUpon>
+    <Compile Include="OderMonAn.xaml.cs">
+      <DependentUpon>OderMonAn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="page2.xaml.cs">
-      <DependentUpon>page2.xaml</DependentUpon>
+    <Compile Include="tablebooked.xaml.cs">
+      <DependentUpon>tablebooked.xaml</DependentUpon>
     </Compile>
-    <Compile Include="page3.xaml.cs">
-      <DependentUpon>page3.xaml</DependentUpon>
+    <Compile Include="Tang1.xaml.cs">
+      <DependentUpon>Tang1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="page4.xaml.cs">
-      <DependentUpon>page4.xaml</DependentUpon>
+    <Compile Include="Tang2.xaml.cs">
+      <DependentUpon>Tang2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="page5.xaml.cs">
-      <DependentUpon>page5.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="trangchu.xaml.cs">
-      <DependentUpon>trangchu.xaml</DependentUpon>
-    </Compile>
-    <Page Include="AddAmount.xaml">
+    <Page Include="AmoutFood.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,23 +204,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="page2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="page3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="page4.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="page5.xaml">
+    <Page Include="OderMonAn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -234,13 +212,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="tablebooked.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tang1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tang2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Templates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="trangchu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -286,6 +272,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\diet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="color.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1.jpg" />
+    <Resource Include="Images\2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" />

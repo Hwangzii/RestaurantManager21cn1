@@ -12,18 +12,62 @@
                 <ResourceDictionary Source="Styles/ComboBoxStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            
+            
+
 
             <!-- Hiệu ứng chuyển màu cho button -->
             <Style x:Key="buttondes" TargetType="Button">
                 <Setter Property="Background" Value="#D0D3D4"/>
                 <Setter Property="Foreground" Value="#5a5a5a"/>
                 <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="#5a5a5a"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" CornerRadius="10" 
                                     BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#FF9966"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="BorderBrush" Value="#FF9966"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="10"
+                                            BorderThickness="7" BorderBrush="{TemplateBinding BorderBrush}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="buttonprint" TargetType="Button">
+                <Setter Property="Background" Value="#E5E7E9"/>
+                <Setter Property="Foreground" Value="#808B96"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="20"/>
+                <Setter Property="Margin" Value="5 0 0 0"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="230"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    CornerRadius="10"
+                                    BorderThickness="2"
+                                    BorderBrush="{TemplateBinding BorderBrush}">
                                 <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
@@ -33,9 +77,9 @@
 
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#FF9966"/>
+                        <Setter Property="Background" Value="#f56b25"/>
                         <Setter Property="Foreground" Value="#FFFFFF"/>
-                        <Setter Property="BorderBrush" Value="#FF9966"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
                     </Trigger>
                 </Style.Triggers>
             </Style>
@@ -140,6 +184,38 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" CornerRadius="20" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+
+                    </Setter.Value>
+                </Setter>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#FF5733"/>
+                        <Setter Property="Foreground" Value="#FFFFFF"/>
+                        <Setter Property="BorderBrush" Value="#FF5733"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            
+
+
+            <!-- hiệu ứng bo góc-->
+            <Style x:Key="mainTabItem" TargetType="TabItem">
+                <Setter Property="Background" Value="Gray"/>
+                <Setter Property="Foreground" Value="#5a5a5a"/>
+                
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <!-- hiệu ứng di chuyển con chuột-->
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TabItem">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
                                 <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>

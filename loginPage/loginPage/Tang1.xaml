@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="loginPage.Tang1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:loginPage"
+             mc:Ignorable="d" 
+             d:DesignHeight="925.7148" d:DesignWidth="1536" Background="#F0F3F4">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel VerticalAlignment="Top">
+                <Grid x:Name="gridTable1" HorizontalAlignment="Center" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="280"/>
+                        <ColumnDefinition Width="280"/>
+                        <ColumnDefinition Width="280"/>
+                        <ColumnDefinition Width="280"/>
+                        <ColumnDefinition Width="280"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="280"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

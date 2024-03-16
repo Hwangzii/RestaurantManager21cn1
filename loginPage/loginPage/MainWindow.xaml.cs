@@ -18,7 +18,7 @@ namespace loginPage
 
     public partial class MainWindow : Window
     {
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Phi;Integrated Security=True";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=restaurant_DB_vxn;Integrated Security=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;
@@ -78,7 +78,7 @@ namespace loginPage
                 using (con = new SqlConnection(connectstring))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM tbUserTestHazii WHERE Username=@Username AND Password=@Password";
+                    string query = "SELECT COUNT(*) FROM nhanvien_TB WHERE TenTaiKhoan=@Username AND MatKhau=@Password";
                     using (cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", txtusername.Text);
@@ -87,7 +87,7 @@ namespace loginPage
                         int count = (int)cmd.ExecuteScalar();
                         if (count == 1)
                         {
-                            trangchu dashboarch = new trangchu();
+                            tablebooked dashboarch = new tablebooked();
                             dashboarch.WindowState = WindowState.Maximized;
                             dashboarch.Show();
                             this.Close();
