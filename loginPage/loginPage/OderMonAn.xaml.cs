@@ -21,7 +21,7 @@ namespace loginPage
     /// </summary>
     public partial class OderMonAn : Window
     {
-        string connectstring = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=restaurant_DB;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=restaurant_DB;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -83,6 +83,7 @@ namespace loginPage
                                 dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                                 dynamicBtn.Content = dynamicStp;
                                 dynamicBtn.Style = (Style)FindResource("buttondes");
+                                dynamicBtn.Click += DynamicBtn_Click;
 
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
@@ -147,6 +148,7 @@ namespace loginPage
                                 dynamicBtn.Background = Brushes.White;
                                 dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                                 dynamicBtn.Content = dynamicStp;
+                                dynamicBtn.Click += DynamicBtn_Click;
 
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
@@ -213,6 +215,7 @@ namespace loginPage
                                 dynamicBtn.Background = Brushes.White;
                                 dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                                 dynamicBtn.Content = dynamicStp;
+                                dynamicBtn.Click += DynamicBtn_Click;
 
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
@@ -279,6 +282,7 @@ namespace loginPage
                                 dynamicBtn.Background = Brushes.White;
                                 dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                                 dynamicBtn.Content = dynamicStp;
+                                dynamicBtn.Click += DynamicBtn_Click;
 
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
@@ -345,6 +349,7 @@ namespace loginPage
                                 dynamicBtn.Background = Brushes.White;
                                 dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                                 dynamicBtn.Content = dynamicStp;
+                                dynamicBtn.Click += DynamicBtn_Click;
 
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
@@ -359,6 +364,49 @@ namespace loginPage
             }
         }
 
+        private void DynamicBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            string foodName = ((TextBlock)((StackPanel)clickedButton.Content).Children[2]).Text;
+            string foodPrice = ((TextBlock)((StackPanel)clickedButton.Content).Children[3]).Text;
+
+            bool itemFound = false;
+            foreach (FoodItem item in ListOderBox.Items)
+            {
+                if(item.Name == foodName)
+                {
+                    item.Qty++;
+                    itemFound = true;
+                    break;                    
+                }
+                            }
+            if (!itemFound)
+            {
+                FoodItem newfoodItem = new FoodItem()
+                {
+                    Name = foodName,
+                    Price = foodPrice,
+                    Qty = 1
+                };
+                ListOderBox.Items.Add(newfoodItem);
+            }
+            else
+            {
+                ListOderBox.Items.Refresh();                
+            }
+            Tongtien();
+        }
+
+        private void Tongtien()
+        {
+            double tongtien = 0;
+            foreach (FoodItem item in ListOderBox.Items)
+            {
+                tongtien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+            }
+            thanhtoan.Content = tongtien.ToString() + "vnđ";
+        }
+
         private void inhoadon_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("chua co su kien nao");
@@ -366,7 +414,7 @@ namespace loginPage
 
         private void thanhtoan_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("chua co su kien nao");
+            
         }
     }
 }

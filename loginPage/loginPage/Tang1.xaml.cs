@@ -22,7 +22,7 @@ namespace loginPage
     public partial class Tang1 : UserControl
     {
 
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=restaurant_DB_vxn;Integrated Security=True";
+        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=restaurant_DB;Integrated Security=True;Encrypt=False";
         public Tang1()
         {
             InitializeComponent();
