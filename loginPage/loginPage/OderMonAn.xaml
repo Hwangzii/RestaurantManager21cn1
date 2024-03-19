@@ -26,19 +26,19 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
             </Grid>
-            
-            
-            
+
+
+
             <!-- bang do an -->
             <Grid Grid.Row="1" x:Name="DsMonAn">
                 <TabControl x:Name="goimonTabControl" SelectionChanged="goimonTabControl_SelectionChanged">
-                    
-                    
+
+
                     <!-- All -->
                     <TabItem x:Name="AllTabItem" Height="40" Width="230">
                         <TabItem.Template>
-                            
-                            
+
+
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
                                 <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15" BorderThickness="1">
@@ -50,8 +50,8 @@
                                         </ContentPresenter.Resources>
                                     </ContentPresenter>
                                 </Border>
-                            
-                                
+
+
                                 <!-- chuyển màu khi chọn-->
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsSelected" Value="True">
@@ -89,7 +89,7 @@
                         </ScrollViewer>
 
                     </TabItem>
-                    
+
                     <!-- Mon nuong -->
                     <TabItem x:Name="MonNuongTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
                         <TabItem.Template>
@@ -140,7 +140,7 @@
                                         <RowDefinition Height="270"/>
                                         <RowDefinition Height="270"/>
                                         <RowDefinition Height="270"/>
-                                        
+
                                     </Grid.RowDefinitions>
                                 </Grid>
 
@@ -148,7 +148,7 @@
                         </ScrollViewer>
 
                     </TabItem>
-                    
+
                     <!-- Món lau-->
                     <TabItem x:Name="MonLauTabItem" Margin="0 0 0 0" Header="Tầng 3" Height="40" Width="230">
                         <TabItem.Template>
@@ -310,11 +310,11 @@
                 </TabControl>
 
             </Grid>
-            
-            
+
+
         </Grid>
-        
-        
+
+
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.8*"/>
@@ -322,20 +322,29 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Background="#f56b25">
-                
+                <TextBlock HorizontalAlignment="Left" 
+                           TextWrapping="Wrap" Text="Bàn số." 
+                           VerticalAlignment="Center" Height="43" Width="109"
+                           FontWeight="Bold" FontSize="30" Margin="247,0,0,0"/>
+                <TextBlock x:Name="tableNumber"
+                    HorizontalAlignment="Left" 
+                    TextWrapping="Wrap" Text="num" 
+                    VerticalAlignment="Center" Height="43" Width="109"
+                    FontWeight="Bold" FontSize="30" Margin="356,0,0,0"/>
+
             </Grid>
-            
-            
+
+
             <!-- danh sach oder -->
-            <Grid Grid.Row="1" Background="Gray">
+            <Grid Grid.Row="1" Background="#F0F3F4">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="9.5*"/>
                     <RowDefinition Height="0.7*"/>
                 </Grid.RowDefinitions>
-                
+
                 <!-- Danh sach oder-->
                 <Grid Grid.Row="0">
-                    <ListView x:Name="ListOderBox" Background="#F0F3F4" >
+                    <ListView x:Name="ListOderBox" Background="#F0F3F4" Height="912" VerticalAlignment="Center" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="260" Header="Tên món" DisplayMemberBinding="{Binding Name}"/>

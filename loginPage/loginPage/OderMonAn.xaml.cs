@@ -26,7 +26,10 @@ namespace loginPage
         {
             InitializeComponent();
         }
-
+        public void settext(string text)
+        {
+            tableNumber.Text = text;
+        }
         private void goimonTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (AllTabItem.IsSelected)
@@ -404,17 +407,16 @@ namespace loginPage
             {
                 tongtien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
             }
-            thanhtoan.Content = tongtien.ToString() + "vnđ";
+            thanhtoan.Content = tongtien.ToString() + " đ";
         }
 
         private void inhoadon_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("chua co su kien nao");
-        }
-
+        }  
         private void thanhtoan_Click(object sender, RoutedEventArgs e)
         {
             
-        }
+        }       
     }
 }

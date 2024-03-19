@@ -59,12 +59,7 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
                             dynamicBtn.Content = dynamicStp;
-
-                            dynamicBtn.Click += (sender, e) =>
-                            {
-                                OderMonAn openOder = new OderMonAn();
-                                openOder.Show();
-                            };
+                            dynamicBtn.Click += DynamicBtn_Click;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -74,6 +69,19 @@ namespace loginPage
                     }
 
                 }
+            }
+        }
+
+        private void DynamicBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            StackPanel stackPanel = clickedButton.Content as StackPanel;
+            TextBlock textBlock = stackPanel.Children[0] as TextBlock;
+            if (textBlock != null)
+            {
+                OderMonAn orderForm = new OderMonAn();
+                orderForm.settext(textBlock.Text);
+                orderForm.Show();
             }
         }
     }
