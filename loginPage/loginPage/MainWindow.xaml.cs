@@ -18,7 +18,7 @@ namespace loginPage
 
     public partial class MainWindow : Window
     {
-        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=restaurant_DB;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=restaurant_DB;Integrated Security=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;

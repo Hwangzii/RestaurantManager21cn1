@@ -21,7 +21,7 @@ namespace loginPage
     /// </summary>
     public partial class OderMonAn : Window
     {
-        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=restaurant_DB;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=restaurant_DB;Integrated Security=True";
         public OderMonAn()
         {
             InitializeComponent();
@@ -416,5 +416,90 @@ namespace loginPage
         {
             
         }
+
+
+        public void ChangeAmount_Click(object sender, RoutedEventArgs e)
+        {
+            TheButton = sender as Button;
+            var listViewItem = FindAncestor<ListViewItem>(TheButton);
+            var item = listViewItem.DataContext as FoodItem;
+            string namee = item.Name;
+            int Qtyy = item.Qty;
+
+            //popup.visibility = visible
+            popup.IsOpen = true;
+            Hienthiso.Text = Qtyy.ToString();
+            Hienthitenmon.Text = namee;
+       
+        }
+
+        private static T FindAncestor<T>(DependencyObject current) where T : DependencyObject
+        {
+            do
+            {
+                if (current is T)
+                {
+                    return (T)current;
+                }
+                current = VisualTreeHelper.GetParent(current);
+            }
+            while (current != null);
+            return null;
+        }
+
+
+        string keyword2;
+        int soluong3, soluong4;
+        Button TheButton;
+        string tenmon2;
+
+        private void ButtonClickAdd(object sender, RoutedEventArgs e)
+        {
+            string thamso = Hienthiso.Text.ToString();
+            soluong3 = Int32.Parse(thamso);
+            soluong3 += 1;
+            Hienthiso.Text = soluong3.ToString();
+
+        }
+
+        private void ButtonClickSub(object sender, RoutedEventArgs e)
+        {
+            string thamso = Hienthiso.Text.ToString();
+            soluong3 = Int32.Parse(thamso);
+            if (soluong3 > 1)
+            {
+                soluong3 -= 1;
+                Hienthiso.Text = soluong3.ToString();
+            }
+        }
+
+        private void Accept(object sender, RoutedEventArgs e)
+        {
+            var listViewItem = FindAncestor<ListViewItem>(TheButton);
+            var item = listViewItem.DataContext as FoodItem;
+            item.Qty = soluong3;
+            ListOderBox.Items.Refresh();
+            Tongtien();
+            popup.IsOpen = false;
+        }
+
+        public void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            var listViewItem = FindAncestor<ListViewItem>(TheButton);
+            var item = listViewItem.DataContext as FoodItem;
+            ListOderBox.Items.Remove(item);
+            Tongtien();
+            popup.IsOpen = false;
+
+        }
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            popup.IsOpen = false;
+        }
+
+
+
+
     }
 }
