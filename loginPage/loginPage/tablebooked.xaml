@@ -48,27 +48,27 @@
                                 <ColumnDefinition Width="270"/>
                             </Grid.ColumnDefinitions>
 
-                            <Button x:Name="Tang1Btn" Grid.Row="0" Margin="5" FontSize="25" Click="Tang1Btn_Click">
+                            <Button x:Name="Tang1Btn" Grid.Row="0" Margin="5" FontSize="25" Click="Tang1Btn_Click" Style="{StaticResource buttonprint}">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Home" Height="30" Width="30" Margin="10 0 10 0"/>
                                     <TextBlock Text="Tầng 1" Width="240"/>
                                 </StackPanel>
                             </Button>
 
-                            <Button x:Name="Tang2Btn" Grid.Row="1" Margin="5" FontSize="25" Click="Tang2Btn_Click">
+                            <Button x:Name="Tang2Btn" Grid.Row="1" Margin="5" FontSize="25" Click="Tang2Btn_Click" Style="{StaticResource buttonprint}">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Home" Height="30" Width="30" Margin="10 0 10 0"/>
                                     <TextBlock Text="Tầng 2" Width="240"/>
                                 </StackPanel>
                             </Button>
 
-                            <Button x:Name="doanhthuBtn" Grid.Row="2" Margin="5" FontSize="25" Click="doanhthuBtn_Click">
+                            <Button x:Name="doanhthuBtn" Grid.Row="2" Margin="5" FontSize="25" Click="doanhthuBtn_Click" Style="{StaticResource buttonprint}">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="FileDocumentOutline" Height="30" Width="30" Margin="10 0 10 0"/>
                                     <TextBlock Text="Doanh thu" Width="240"/>
                                 </StackPanel>
                             </Button>
-                            <Button Grid.Row="12" Margin="5" FontSize="25">
+                            <Button x:Name="logoutBtn" Grid.Row="11" Margin="5" FontSize="25" Style="{StaticResource buttonprint}" Click="logoutBtn_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="LogoutVariant" Height="30" Width="30" Margin="10 0 10 0"/>
                                     <TextBlock Text="Đăng xuất" Width="240"/>

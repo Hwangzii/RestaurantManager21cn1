@@ -21,13 +21,15 @@ namespace loginPage
     /// </summary>
     public partial class Tang2 : UserControl
     {
-        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=restaurant_DB;Integrated Security=True;Encrypt=False";
+        public event EventHandler DynamicButtonClicked;
+
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=quanlynhahang21CN1;Integrated Security=True";
         public Tang2()
         {
             InitializeComponent();
-            int maBanAn = 21;
+            int maBanAn = 0;
             SqlConnection conn = new SqlConnection(connectstring);
-            SqlCommand command = new SqlCommand("select *  from banan_TB", conn);
+            SqlCommand command = new SqlCommand("select *  from BanAn", conn);
             conn.Open();
 
 
@@ -35,7 +37,7 @@ namespace loginPage
             {
                 while (read.Read())
                 {
-                    maBanAn = (int)read["MaBanAn"];
+                    maBanAn = (int)read["MaBan"];
                     for (int i = 1; i <= 40; i++)
                     {
 
@@ -48,7 +50,7 @@ namespace loginPage
 
                         if (maBanAn == i+20 )
                         {
-                            dynamicTxtTenBanAn.Text = read["TenBanAn"].ToString();
+                            dynamicTxtTenBanAn.Text = read["TenBan"].ToString();
                             dynamicTxtTenBanAn.HorizontalAlignment = HorizontalAlignment.Center;
                             dynamicTxtTenBanAn.VerticalAlignment = VerticalAlignment.Center;
                             dynamicTxtTenBanAn.FontSize = 30;
@@ -59,7 +61,16 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
                             dynamicBtn.Content = dynamicStp;
-                            dynamicBtn.Click += DynamicBtn_Click;
+
+                            dynamicBtn.Click += (sender, e) =>
+                            {
+                                var orderMonAn = new OderMonAn();
+                                orderMonAn.WindowState = WindowState.Maximized;
+                                orderMonAn.Show();
+                                var closerMonAn = new tablebooked();
+                                closerMonAn.Close();
+                                OnDynamicButtonClicked(EventArgs.Empty);
+                            };
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -72,17 +83,9 @@ namespace loginPage
             }
         }
 
-        private void DynamicBtn_Click(object sender, RoutedEventArgs e)
+        protected virtual void OnDynamicButtonClicked(EventArgs e)
         {
-            Button clickedButton = sender as Button;
-            StackPanel stackPanel = clickedButton.Content as StackPanel;
-            TextBlock textBlock = stackPanel.Children[0] as TextBlock;
-            if (textBlock != null)
-            {
-                OderMonAn orderForm = new OderMonAn();
-                orderForm.settext(textBlock.Text);
-                orderForm.Show();
-            }
+            DynamicButtonClicked?.Invoke(this, e);
         }
     }
 }

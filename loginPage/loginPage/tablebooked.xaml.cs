@@ -30,7 +30,15 @@ namespace loginPage
         private void ShowTang1UserControl()
         {
             Tang1 tang1UserControl = new Tang1();
+            //
+            tang1UserControl.DynamicButtonClicked += Tang1UserControl_DynamicButtonClicked;
             gridShowTable.Children.Add(tang1UserControl);
+        }
+
+        private void Tang1UserControl_DynamicButtonClicked(object sender, EventArgs e)
+        {
+            // Tạm ẩn cửa sổ hiện tại khi nhấp vào nút dynamicBtn
+            this.Visibility = Visibility.Collapsed;
         }
 
 
@@ -48,6 +56,12 @@ namespace loginPage
         }
 
         private void doanhthuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("hiện chưa có sự kiện nào", "thông báo",
+            MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void logoutBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("hiện chưa có sự kiện nào", "thông báo",
             MessageBoxButton.OK, MessageBoxImage.Warning);
