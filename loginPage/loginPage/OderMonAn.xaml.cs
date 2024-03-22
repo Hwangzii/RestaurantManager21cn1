@@ -355,9 +355,16 @@ namespace loginPage
             MessageBox.Show("chua co su kien nao");
         }
 
+        // ---------------------------------   Ngọc làm phần này   ---------------------------------//
         private void thanhtoan_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("chua co su kien nao");
+            ThanhToan thanhToan = new ThanhToan();
+            foreach (FoodItem item in ListOderBox.Items)
+            {
+                thanhToan.foodLV.Items.Add(item);
+                thanhToan.foodLV.Visibility = Visibility.Hidden;
+            }
+            thanhToan.Show();
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
