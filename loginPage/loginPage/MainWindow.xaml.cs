@@ -18,7 +18,7 @@ namespace loginPage
 
     public partial class MainWindow : Window
     {
-        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=restaurant_DB;Integrated Security=True";
+        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;
@@ -78,7 +78,7 @@ namespace loginPage
                 using (con = new SqlConnection(connectstring))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM nhanvien_TB WHERE TenTaiKhoan=@Username AND MatKhau=@Password";
+                    string query = "SELECT COUNT(*) FROM Quanly WHERE TaiKhoan=@Username AND MatKhau=@Password";
                     using (cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", txtusername.Text);

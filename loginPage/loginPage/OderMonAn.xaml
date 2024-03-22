@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:loginPage"
         mc:Ignorable="d"
         Title="OderMonAn" Height="1080" Width="1920">
-    <Grid>
+    <Grid x:Name="OrderfoodForm" Loaded="OrderfoodForm_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7.5*"/>
             <ColumnDefinition Width="2.5*"/>
@@ -19,12 +19,20 @@
                 <RowDefinition Height="9.2*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Background="#f56b25">
+            <Grid Grid.Row="0" Background="#ECF0F1 ">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Button x:Name="backBtn" Width="100"
+                            BorderBrush="Transparent" HorizontalAlignment="Left" Background="Transparent" Click="backBtn_Click">
+                        <Icon:PackIconMaterial Kind="ArrowLeft" 
+                                               Foreground="#f56b25"
+                                               Height="30" Width="30"/>
+                    </Button>
+                </Grid>
             </Grid>
             
             
@@ -34,8 +42,8 @@
                 <TabControl x:Name="goimonTabControl" SelectionChanged="goimonTabControl_SelectionChanged">
                     
                     
-                    <!-- All -->
-                    <TabItem x:Name="AllTabItem" Height="40" Width="230">
+                    <!-- Mon Nuong-->
+                    <TabItem x:Name="MonNuongTabItem" Height="40" Width="230">
                         <TabItem.Template>
                             
                             
@@ -63,7 +71,7 @@
 
                         <ScrollViewer>
                             <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid x:Name="AllGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid x:Name="monNuongGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="270"/>
                                         <ColumnDefinition Width="270"/>
@@ -90,8 +98,8 @@
 
                     </TabItem>
                     
-                    <!-- Mon nuong -->
-                    <TabItem x:Name="MonNuongTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
+                    <!-- Lẩu -->
+                    <TabItem x:Name="MonLauTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
                         <TabItem.Template>
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
@@ -122,7 +130,7 @@
 
                         <ScrollViewer>
                             <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid x:Name="MonNuongGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid x:Name="monLauGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="270"/>
                                         <ColumnDefinition Width="270"/>
@@ -149,8 +157,8 @@
 
                     </TabItem>
                     
-                    <!-- Món lau-->
-                    <TabItem x:Name="MonLauTabItem" Margin="0 0 0 0" Header="Tầng 3" Height="40" Width="230">
+                    <!-- Món chín-->
+                    <TabItem x:Name="monChinTabItem" Margin="0 0 0 0" Header="Tầng 3" Height="40" Width="230">
                         <TabItem.Template>
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
@@ -174,7 +182,7 @@
                         </TabItem.Template>
                         <ScrollViewer>
                             <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid x:Name="MonLauGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <Grid x:Name="monChinGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="270"/>
                                         <ColumnDefinition Width="270"/>
@@ -203,66 +211,13 @@
 
                     </TabItem>
 
-                    <!-- Mon chin-->
-                    <TabItem x:Name="MonChinTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
-                        <TabItem.Template>
-                            <!-- bo góc khung -->
-                            <ControlTemplate TargetType="TabItem">
-                                <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15" BorderThickness="1">
-                                    <ContentPresenter Content="Tầng 4" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                        <ContentPresenter.Resources>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="FontSize" Value="20"/>
-                                            </Style>
-                                        </ContentPresenter.Resources>
-                                    </ContentPresenter>
-                                </Border>
-
-                                <!-- chuyển màu khi chọn-->
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="borderTang1" Property="Background" Value="#FF9966"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </TabItem.Template>
-
-                        <ScrollViewer>
-                            <StackPanel VerticalAlignment="Top" Margin="0 0 0 0">
-                                <Grid x:Name="MonChinGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="270"/>
-                                        <ColumnDefinition Width="270"/>
-                                        <ColumnDefinition Width="270"/>
-                                        <ColumnDefinition Width="270"/>
-                                        <ColumnDefinition Width="270"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="270"/>
-                                        <RowDefinition Height="270"/>
-                                        <RowDefinition Height="270"/>
-                                        <RowDefinition Height="270"/>
-                                        <RowDefinition Height="270"/>
-                                        <RowDefinition Height="270"/>
-                                        <RowDefinition Height="270"/>
-                                        <RowDefinition Height="270"/>
-                                        <RowDefinition Height="270"/>
-
-                                    </Grid.RowDefinitions>
-                                </Grid>
-
-                            </StackPanel>
-                        </ScrollViewer>
-
-                    </TabItem>
-
-                    <!-- Do uong-->
+                    <!-- Đồ Uống-->
                     <TabItem x:Name="DoUongTabItem" Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
                         <TabItem.Template>
                             <!-- bo góc khung -->
                             <ControlTemplate TargetType="TabItem">
                                 <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15" BorderThickness="1">
-                                    <ContentPresenter Content="Tầng 5" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <ContentPresenter Content="Tầng 4" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <ContentPresenter.Resources>
                                             <Style TargetType="TextBlock">
                                                 <Setter Property="FontSize" Value="20"/>
@@ -306,6 +261,33 @@
 
                             </StackPanel>
                         </ScrollViewer>
+
+                    </TabItem>
+
+                    <!-- Tang 5-->
+                    <TabItem Margin="0 0 0 0" Header="Tầng 2" Height="40" Width="230">
+                        <TabItem.Template>
+                            <!-- bo góc khung -->
+                            <ControlTemplate TargetType="TabItem">
+                                <Border x:Name="borderTang1" Background="{TemplateBinding Background}" CornerRadius="15" BorderThickness="1">
+                                    <ContentPresenter Content="Tầng 5" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <ContentPresenter.Resources>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="FontSize" Value="20"/>
+                                            </Style>
+                                        </ContentPresenter.Resources>
+                                    </ContentPresenter>
+                                </Border>
+
+                                <!-- chuyển màu khi chọn-->
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="borderTang1" Property="Background" Value="#FF9966"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </TabItem.Template>
+
                     </TabItem>
                 </TabControl>
 
@@ -313,33 +295,90 @@
             
             
         </Grid>
-
-
+        
+        
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.8*"/>
                 <RowDefinition Height="9.2*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Background="#f56b25">
-
+            <Grid Grid.Row="0" Background="#ECF0F1">
+                <TextBlock x:Name="tableNumber" Text="" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
-
-
+            
+            
             <!-- danh sach oder -->
             <Grid Grid.Row="1" Background="Gray">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="9.5*"/>
                     <RowDefinition Height="0.7*"/>
                 </Grid.RowDefinitions>
-
+                
                 <!-- Danh sach oder-->
                 <Grid Grid.Row="0">
                     <ListView x:Name="ListOderBox" Background="#F0F3F4" >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="240" Header="Tên món" DisplayMemberBinding="{Binding Name}"/>
-                                <GridViewColumn Width="60" Header="Số lượng" DisplayMemberBinding="{Binding Qty}"/>
+                                <!--
+                                
+                                
+                                <GridViewColumn Width="260" Header="Tên món">
+                                    <GridViewColumn.DisplayMemberBinding>
+                                        <Binding Path="Name">
+                                            <Binding.RelativeSource>
+                                                <RelativeSource Mode="FindAncestor" AncestorType="{x:Type ListView}"/>
+                                            </Binding.RelativeSource>
+                                        </Binding>
+                                    </GridViewColumn.DisplayMemberBinding>
+                                    <GridViewColumn.HeaderContainerStyle>
+                                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                                            <Setter Property="FontSize" Value="16"/>
+                                            <Setter Property="Height" Value="40"/>
+                                        </Style>
+                                    </GridViewColumn.HeaderContainerStyle>
+                                </GridViewColumn>
+                                
+                                
+                                <GridViewColumn Width="70" Header="Số lượng">
+                                    <GridViewColumn.DisplayMemberBinding>
+                                        <Binding Path="Name">
+                                            <Binding.RelativeSource>
+                                                <RelativeSource Mode="FindAncestor" AncestorType="{x:Type ListView}"/>
+                                            </Binding.RelativeSource>
+                                        </Binding>
+                                    </GridViewColumn.DisplayMemberBinding>
+                                    <GridViewColumn.HeaderContainerStyle>
+                                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                                            <Setter Property="FontSize" Value="16"/>
+                                            <Setter Property="Height" Value="40"/>
+                                        </Style>
+                                    </GridViewColumn.HeaderContainerStyle>
+                                </GridViewColumn>
+                                
+                                
+                                <GridViewColumn Width="150" Header="Tên món">
+                                    <GridViewColumn.DisplayMemberBinding>
+                                        <Binding Path="Name">
+                                            <Binding.RelativeSource>
+                                                <RelativeSource Mode="FindAncestor" AncestorType="{x:Type ListView}"/>
+                                            </Binding.RelativeSource>
+                                        </Binding>
+                                    </GridViewColumn.DisplayMemberBinding>
+                                    <GridViewColumn.HeaderContainerStyle>
+                                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                                            <Setter Property="FontSize" Value="16"/>
+                                            <Setter Property="Height" Value="40"/>
+                                        </Style>
+                                    </GridViewColumn.HeaderContainerStyle>
+                                </GridViewColumn>
+                                -->
+
+                                <GridViewColumn Width="260" Header="Tên món" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Width="70" Header="Số lượng" DisplayMemberBinding="{Binding Qty}"/>
+                                
+                                
+                                <!-- Hung: Tạo một cột để khởi tạo nút sửa số lượng -->
 
                                 <GridViewColumn Header="Sửa">
                                     <GridViewColumn.CellTemplate>
@@ -350,7 +389,10 @@
                                 </GridViewColumn>
 
 
-                                <GridViewColumn Width="110" Header="Đơn giá" DisplayMemberBinding="{Binding Price}"/>
+                                <GridViewColumn Width="125" Header="Đơn giá" DisplayMemberBinding="{Binding Price}"/>
+
+
+
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -370,7 +412,12 @@
                     </StackPanel>
                 </Grid>
             </Grid>
+
+
         </Grid>
+        
+        
+        <!-- Hung: Thêm popup để hiển thị bảng thay đổi số lượng, popup ko hiển thị trong designer view mà chỉ khi chạy mới thấy-->
 
         <Popup x:Name="popup" 
                Grid.Row="1"
@@ -479,7 +526,7 @@
                             Margin="10 0 10 0"
                             Click="Remove_Click"
                             >
-                            
+
                         </Button>
                         <Button
                         Grid.Column="2"
@@ -501,16 +548,5 @@
         </Popup>
 
 
-
-
-
     </Grid>
-    
-    
-    
-    
-    
-    
-    
-    
 </Window>
