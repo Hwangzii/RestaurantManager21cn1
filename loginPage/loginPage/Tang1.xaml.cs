@@ -22,7 +22,7 @@ namespace loginPage
         // Khai báo sự kiện DynamicButtonClicked
         public event EventHandler DynamicButtonClicked;
 
-        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
+        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=Quanlynhahang21CN11;Integrated Security=True";
         public Tang1()
         {
             InitializeComponent();
