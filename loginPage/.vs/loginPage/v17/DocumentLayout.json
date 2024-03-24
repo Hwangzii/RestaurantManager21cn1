@@ -1,13 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Chung\\JOBS\\git\\FILE_CHINH\\RestaurantManager21cn1\\loginPage\\",
+  "WorkspaceRootPath": "E:\\Git\\QLNH\\Test project\\RestaurantManager21cn1\\loginPage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\file_chinh\\restaurantmanager21cn1\\loginpage\\loginpage\\odermonan.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\odermonan.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|d:\\chung\\jobs\\git\\file_chinh\\restaurantmanager21cn1\\loginpage\\loginpage\\odermonan.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|E:\\Git\\QLNH\\Test project\\RestaurantManager21cn1\\loginPage\\loginpage\\odermonan.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A600D103-B0C7-46F4-ADB7-FB1A81F7D28C}|loginPage\\LoginPage.csproj|solutionrelative:loginpage\\odermonan.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,24 +19,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OderMonAn.xaml",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\FILE_CHINH\\RestaurantManager21cn1\\loginPage\\loginPage\\OderMonAn.xaml",
-              "RelativeDocumentMoniker": "loginPage\\OderMonAn.xaml",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\FILE_CHINH\\RestaurantManager21cn1\\loginPage\\loginPage\\OderMonAn.xaml",
-              "RelativeToolTip": "loginPage\\OderMonAn.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-24T06:58:25.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "OderMonAn.xaml.cs",
-              "DocumentMoniker": "D:\\Chung\\JOBS\\git\\FILE_CHINH\\RestaurantManager21cn1\\loginPage\\loginPage\\OderMonAn.xaml.cs",
+              "DocumentMoniker": "E:\\Git\\QLNH\\Test project\\RestaurantManager21cn1\\loginPage\\loginPage\\OderMonAn.xaml.cs",
               "RelativeDocumentMoniker": "loginPage\\OderMonAn.xaml.cs",
-              "ToolTip": "D:\\Chung\\JOBS\\git\\FILE_CHINH\\RestaurantManager21cn1\\loginPage\\loginPage\\OderMonAn.xaml.cs",
+              "ToolTip": "E:\\Git\\QLNH\\Test project\\RestaurantManager21cn1\\loginPage\\loginPage\\OderMonAn.xaml.cs",
               "RelativeToolTip": "loginPage\\OderMonAn.xaml.cs",
-              "ViewState": "AQIAAH8BAAAAAAAAAAAwwOUBAAAAAAAA",
+              "ViewState": "AQIAADUBAAAAAAAAAAAYwEUBAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-24T06:54:12.329Z",
               "EditorCaption": ""
