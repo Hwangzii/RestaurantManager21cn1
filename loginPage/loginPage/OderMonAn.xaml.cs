@@ -23,7 +23,7 @@ namespace loginPage
     /// </summary>
     public partial class OderMonAn : Window
     {
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace loginPage
                     while (read.Read())
                     {
                         maMonAn = (int)read["MaMonAn"];
-                        for (int i = 1; i < 35; i++)
+                        for (int i = 1; i <= 35; i++)
                         {
                             Button dynamicBtn = new Button();
                             StackPanel dynamicStp = new StackPanel();
@@ -114,7 +114,7 @@ namespace loginPage
                     while (read.Read())
                     {
                         maMonAn = (int)read["MaMonAn"];
-                        for (int i = 11; i <= 35; i++)
+                        for (int i = 11; i <= 20; i++)
                         {
                             Button dynamicBtn = new Button();
                             StackPanel dynamicStp = new StackPanel();
@@ -129,7 +129,7 @@ namespace loginPage
                             dynamicImg.Height = 150;
 
                             int row = (i - 11) / 5;
-                            int column = i % 5;
+                            int column = (i - 1) % 5;
 
                             if (maMonAn == i)
                             {
@@ -182,7 +182,7 @@ namespace loginPage
                     while (read.Read())
                     {
                         maMonAn = (int)read["MaMonAn"];
-                        for (int i = 11; i <= 35; i++)
+                        for (int i = 21; i <= 30; i++)
                         {
                             Button dynamicBtn = new Button();
                             StackPanel dynamicStp = new StackPanel();
@@ -196,8 +196,8 @@ namespace loginPage
                             dynamicImg.Width = 150;
                             dynamicImg.Height = 150;
 
-                            int row = (i - 11) / 5;
-                            int column = i % 5;
+                            int row = (i - 21) / 5;
+                            int column = (i - 1) % 5;
 
                             if (maMonAn == i)
                             {
@@ -250,7 +250,7 @@ namespace loginPage
                     while (read.Read())
                     {
                         maMonAn = (int)read["MaMonAn"];
-                        for (int i = 11; i <= 35; i++)
+                        for (int i = 31; i <= 35; i++)
                         {
                             Button dynamicBtn = new Button();
                             StackPanel dynamicStp = new StackPanel();
@@ -264,8 +264,8 @@ namespace loginPage
                             dynamicImg.Width = 150;
                             dynamicImg.Height = 150;
 
-                            int row = (i - 11) / 5;
-                            int column = i % 5;
+                            int row = (i - 31) / 5;
+                            int column = (i - 1) % 5;
 
                             if (maMonAn == i)
                             {
@@ -334,7 +334,7 @@ namespace loginPage
             {
                 tongtien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
             }
-            thanhtoan.Content = tongtien.ToString() + " đ";
+            luuThongtin.Content = tongtien.ToString() + " đ";
         }
 
         private void inhoadon_Click(object sender, RoutedEventArgs e)
@@ -349,9 +349,75 @@ namespace loginPage
             inhoadon.Show();
         }
 
-        private void thanhtoan_Click(object sender, RoutedEventArgs e)
+        // ============ Ngọc: Code nút lưu thông tin vào db ============//
+        private void luuThongtin_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("chua co su kien nao");
+            SqlConnection conn = new SqlConnection(connectstring);
+            if (ListOderBox.Items.Count == 0)
+            {
+                MessageBox.Show("Chưa có món ăn. Lưu thông tin thất bại");
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+
+                    string tenBan = tableNumber.Text;
+                    string findTableID = "select * from BanAn where TenBan = @tenBan";
+                    int banID = 0;
+
+                    SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
+                    cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
+
+                    using (SqlDataReader read = cmdTableID.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            banID = (int)read["MaBan"];
+                        }
+                    }
+
+                    DateTime ngayAn = DateTime.Now;
+                    double tongTien = 0;
+                    foreach (FoodItem item in ListOderBox.Items)
+                    {
+                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                    }
+                    int soLuongMon = 0;
+                    foreach (FoodItem item in ListOderBox.Items)
+                    {
+                        soLuongMon += item.Qty;
+                    }
+
+                    string insertString = @"
+                    insert into HoaDon
+                    (MaBan, NgayAn, SoLuongMon, TongTien)
+                    values (@maBan, @ngayAn, @soLuongMon, @tongTien)";
+
+                    SqlCommand cmd = new SqlCommand(insertString, conn);
+                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
+                    cmd.Parameters.AddWithValue("@maBan", banID);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Lưu thông tin thành công");
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.Message);
+                }
+                finally
+                {
+
+                    // Close the connection
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)

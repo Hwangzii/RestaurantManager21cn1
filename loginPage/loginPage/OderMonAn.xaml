@@ -340,7 +340,7 @@
                 </Grid>
                 <Grid Grid.Row="1" Background="#FFFFFF">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Button x:Name="thanhtoan" Click="thanhtoan_Click" Style="{StaticResource buttonprint}">
+                        <Button x:Name="luuThongtin" Click="luuThongtin_Click" Style="{StaticResource buttonprint}">
                             <TextBlock Text="0 đ" FontSize="30"/>
                         </Button>
                         <Button x:Name="inhoadon"
