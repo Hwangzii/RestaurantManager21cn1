@@ -352,19 +352,19 @@ namespace loginPage
 
         private void inhoadon_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("chua co su kien nao");
+            phieuhoadon inhoadon = new phieuhoadon();
+            double h = SystemParameters.PrimaryScreenHeight;
+            double w = SystemParameters.PrimaryScreenWidth;
+            inhoadon.Left = 0;
+            inhoadon.Top = 0;
+            inhoadon.Width = w/3;
+            inhoadon.Height = h;
+            inhoadon.Show();
         }
 
-        // ---------------------------------   Ngọc làm phần này   ---------------------------------//
         private void thanhtoan_Click(object sender, RoutedEventArgs e)
         {
-            ThanhToan thanhToan = new ThanhToan();
-            foreach (FoodItem item in ListOderBox.Items)
-            {
-                thanhToan.foodLV.Items.Add(item);
-                thanhToan.foodLV.Visibility = Visibility.Hidden;
-            }
-            thanhToan.Show();
+            MessageBox.Show("chua co su kien nao");
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
@@ -379,6 +379,7 @@ namespace loginPage
 
         }
 
+        // Phi: code thêm hiển thị giao diện  
         private void OrderfoodForm_Loaded(object sender, RoutedEventArgs e)
         {
             double w = SystemParameters.PrimaryScreenWidth;

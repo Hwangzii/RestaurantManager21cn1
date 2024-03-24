@@ -46,6 +46,7 @@ namespace loginPage
         {
             if (e.ClickCount == 2)
             {
+                
                 if (IsMaxximize)
                 {
                     this.WindowState = WindowState.Normal;

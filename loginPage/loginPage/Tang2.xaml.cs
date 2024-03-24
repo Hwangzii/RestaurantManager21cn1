@@ -23,6 +23,9 @@ namespace loginPage
     {
         public event EventHandler DynamicButtonClicked;
 
+
+
+
         string connectstring = @"Data Source=HOANGPHI;Initial Catalog=quanlynhahang21CN1;Integrated Security=True";
         public Tang2()
         {
@@ -61,16 +64,8 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
                             dynamicBtn.Content = dynamicStp;
-
-                            dynamicBtn.Click += (sender, e) =>
-                            {
-                                var orderMonAn = new OderMonAn();
-                                orderMonAn.WindowState = WindowState.Maximized;
-                                orderMonAn.Show();
-                                var closerMonAn = new tablebooked();
-                                closerMonAn.Close();
-                                OnDynamicButtonClicked(EventArgs.Empty);
-                            };
+                            dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Click += DynamicBtn_Click;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -86,6 +81,21 @@ namespace loginPage
         protected virtual void OnDynamicButtonClicked(EventArgs e)
         {
             DynamicButtonClicked?.Invoke(this, e);
+        }
+
+        private void DynamicBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            StackPanel stackPanel = clickedButton.Content as StackPanel;
+            TextBlock textBlock = stackPanel.Children[0] as TextBlock;
+
+            if (textBlock != null)
+            {
+                OderMonAn orderForm = new OderMonAn();
+                orderForm.settext(textBlock.Text);
+                orderForm.Show();
+
+            }
         }
     }
 }

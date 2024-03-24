@@ -90,6 +90,7 @@ namespace loginPage
                 OderMonAn orderForm = new OderMonAn();
                 orderForm.settext(textBlock.Text);
                 orderForm.Show();
+                
             }
         }
 
