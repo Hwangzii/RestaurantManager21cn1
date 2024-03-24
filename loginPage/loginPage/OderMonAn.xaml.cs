@@ -23,7 +23,7 @@ namespace loginPage
     /// </summary>
     public partial class OderMonAn : Window
     {
-        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();

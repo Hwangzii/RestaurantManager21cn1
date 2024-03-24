@@ -187,6 +187,9 @@
     <Compile Include="Tang2.xaml.cs">
       <DependentUpon>Tang2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="testxongXOA.xaml.cs">
+      <DependentUpon>testxongXOA.xaml</DependentUpon>
+    </Compile>
     <Page Include="AmoutFood.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,6 +238,10 @@
     <Page Include="Templates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="testxongXOA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

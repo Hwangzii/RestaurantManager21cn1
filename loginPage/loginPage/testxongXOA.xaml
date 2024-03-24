@@ -1,0 +1,52 @@
+﻿<Window x:Class="loginPage.testxongXOA"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:loginPage"
+        mc:Ignorable="d"
+        Title="testxongXOA" Height="400" Width="600"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        >
+    <Grid x:Name="suasoluong">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#F4F6F7">
+            <TextBlock Text="1. Sường nướng" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Foreground="#2C3E50" x:Name="Hienthitenmon">
+            </TextBlock>
+        </Grid>
+        <Border Grid.Row="1" Background="#CCD1D1" Height="0.5"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Margin="50 0 0 0" Height="100" Width="100" Background="Transparent" BorderBrush="Transparent">
+                <TextBlock Text="-" FontSize="150" Foreground="#f56b25" Margin="0 0 0 20" VerticalAlignment="Center"/>
+            </Button>
+
+            <Grid Grid.Column="1">
+                <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="120"/>
+            </Grid>
+
+            <Button Grid.Column="2" Margin="0 0 50 0" Height="100" Width="100" Background="Transparent" BorderBrush="Transparent">
+                <TextBlock Text="+" FontSize="100" Foreground="#f56b25" Margin="0 0 0 20" VerticalAlignment="Center"/>
+            </Button>
+        </Grid>
+        <Border Grid.Row="3" Background="#CCD1D1" Height="0.5"/>
+        <Grid Grid.Row="4">
+            
+        </Grid>
+    </Grid>
+
+    
+</Window>
