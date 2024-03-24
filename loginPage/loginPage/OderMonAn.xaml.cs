@@ -338,6 +338,8 @@ namespace loginPage
                 ListOderBox.Items.Refresh();
             }
             Tongtien();
+
+
         }
 
         private void Tongtien()
@@ -350,10 +352,66 @@ namespace loginPage
             thanhtoan.Content = tongtien.ToString() + " đ";
         }
 
+
+        // Hùng: Mở bảng tạm thanh toán
         private void inhoadon_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("chua co su kien nao");
+            popup1.IsOpen = true;
+
+            SoBann.Text = "Bàn: " + tableNumber.Text;
+            Ngay_An.Text = "Ngày: " + DateTime.Now;
+            StackPanell.Children.Clear();
+
+            foreach (FoodItem item in ListOderBox.Items)
+            {
+                AddTextBlockWithThreeColumns(item.Name,item.Qty, item.Price);
+            }
+
         }
+
+
+        // Hùng: tạo bảng trong tạm thanh toán
+        void AddTextBlockWithThreeColumns(string column1Text, int column2Text, string column3Text)
+        {
+            Grid grid = new Grid();
+            grid.MinHeight = 25;
+            grid.Margin = new Thickness(10, 10, 10, 10);
+            grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(280) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition()  );
+            grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(140) });
+
+            TextBlock textBlock1 = new TextBlock();
+            textBlock1.Text = column1Text;
+            Grid.SetColumn(textBlock1, 0);
+            grid.Children.Add(textBlock1);
+            textBlock1.TextAlignment = TextAlignment.Left;
+            textBlock1.Width = 300;
+
+            TextBlock textBlock2 = new TextBlock();
+            textBlock2.Text = column2Text.ToString();
+            Grid.SetColumn(textBlock2, 1);
+            textBlock2.TextAlignment = TextAlignment.Center;
+            grid.Children.Add(textBlock2);
+
+            TextBlock textBlock3 = new TextBlock();
+            textBlock3.Text = column3Text;
+            Grid.SetColumn(textBlock3, 2);
+            grid.Children.Add(textBlock3);
+            textBlock3.TextAlignment = TextAlignment.Right;
+
+            TextBlock textBlock4 = new TextBlock();
+            double GiaTien = double.Parse(column3Text.Replace(" vnđ", ""));
+            textBlock4.Text = (GiaTien* column2Text).ToString() + " vnđ ";
+            Grid.SetColumn(textBlock4, 3);
+            textBlock4.TextAlignment = TextAlignment.Right;
+            grid.Children.Add(textBlock4);
+
+            StackPanell.Children.Add(grid);
+        }
+
+
+
 
         private void thanhtoan_Click(object sender, RoutedEventArgs e)
         {
@@ -469,6 +527,11 @@ namespace loginPage
         private void Cancel(object sender, RoutedEventArgs e)
         {
             popup.IsOpen = false;
+        }
+
+        private void Click_Dong_Xac_Nhan(object sender, RoutedEventArgs e)
+        {
+            popup1.IsOpen = false;
         }
 
 
