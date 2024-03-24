@@ -320,20 +320,20 @@
                     <ListView x:Name="ListOderBox" Background="#F0F3F4" >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="260" Header="Tên món" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Width="150" Header="Tên món" DisplayMemberBinding="{Binding Name}"/>
                                 <GridViewColumn Width="70" Header="Số lượng" DisplayMemberBinding="{Binding Qty}"/>
 
                                 <!-- Hung: Tạo một cột để khởi tạo nút sửa số lượng -->
 
-                                <GridViewColumn Header="Sửa">
+                                <GridViewColumn Header="Sửa" Width="40">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Button Content=". . ." Click="ChangeAmount_Click"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                
-                                <GridViewColumn Width="150" Header="Đơn giá" DisplayMemberBinding="{Binding Price}"/>
+                                </GridViewColumn>                                
+                                <GridViewColumn Width="120" Header="Đơn giá" DisplayMemberBinding="{Binding Price}"/>
+                                <GridViewColumn Width="110" Header="Thời gian" DisplayMemberBinding="{Binding Time}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

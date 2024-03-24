@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32.SafeHandles;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace loginPage
     /// </summary>
     public partial class OderMonAn : Window
     {
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=quanlynhahang21CN1;Integrated Security=True";
+        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -307,36 +308,22 @@ namespace loginPage
             }
         }
 
+        // Nam: Thêm thời gian vào column
         private void DynamicBtn_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;
+            string foodTime = DateTime.Now.ToString("HH:mm");
             string foodName = ((TextBlock)((StackPanel)clickedButton.Content).Children[2]).Text;
             string foodPrice = ((TextBlock)((StackPanel)clickedButton.Content).Children[3]).Text;
-
-            bool itemFound = false;
-            foreach (FoodItem item in ListOderBox.Items)
+            FoodItem newfoodItem = new FoodItem()
             {
-                if (item.Name == foodName)
-                {
-                    item.Qty++;
-                    itemFound = true; 
-                    break;
-                }
-            }
-            if (!itemFound)
-            {
-                FoodItem newfoodItem = new FoodItem()
-                {
-                    Name = foodName,
-                    Price = foodPrice,
-                    Qty = 1,
-                };
-                ListOderBox.Items.Add(newfoodItem);
-            }
-            else
-            {
-                ListOderBox.Items.Refresh();
-            }
+               Name = foodName,
+               Price = foodPrice,
+               Qty = 1,
+               Time = foodTime,
+             };
+             ListOderBox.Items.Add(newfoodItem);
+           
             Tongtien();
         }
 
