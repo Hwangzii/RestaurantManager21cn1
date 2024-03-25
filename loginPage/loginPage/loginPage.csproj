@@ -175,9 +175,6 @@
     <Compile Include="OderMonAn.xaml.cs">
       <DependentUpon>OderMonAn.xaml</DependentUpon>
     </Compile>
-    <Compile Include="phieuhoadon.xaml.cs">
-      <DependentUpon>phieuhoadon.xaml</DependentUpon>
-    </Compile>
     <Compile Include="tablebooked.xaml.cs">
       <DependentUpon>tablebooked.xaml</DependentUpon>
     </Compile>
@@ -186,9 +183,6 @@
     </Compile>
     <Compile Include="Tang2.xaml.cs">
       <DependentUpon>Tang2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="testxongXOA.xaml.cs">
-      <DependentUpon>testxongXOA.xaml</DependentUpon>
     </Compile>
     <Page Include="AmoutFood.xaml">
       <SubType>Designer</SubType>
@@ -215,10 +209,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="phieuhoadon.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Styles\ComboBoxStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -238,10 +228,6 @@
     <Page Include="Templates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="testxongXOA.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

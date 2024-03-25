@@ -6,12 +6,15 @@
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:loginPage"
         mc:Ignorable="d"
+        WindowStyle="None"
         Title="OderMonAn" Height="1080" Width="1920">
     <Grid x:Name="OrderfoodForm" Loaded="OrderfoodForm_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7.5*"/>
             <ColumnDefinition Width="2.5*"/>
         </Grid.ColumnDefinitions>
+        
+        
 
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -311,8 +314,9 @@
             <!-- danh sach oder -->
             <Grid Grid.Row="1" Background="Gray">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="9.5*"/>
-                    <RowDefinition Height="0.7*"/>
+                    <RowDefinition Height="8.5*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
                 <!-- Danh sach oder-->
@@ -338,14 +342,19 @@
                         </ListView.View>
                     </ListView>
                 </Grid>
-                <Grid Grid.Row="1" Background="#FFFFFF">
+
+                <StackPanel Grid.Row="1" Background="#FFFFFF" Orientation="Horizontal">
+                    <TextBlock Text="Tổng tiền:" FontSize="18" Margin="0 12 0 0"/>
+                    <TextBlock Text="..." x:Name="hienthitongtien" FontSize="18" Width="300" Margin="30 12 0 0" />
+                </StackPanel>
+                
+                <Grid Grid.Row="2" Background="#FFFFFF">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Button x:Name="luuThongtin" Click="luuThongtin_Click" Style="{StaticResource buttonprint}">
-                            <TextBlock Text="0 đ" FontSize="30"/>
+                            <TextBlock Text="lưu order" FontSize="30"/>
                         </Button>
                         <Button x:Name="inhoadon"
-                            Click="inhoadon_Click"
-                            Style="{StaticResource buttonprint}">
+                            Style="{StaticResource buttonprint}" Click="inhoadon_Click">
                             <Icon:PackIconMaterial Kind="Printer"
                                    Height="35"
                                    Width="35"/>
@@ -357,132 +366,186 @@
         
                 <!-- Hung: Thêm popup để hiển thị bảng thay đổi số lượng, popup ko hiển thị trong designer view mà chỉ khi chạy mới thấy-->
 
-        <Popup x:Name="popup" 
-               Grid.Row="1"
-               Placement="Center"
-               IsOpen="False">
-
-            <Grid x:Name="SuaSoLuong">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="90" />
-                    <RowDefinition Height="310" />
-                    <RowDefinition Height="50" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="600"/>
-                </Grid.ColumnDefinitions>
-
-                <!--Phần trên-->
-                <Grid Background="#FF5733">
-                    <TextBlock 
-                    VerticalAlignment="Center" HorizontalAlignment="Center"
-                    FontSize="60" Foreground="White"
-                    x:Name="Hienthitenmon">
-                    </TextBlock>
-                </Grid>
-
-                <!--Phần giữa-->
-                <Grid
-                Background="White"
-                Grid.Row="1"
-                >
+        <Popup x:Name="popup" Grid.Row="1" Placement="Center" IsOpen="False">
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <Grid x:Name="suasoluong">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="7*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1.5*"/>
                     </Grid.RowDefinitions>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-
-                        <Button 
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Center"
-                        FontSize="100"
-                        Content="-"
-                        Click="ButtonClickSub"            
-                        Width="Auto" Height="Auto" 
-                        >
-                        </Button>
-
-                        <Button 
-                        Grid.Column="2"
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        FontSize="100"
-                        Content="+"
-                        Click="ButtonClickAdd"        
-                        Width="Auto" Height="Auto" 
-                           >
-                        </Button>
-
-                        <!--Số lượng-->
-                        <TextBlock
-                        Grid.Column="1"
-                        x:Name="Hienthiso"                   
-                        FontSize="150"
-                        VerticalAlignment="Center"
-                       HorizontalAlignment="Center">
-                        </TextBlock>
+                    <Grid Grid.Row="0" Background="#F4F6F7">
+                        <TextBlock x:Name="Hienthitenmon" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Foreground="#2C3E50"/>
                     </Grid>
-                </Grid>
-
-                <Grid
-                    Background="White"
-                Grid.Row="2">
-
-                    <Grid Margin="0 0 0 10">
+                    <Border Grid.Row="1" Background="#CCD1D1" Height="0.5"/>
+                    <Grid Grid.Row="2" Background="White">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        Content="Hủy"
-                        FontSize="30"
-                        VerticalAlignment="Center"
-                        Margin="10 0 10 0"
-                        Click="Cancel"
-                         >
-                        </Button>
-                        <Button
-                            Grid.Column="1"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Content="Xóa"
-                            FontSize="30"
-                            VerticalAlignment="Center"
-                            Margin="10 0 10 0"
-                            Click="Remove_Click"
-                            >
 
+                        <Button x:Name="truBtn" Grid.Column="0" Margin="50 0 0 0" Height="100" Width="100" Background="Transparent" BorderBrush="Transparent" Click="truBtn_Click">
+                            <TextBlock Text="-" FontSize="150" Foreground="#f56b25" Margin="0 0 0 20" VerticalAlignment="Center"/>
                         </Button>
-                        <Button
-                        Grid.Column="2"
-                        Background="#FF3D37FF"
-                        BorderBrush="#FF3D37FF"
-                        Foreground="White"
-                        Content="Thêm"
-                        FontSize="30"
-                        VerticalAlignment="Center"
-                        Margin="10 0 10 0"
-                        Click="Accept"
->
+
+                        <Grid Grid.Column="1">
+                            <TextBlock x:Name="Hienthiso" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="120"/>
+                        </Grid>
+
+                        <Button x:Name="congBtn" Grid.Column="2" Margin="0 0 50 0" Height="100" Width="100" Background="Transparent" BorderBrush="Transparent" Click="congBtn_Click">
+                            <TextBlock Text="+" FontSize="100" Foreground="#f56b25" Margin="0 0 0 20" VerticalAlignment="Center"/>
+                        </Button>
+                    </Grid>
+                    <Border Grid.Row="3" Background="#CCD1D1" Height="0.5"/>
+                    <Grid Grid.Row="4" Background="#FFFFFF">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="huyBtn" Grid.Column="0" Style="{StaticResource buttondeshazi}" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="170" Click="huyBtn_Click">
+                            <TextBlock Text="Hủy"/>
+                        </Button>
+
+                        <Button x:Name="xoaBtn" Grid.Column="1" Style="{StaticResource buttondeshazi}" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="170" Click="xoaBtn_Click">
+                            <TextBlock Text="Xóa"/>
+                        </Button>
+
+                        <Button x:Name="luuBtn" Grid.Column="2" Style="{StaticResource buttondeshazi}" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="170" Click="luuBtn_Click">
+                            <TextBlock Text="Lưu" />
                         </Button>
                     </Grid>
                 </Grid>
-            </Grid>
+            </Border>
+        </Popup>
+            
+        
+        
+        <!-- ======= Phi thêm Popup hóa đơn ====== -->
+        <Popup x:Name="popup1" Grid.Column="0" IsOpen="False" Placement="Left" VerticalOffset="0" HorizontalOffset="800">
+            <Border Background="#FFFFFF" BorderBrush="LightGray" BorderThickness="1" Width="800" Height="1080">
+                <Grid x:Name="formthanhtoan">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7.5*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1.3*"/>
+                        <RowDefinition Height="0.7*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <ScrollViewer>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
 
+                                <StackPanel>
+                                    <TextBlock Margin="0 20 0 0" Text="HÓA ĐƠN" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+                                    <Grid
+                                         Margin="0 10 0 0"
+                                         Height="40">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="Thoigian" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                        <TextBlock x:Name="Ban" HorizontalAlignment="Right" Margin="0 0 10 0" Grid.Column="1"/>
+                                    </Grid>
+                                    <Grid>
+                                        <ListView x:Name="foodLV"  Background="#F0F3F4" Margin="0 10 0 0" >
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Width="300" Header="Tên món" DisplayMemberBinding="{Binding Name}"/>
+                                                    <GridViewColumn Width="50" Header="SL" DisplayMemberBinding="{Binding Qty}"/>
+                                                    <GridViewColumn Width="220" Header="Đơn giá" DisplayMemberBinding="{Binding Price}"/>
+                                                    <GridViewColumn Width="220" Header="Thành tiền" DisplayMemberBinding="{Binding Price}"/>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </Grid>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1" x:Name="Hienthi">
+                                
+                                </StackPanel>
+
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Tổng tiền: " Margin="10 0 0 0" FontSize="20" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1" x:Name="TongTien" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 20 0" FontSize="20"/>
+
+                                </Grid>
+                            </Grid>
+
+
+
+                        </ScrollViewer>
+                    </Grid>
+                    <Border Grid.Row="1" Background="Gray" Height="0.5"/>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="NHẬP THÔNG TIN KHÁCH HÀNG" FontWeight="Bold" FontSize="16" Margin="5"/>
+                            <StackPanel Grid.Column="0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Tên khách hàng" Width="170" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="18"/>
+                                    <TextBox x:Name="tenktTxtBox" Margin="5" Width="450"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Số điện thoại" Width="170" VerticalAlignment="Center" Margin="10 0 0 0" FontSize="18"/>
+                                    <TextBox x:Name="sdtkhTxtBox" Margin="5" Width="450"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <Border Grid.Column="1" Background="Gray" Width="0.5"/>
+
+                        <StackPanel Grid.Column="2">
+                            <Label Content="HÌNH THỨC THANH TOÁN" Margin="5 5 0 0"/>
+                            <CheckBox Style="{DynamicResource CheckBoxStyle1}" Content="chuyển khoản" FontSize="15" Margin="10 20 0 0" IsChecked="False"/>
+                            <CheckBox Style="{DynamicResource CheckBoxStyle1}" Content="Trả tiền mặt" FontSize="15" Margin="10 20 0 0" IsChecked="False"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="3" Background="#D3D3D3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Style="{StaticResource buttondeshazi}">
+                            <TextBlock Text="in hóa đơn" />
+                        </Button>
+
+                        <Button Grid.Column="1" Style="{StaticResource buttondeshazi}">
+                            <TextBlock Text="thanh toán" />
+                        </Button>
+
+                        <Button x:Name="huythanhtoanBtn" Grid.Column="2" Style="{StaticResource buttondeshazi}" Click="huythanhtoanBtn_Click">
+                            <TextBlock Text="hủy" />
+                        </Button>
+                    </Grid>
+
+                </Grid>
+            </Border>
         </Popup>
 
     </Grid>

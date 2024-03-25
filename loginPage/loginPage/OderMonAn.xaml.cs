@@ -23,7 +23,7 @@ namespace loginPage
     /// </summary>
     public partial class OderMonAn : Window
     {
-        string connectstring = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -74,7 +74,7 @@ namespace loginPage
                                 dynamicTxtTenMonAn.FontSize = 20;
                                 dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
 
-                                dynamicTxtGiaMonAn.Text = read["GiaTien"].ToString() + " vnđ";
+                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";                               
                                 dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
                                 dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
                                 dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
@@ -140,7 +140,7 @@ namespace loginPage
                                 dynamicTxtTenMonAn.FontSize = 20;
                                 dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
 
-                                dynamicTxtGiaMonAn.Text = read["GiaTien"].ToString() + " vnđ";
+                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";
                                 dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
                                 dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
                                 dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
@@ -164,8 +164,6 @@ namespace loginPage
 
                                 monLauGrid.Children.Add(dynamicBtn);
                             }
-
-
                         }
                     }
                 }
@@ -208,7 +206,7 @@ namespace loginPage
                                 dynamicTxtTenMonAn.FontSize = 20;
                                 dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
 
-                                dynamicTxtGiaMonAn.Text = read["GiaTien"].ToString() + " vnđ";
+                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";
                                 dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
                                 dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
                                 dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
@@ -276,7 +274,7 @@ namespace loginPage
                                 dynamicTxtTenMonAn.FontSize = 20;
                                 dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
 
-                                dynamicTxtGiaMonAn.Text = read["GiaTien"].ToString() + " vnđ";
+                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";
                                 dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
                                 dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
                                 dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
@@ -334,20 +332,9 @@ namespace loginPage
             {
                 tongtien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
             }
-            luuThongtin.Content = tongtien.ToString() + " đ";
+            hienthitongtien.Text = tongtien.ToString("#,##") + " đ";
         }
 
-        private void inhoadon_Click(object sender, RoutedEventArgs e)
-        {
-            phieuhoadon inhoadon = new phieuhoadon();
-            double h = SystemParameters.PrimaryScreenHeight;
-            double w = SystemParameters.PrimaryScreenWidth;
-            inhoadon.Left = 0;
-            inhoadon.Top = 0;
-            inhoadon.Width = w/3;
-            inhoadon.Height = h;
-            inhoadon.Show();
-        }
 
         // ============ Ngọc: Code nút lưu thông tin vào db ============//
         private void luuThongtin_Click(object sender, RoutedEventArgs e)
@@ -483,18 +470,36 @@ namespace loginPage
 
         }
 
-        // Hùng: Thêm 2 chức năng tăng giảm số lượng
+        // Hùng + Phi: 3 chức năng của 3 nút bấm trong bảng thay đổi số lượng
 
-        private void ButtonClickAdd(object sender, RoutedEventArgs e)
+
+        private void huyBtn_Click(object sender, RoutedEventArgs e)
         {
-            string thamso = Hienthiso.Text.ToString();
-            soluong3 = Int32.Parse(thamso);
-            soluong3 += 1;
-            Hienthiso.Text = soluong3.ToString();
-
+            popup.IsOpen = false;
         }
 
-        private void ButtonClickSub(object sender, RoutedEventArgs e)
+        private void xoaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var listViewItem = FindAncestor<ListViewItem>(TheButton);
+            var item = listViewItem.DataContext as FoodItem;
+            ListOderBox.Items.Remove(item);
+            Tongtien();
+            popup.IsOpen = false;
+        }
+
+        private void luuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var listViewItem = FindAncestor<ListViewItem>(TheButton);
+            var item = listViewItem.DataContext as FoodItem;
+            item.Qty = soluong3;
+            ListOderBox.Items.Refresh();
+            Tongtien();
+            popup.IsOpen = false;
+        }
+
+        // Hùng: Thêm 2 chức năng tăng giảm số lượng
+
+        private void truBtn_Click(object sender, RoutedEventArgs e)
         {
             string thamso = Hienthiso.Text.ToString();
             soluong3 = Int32.Parse(thamso);
@@ -505,34 +510,212 @@ namespace loginPage
             }
         }
 
-        // Hùng: 3 chức năng của 3 nút bấm trong bảng thay đổi số lượng
-
-        private void Accept(object sender, RoutedEventArgs e)
+        private void congBtn_Click(object sender, RoutedEventArgs e)
         {
-            var listViewItem = FindAncestor<ListViewItem>(TheButton);
-            var item = listViewItem.DataContext as FoodItem;
-            item.Qty = soluong3;
-            ListOderBox.Items.Refresh();
-            Tongtien();
-            popup.IsOpen = false;
-        }
-
-        public void Remove_Click(object sender, RoutedEventArgs e)
-        {
-            var listViewItem = FindAncestor<ListViewItem>(TheButton);
-            var item = listViewItem.DataContext as FoodItem;
-            ListOderBox.Items.Remove(item);
-            Tongtien();
-            popup.IsOpen = false;
+            string thamso = Hienthiso.Text.ToString();
+            soluong3 = Int32.Parse(thamso);
+            soluong3 += 1;
+            Hienthiso.Text = soluong3.ToString();
 
         }
 
-        private void Cancel(object sender, RoutedEventArgs e)
+        private void thanhtoanBtn_Click(object sender, RoutedEventArgs e)
         {
-            popup.IsOpen = false;
+            
+            SqlConnection conn = new SqlConnection(connectstring);
+
+            if (tenktTxtBox.Text != null && sdtkhTxtBox.Text == null)
+            {
+                MessageBox.Show("Vui lòng nhập SĐT của khách hàng");
+            }
+            else if (sdtkhTxtBox.Text != null && tenktTxtBox.Text == null)
+            {
+                MessageBox.Show("Vui lòng nhập tên của khách hàng");
+            }
+            else if (tenktTxtBox.Text != null && sdtkhTxtBox.Text != null)
+            {
+                try
+                {
+                    string tenKH = tenktTxtBox.Text;
+                    string sdtKH = sdtkhTxtBox.Text;
+                    DateTime ngayAn = DateTime.Now;
+                    double tongTien = 0;
+                    foreach (FoodItem item in foodLV.Items)
+                    {
+                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                    }
+                    int soLuongMon = 0;
+                    foreach (FoodItem item in foodLV.Items)
+                    {
+                        soLuongMon += item.Qty;
+                    }
+
+                    conn.Open();
+
+                    string insertString = @"insert into HoaDon (TenKH, SDTKH, NgayAn, SoLuongMon, TongTien) values (@tenKH, @sdtKH, @ngayAn, @soLuongMon, @tongTien)";
+
+                    SqlCommand cmd = new SqlCommand(insertString, conn);
+                    cmd.Parameters.AddWithValue("@tenKH", tenKH);
+                    cmd.Parameters.AddWithValue("@sdtKH", sdtKH);
+                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
+
+                    cmd.ExecuteNonQuery();
+                }
+                finally
+                {
+                    // Close the connection
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
+                    this.Close();
+                }
+            }
+            else
+            {
+                try
+                {
+                    DateTime ngayAn = DateTime.Now;
+                    double tongTien = 0;
+                    foreach (FoodItem item in foodLV.Items)
+                    {
+                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                    }
+                    int soLuongMon = 0;
+                    foreach (FoodItem item in foodLV.Items)
+                    {
+                        soLuongMon += item.Qty;
+                    }
+                hienthitongtien.Text = tongTien.ToString();
+
+                    conn.Open();
+
+                    string insertString = @"
+                 insert into HoaDon
+                 (NgayAn, SoLuongMon, TongTien)
+                 values (@ngayAn, @soLuongMon, @tongTien)";
+
+                    SqlCommand cmd = new SqlCommand(insertString, conn);
+                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
+
+                    cmd.ExecuteNonQuery();
+                }
+                finally
+                {
+                    // Close the connection
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
+                    this.Close();
+                }
+            }
         }
 
+        private void inhoadonBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("hiện chưa thể in phiếu thanh toán!");
+        }
 
+        // === PHI: Thêm câu lênh mở Popup hóa đơn
+        private void inhoadon_Click(object sender, RoutedEventArgs e)
+        {
+            popup1.IsOpen = true;
+            Thoigian.Text = "Ngày: " + DateTime.Now.ToString();
+            Ban.Text = "Bàn: " + tableNumber.Text;
+            TongTien.Text = hienthitongtien.Text;
+            SortThatShitOut();
+            Hienthi.Children.Clear();
+
+            // === Hùng: Thêm item vào hóa đơn từ List ====
+            foreach (FoodItem item in Danhsach)
+            {
+                Grid grid = new Grid();
+                grid.MinHeight = 25;
+                grid.Margin = new Thickness(10, 10, 10, 10);
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(300) });
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50) });
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(200) });
+                grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(200) });
+
+                TextBlock textBlock1 = new TextBlock();
+                textBlock1.Text = item.Name;
+                Grid.SetColumn(textBlock1, 0);
+                grid.Children.Add(textBlock1);
+                textBlock1.TextAlignment = TextAlignment.Left;
+                textBlock1.Width = 300;
+
+                TextBlock textBlock2 = new TextBlock();
+                textBlock2.Text = item.Qty.ToString();
+                Grid.SetColumn(textBlock2, 1);
+                textBlock2.TextAlignment = TextAlignment.Center;
+                grid.Children.Add(textBlock2);
+
+                TextBlock textBlock3 = new TextBlock();
+                textBlock3.Text = item.Price;
+                Grid.SetColumn(textBlock3, 2);
+                grid.Children.Add(textBlock3);
+                textBlock3.TextAlignment = TextAlignment.Right;
+
+                TextBlock textBlock4 = new TextBlock();
+                double GiaTien = double.Parse(item.Price.Replace(" vnđ", ""));
+                textBlock4.Text = (GiaTien * item.Qty).ToString() + " vnđ ";
+                Grid.SetColumn(textBlock4, 3);
+                textBlock4.TextAlignment = TextAlignment.Right;
+                grid.Children.Add(textBlock4);
+
+                Hienthi.Children.Add(grid);
+            }
+
+
+        }
+
+        // === PHI: thêm hủy in hóa đơn ====
+        private void huythanhtoanBtn_Click(object sender, RoutedEventArgs e)
+        {
+            popup1.IsOpen = false;
+        }
+
+        // === Hùng: Lấ int ID từ tên món để sort ====
+        private int GetID(string a)
+        {
+            int IDD;
+            if (Char.IsNumber(a, 1))
+            {
+                IDD = Convert.ToInt32(a[0]) * 10 + Convert.ToInt32(a[1]);
+            }
+            else
+            {
+                IDD = Convert.ToInt32(a[0]);
+            }
+            return IDD;
+        }
+
+        // === Hùng: Tạo một List để sắp xếp item ====
+        List<FoodItem> Danhsach = new List<FoodItem>();
+
+        private void SortThatShitOut()
+        {
+            Danhsach.Clear();
+            foreach (FoodItem item in ListOderBox.Items)
+            {
+                if (Danhsach.Exists(x => x.Name == item.Name))
+                {
+                    FoodItem item1 = Danhsach.Find(x => x.Name == item.Name);
+                    item1.Qty += item.Qty;
+                }
+                else
+                {
+                    Danhsach.Add(new FoodItem { Name = item.Name, Qty = item.Qty, Price = item.Price, ID = GetID(item.Name) });
+                }
+            }
+            Danhsach = Danhsach.OrderBy(x => x.ID).ToList();
+
+        }
 
 
     }

@@ -574,8 +574,6 @@ D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debu
 D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\LoginPage.csproj.Up2Date
 D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.exe
 D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.pdb
-D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\phieuhoadon.g.cs
-D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\phieuhoadon.baml
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\loginPage.exe.config
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\loginPage.exe
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\loginPage.pdb
@@ -856,8 +854,6 @@ D:\Chung\JOBS\git\FILE_TEST\RestaurantManager21cn1\loginPage\loginPage\obj\Debug
 D:\Chung\JOBS\git\FILE_TEST\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\LoginPage.csproj.Up2Date
 D:\Chung\JOBS\git\FILE_TEST\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.exe
 D:\Chung\JOBS\git\FILE_TEST\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.pdb
-D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\testxongXOA.g.cs
-D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\testxongXOA.baml
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\loginPage.exe.config
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\loginPage.exe
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\loginPage.pdb
@@ -977,22 +973,18 @@ D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Amout
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\BillForm.g.cs
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\MainWindow.g.cs
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\OderMonAn.g.cs
-D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\phieuhoadon.g.cs
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\tablebooked.g.cs
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Tang1.g.cs
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Tang2.g.cs
-D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\testxongXOA.g.cs
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\App.g.cs
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage_MarkupCompile.cache
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage_MarkupCompile.lref
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\AmoutFood.baml
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\BillForm.baml
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\OderMonAn.baml
-D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\phieuhoadon.baml
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\tablebooked.baml
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Tang1.baml
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Tang2.baml
-D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\testxongXOA.baml
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.g.resources
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.Properties.Resources.resources
 D:\Chung\JOBS\git\new\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\LoginPage.csproj.GenerateResource.cache

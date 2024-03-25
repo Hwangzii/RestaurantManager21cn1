@@ -4,4 +4,5 @@
     public string Price { get; set; }
     public int Qty { get; set; }
     public string Time { get; set; }
+    public int ID { get; set; }
 }

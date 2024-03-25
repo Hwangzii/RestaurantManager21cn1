@@ -29,8 +29,6 @@
         <Border BorderThickness="0 0 0 2" BorderBrush="#E2E9E9" CornerRadius="5 5 0 0" Background="White" Padding="10"
                 MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <Grid>
-
-
                 <Icon:PackIconMaterial Kind="Microsoft" Width="25" Height="25" HorizontalAlignment="Left"
                                        VerticalAlignment="Center" Foreground="#FF5733"/>
 

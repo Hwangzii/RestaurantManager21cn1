@@ -18,7 +18,7 @@ namespace loginPage
 
     public partial class MainWindow : Window
     {
-        string connectstring = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;
@@ -104,8 +104,6 @@ namespace loginPage
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
-
-
         }
 
         private void ForgotpasswordButton(object sender, RoutedEventArgs e)

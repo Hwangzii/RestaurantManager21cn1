@@ -22,7 +22,7 @@ namespace loginPage
         // Khai báo sự kiện DynamicButtonClicked
         public event EventHandler DynamicButtonClicked;
 
-        string connectstring = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public Tang1()
         {
             InitializeComponent();
@@ -91,7 +91,9 @@ namespace loginPage
                 orderForm.settext(textBlock.Text);
                 orderForm.Show();
                 
+                
             }
+            
         }
 
     }

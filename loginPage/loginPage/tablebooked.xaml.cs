@@ -61,10 +61,14 @@ namespace loginPage
             MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
+        // Phi: thêm logout
         private void logoutBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hiện chưa có sự kiện nào", "thông báo",
-            MessageBoxButton.OK, MessageBoxImage.Warning);
+            MainWindow mainWindow = new MainWindow(); // Tạo mới một instance của MainWindow
+            mainWindow.Show(); // Hiển thị MainWindow
+            this.Close(); // Đóng cửa sổ hiện tại
         }
+
+
     }
 }
