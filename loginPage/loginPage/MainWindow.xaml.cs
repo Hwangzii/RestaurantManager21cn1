@@ -18,7 +18,7 @@ namespace loginPage
 
     public partial class MainWindow : Window
     {
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;
@@ -79,7 +79,7 @@ namespace loginPage
                 using (con = new SqlConnection(connectstring))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM Quanly WHERE TaiKhoan=@Username AND MatKhau=@Password";
+                    string query = "SELECT COUNT(*) FROM QuanLy WHERE TaiKhoan=@Username AND MatKhau=@Password";
                     using (cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", txtusername.Text);

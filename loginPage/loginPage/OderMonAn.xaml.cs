@@ -18,12 +18,9 @@ using System.Windows.Shapes;
 
 namespace loginPage
 {
-    /// <summary>
-    /// Interaction logic for OderMonAn.xaml
-    /// </summary>
     public partial class OderMonAn : Window
     {
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -35,9 +32,10 @@ namespace loginPage
             tableNumber.Text = text;
         }
 
+        // ============ Ngọc: Tạo các button dựa trên số món ăn có trong database ============ //
         private void goimonTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (MonNuongTabItem.IsSelected)
+            if (allTabItem.IsSelected)
             {
                 int maMonAn = 0;
                 SqlConnection conn = new SqlConnection(connectstring);
@@ -48,7 +46,7 @@ namespace loginPage
                     while (read.Read())
                     {
                         maMonAn = (int)read["MaMonAn"];
-                        for (int i = 1; i <= 35; i++)
+                        for (int i = 1; i <= 50; i++)
                         {
                             Button dynamicBtn = new Button();
                             StackPanel dynamicStp = new StackPanel();
@@ -96,6 +94,72 @@ namespace loginPage
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
 
+                                allGrid.Children.Add(dynamicBtn);
+                            }
+                        }
+                    }
+                }
+            }
+
+            else if (monNuongTabItem.IsSelected)
+            {
+                int maMonAn = 0;
+                SqlConnection conn = new SqlConnection(connectstring);
+                SqlCommand command = new SqlCommand("SELECT * FROM MonAn", conn);
+                conn.Open();
+                using (SqlDataReader read = command.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        maMonAn = (int)read["MaMonAn"];
+                        for (int i = 1; i <= 10; i++)
+                        {
+                            Button dynamicBtn = new Button();
+                            StackPanel dynamicStp = new StackPanel();
+                            Border dynamicBorder = new Border();
+                            TextBlock dynamicTxtTenMonAn = new TextBlock();
+                            TextBlock dynamicTxtGiaMonAn = new TextBlock();
+                            Image dynamicImg = new Image();
+                            string foodImageURL = string.Format(@"/Images/diet.png", i);
+                            BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
+                            dynamicImg.Source = foodImg;
+                            dynamicImg.Width = 150;
+                            dynamicImg.Height = 150;
+
+                            int row = (i - 1) / 5;
+                            int column = (i - 1) % 5;
+
+                            if (maMonAn == i)
+                            {
+                                dynamicTxtTenMonAn.Text = i.ToString() + ".  " + read["TenMon"].ToString();
+                                dynamicTxtTenMonAn.HorizontalAlignment = HorizontalAlignment.Center;
+                                dynamicTxtTenMonAn.VerticalAlignment = VerticalAlignment.Bottom;
+                                dynamicTxtTenMonAn.Margin = new Thickness(0, 0, 0, 0);
+                                dynamicTxtTenMonAn.FontSize = 20;
+                                dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
+
+                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";
+                                dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
+                                dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
+                                dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
+                                dynamicTxtGiaMonAn.FontSize = 16;
+                                dynamicTxtGiaMonAn.Foreground = Brushes.Gray;
+                                dynamicTxtGiaMonAn.TextWrapping = TextWrapping.WrapWithOverflow;
+
+                                dynamicStp.Children.Add(dynamicBorder);
+                                dynamicStp.Children.Add(dynamicImg);
+                                dynamicStp.Children.Add(dynamicTxtTenMonAn);
+                                dynamicStp.Children.Add(dynamicTxtGiaMonAn);
+
+                                dynamicBtn.Background = Brushes.White;
+                                dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
+                                dynamicBtn.Content = dynamicStp;
+                                dynamicBtn.Style = (Style)FindResource("buttondes");
+                                dynamicBtn.Click += DynamicBtn_Click;
+
+                                Grid.SetColumn(dynamicBtn, column);
+                                Grid.SetRow(dynamicBtn, row);
+
                                 monNuongGrid.Children.Add(dynamicBtn);
                             }
                         }
@@ -103,7 +167,7 @@ namespace loginPage
                 }
             }
 
-            else if (MonLauTabItem.IsSelected)
+            else if (monLauTabItem.IsSelected)
             {
                 int maMonAn = 0;
                 SqlConnection conn = new SqlConnection(connectstring);
@@ -169,7 +233,7 @@ namespace loginPage
                 }
             }
 
-            else if (monChinTabItem.IsSelected)
+            else if (monNongTabItem.IsSelected)
             {
                 int maMonAn = 0;
                 SqlConnection conn = new SqlConnection(connectstring);
@@ -228,16 +292,14 @@ namespace loginPage
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
 
-                                monChinGrid.Children.Add(dynamicBtn);
+                                monNongGrid.Children.Add(dynamicBtn);
                             }
-
-
                         }
                     }
                 }
             }
 
-            else if (DoUongTabItem.IsSelected)
+            else if (doUongTabItem.IsSelected)
             {
                 int maMonAn = 0;
                 SqlConnection conn = new SqlConnection(connectstring);
@@ -248,7 +310,7 @@ namespace loginPage
                     while (read.Read())
                     {
                         maMonAn = (int)read["MaMonAn"];
-                        for (int i = 31; i <= 35; i++)
+                        for (int i = 31; i <= 40; i++)
                         {
                             Button dynamicBtn = new Button();
                             StackPanel dynamicStp = new StackPanel();
@@ -296,10 +358,8 @@ namespace loginPage
                                 Grid.SetColumn(dynamicBtn, column);
                                 Grid.SetRow(dynamicBtn, row);
 
-                                DoUongGrid.Children.Add(dynamicBtn);
+                                doUongGrid.Children.Add(dynamicBtn);
                             }
-
-
                         }
                     }
                 }
