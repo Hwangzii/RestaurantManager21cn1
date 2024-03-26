@@ -171,7 +171,12 @@
     <Compile Include="BillForm.xaml.cs">
       <DependentUpon>BillForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="doanhthu.xaml.cs">
+      <DependentUpon>doanhthu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FoodItem.cs" />
+    <Compile Include="HoaDon.cs" />
+    <Compile Include="HoaDonFoodKorean.cs" />
     <Compile Include="OderMonAn.xaml.cs">
       <DependentUpon>OderMonAn.xaml</DependentUpon>
     </Compile>
@@ -189,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BillForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="doanhthu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

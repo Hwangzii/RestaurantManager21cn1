@@ -1134,3 +1134,5 @@ D:\Homework\CS\Git\new19\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Lo
 D:\Homework\CS\Git\new19\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\LoginPage.csproj.Up2Date
 D:\Homework\CS\Git\new19\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.exe
 D:\Homework\CS\Git\new19\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.pdb
+D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\doanhthu.g.cs
+D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\doanhthu.baml

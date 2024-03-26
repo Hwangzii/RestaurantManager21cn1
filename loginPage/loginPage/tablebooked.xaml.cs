@@ -57,8 +57,8 @@ namespace loginPage
 
         private void doanhthuBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hiện chưa có sự kiện nào", "thông báo",
-            MessageBoxButton.OK, MessageBoxImage.Warning);
+            doanhthu doanhthuUserControl = new doanhthu();
+            gridShowTable.Children.Add(doanhthuUserControl);
         }
 
         // Phi: thêm logout
