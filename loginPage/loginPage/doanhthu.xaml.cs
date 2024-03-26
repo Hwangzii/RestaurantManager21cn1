@@ -27,10 +27,11 @@ namespace loginPage
 
         private void btnxemDoanhThu_Click(object sender, RoutedEventArgs e)
         {
-            HoaDonFoodKorean HDonFood = new HoaDonFoodKorean();
+            HoaDonDAO hoadonDAO = new HoaDonDAO();
 
-            var hoaDonFood = HDonFood.GetAddBills();
-            Dataview.ItemsSource = hoaDonFood;
+            var hoadonItemsSource = hoadonDAO.GetAddHoaDon();
+
+            Dataview.ItemsSource = hoadonItemsSource;
         }
     }
 }
