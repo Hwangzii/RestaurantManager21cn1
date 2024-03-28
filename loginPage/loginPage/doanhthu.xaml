@@ -1,7 +1,8 @@
 ﻿<UserControl x:Class="loginPage.doanhthu"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:loginPage"
              mc:Ignorable="d" 
@@ -95,9 +96,17 @@
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </TabItem.Template>
-
+                
+                <Grid>
+                    <!--TextBlock Text="Thống kê doanh thu năm"/-->
+                    <ComboBox x:Name="YearComboBox" Width="200" Height="30" SelectionChanged="YearComboBox_SelectionChanged" Margin="1320,0,10,848"/>
+                    <!-- CartesianChart -->
+                    <lvc:CartesianChart x:Name="ColumnChart" Margin="10,121,10,10" >
+                    </lvc:CartesianChart>
+                </Grid>
 
             </TabItem>
+          
         </TabControl>
     </Grid>
 </UserControl>
