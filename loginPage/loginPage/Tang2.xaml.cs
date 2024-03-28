@@ -26,7 +26,7 @@ namespace loginPage
 
 
 
-        string connectstring = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=THANHHOA\MSSQLSERVER01;Initial Catalog=Quanlynhahang21CN1.1;Integrated Security=True;Encrypt=False";
         public Tang2()
         {
             InitializeComponent();
