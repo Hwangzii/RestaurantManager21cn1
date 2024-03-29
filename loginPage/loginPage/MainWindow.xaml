@@ -14,33 +14,11 @@
         >
 
 
-
     <Window.Resources >
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
-        <Style x:Key="RoundedPasswordBoxStyle" TargetType="{x:Type PasswordBox}">
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
-            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="2"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type PasswordBox}">
-                        <Border x:Name="border"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        Background="{TemplateBinding Background}"
-                        CornerRadius="5">
-                            <!-- Điều chỉnh giá trị CornerRadius tại đây -->
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
     </Window.Resources>
 
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
@@ -51,12 +29,14 @@
         <Border BorderThickness="0 0 0 2" BorderBrush="#E2E9E9" CornerRadius="5 5 0 0" Background="White" Padding="10"
                 MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <Grid>
+
+
                 <Icon:PackIconMaterial Kind="Microsoft" Width="25" Height="25" HorizontalAlignment="Left"
                                        VerticalAlignment="Center" Foreground="#FF5733"/>
 
                 <TextBlock Text="Microsoft C#" FontSize="25" VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#FF5733"/>
                 <Button Click="button_Close" Style="{StaticResource topButton}" HorizontalAlignment="Right">
-                    <Icon:PackIconMaterial Kind="Close" Style="{StaticResource topButtonIcon}" Foreground="#FF5733"/>
+                    <Icon:PackIconMaterial Kind="Close" Style="{StaticResource topButtonIcon}"/>
                 </Button>
             </Grid>
         </Border>
@@ -86,37 +66,31 @@
 
                 <!--Username Textbox-->
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="53*"/>
-                        <ColumnDefinition Width="56*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Margin="40,0,0,0" VerticalAlignment="Center" Foreground="#bdbdbd"
+                    <TextBlock Margin="35 0 5 0" VerticalAlignment="Center" Foreground="#bdbdbd"
                                Panel.ZIndex="1" IsHitTestVisible="False" FontSize="18" Text="Enter Username"
                                Visibility="{Binding ElementName=txtusername
-                        ,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="txtusername" Grid.ColumnSpan="2" UndoLimit="0" />
+                        ,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
+                    <TextBox x:Name="txtusername" />
                     <Icon:PackIconMaterial Kind="AccountOutline"  
                                            Width="15" Foreground="#c7c7c7" 
-                                           VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                           VerticalAlignment="Center" Margin="10 0 0 0"/>
                 </Grid>
-
 
                 <!--Password Textbox-->
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="53*"/>
-                        <ColumnDefinition Width="56*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="txtPasswordPlaceholder" Margin="41,0,99,0" Foreground="#bdbdbd"
-                    Panel.ZIndex="1" IsHitTestVisible="False" FontSize="18" Text="Enter Password"
-                    Visibility="{Binding ElementName=txtpassword
-                ,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="296"/>
-                    <PasswordBox x:Name="txtpassword" Style="{StaticResource RoundedPasswordBoxStyle}" 
-                                 PasswordChanged="PasswordBox_PasswordChanged" Grid.ColumnSpan="2" Width="436" Height="38" VerticalAlignment="Center"/>
-
+                    <TextBlock Margin="35 0 5 0" VerticalAlignment="Center" Foreground="#bdbdbd"
+                           Panel.ZIndex="1" IsHitTestVisible="False" FontSize="18" Text="Enter Password" 
+                           Visibility="{Binding ElementName=txtpassword,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
+                    <TextBox x:Name="txtpassword" />
                     <Icon:PackIconMaterial Kind="LockOutline"  
-Width="15" Foreground="#c7c7c7" Margin="10,11,0,11" VerticalAlignment="Stretch"/>
+                           Width="15" Foreground="#c7c7c7" 
+                           VerticalAlignment="Center" Margin="10 0 0 0"/>
                 </Grid>
+
+
+
+
+
 
                 <CheckBox Style="{DynamicResource CheckBoxStyle1}" Content="Remember me" FontSize="15" Margin="0 20 0 20" IsChecked="True"/>
 

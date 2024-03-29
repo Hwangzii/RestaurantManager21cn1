@@ -52,19 +52,14 @@ namespace loginPage
                 Position = AxisPosition.LeftBottom
             };
             ColumnChart.AxisX.Add(axisX);
+
+            
         }
 
-        private void btnxemDoanhThu_Click(object sender, RoutedEventArgs e)
-        {
-            HoaDonDAO hoadonDAO = new HoaDonDAO();
-
-            var hoadonItemsSource = hoadonDAO.GetAddHoaDon();
-
-            Dataview.ItemsSource = hoadonItemsSource;
-        }
+        
         private void LoadDataAndBindToChart(string year)
         {
-            string connectionString = @"Data Source=THANHHOA\MSSQLSERVER01;Initial Catalog=Quanlynhahang21CN1.1;Integrated Security=True;Encrypt=False";
+            string connectionString = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
             string query = @"SELECT MONTH(NgayAn) AS Month, SUM(Tongtien) AS Revenue FROM HoaDon WHERE YEAR(NgayAn) = @Year GROUP BY MONTH(NgayAn) ORDER BY Month";
 
             // Initialize Labels and Revenue array
@@ -83,11 +78,13 @@ namespace loginPage
                         {
                             int month = Convert.ToInt32(reader["Month"]);
                             double revenue = Convert.ToDouble(reader["Revenue"]);
-                            revenueByMonth[month - 1] = revenue; // Month starts from 1 but array index starts from 0
+                            revenueByMonth[month-1] = revenue; // Month starts from 1 but array index starts from 0
                         }
                     }
                 }
             }
+
+            SeriesCollection.Clear();
 
             // Populate SeriesCollection and Labels
             SeriesCollection.Add(new ColumnSeries
@@ -126,6 +123,47 @@ namespace loginPage
         {
             selectedYear = YearComboBox.SelectedItem as string;
             LoadDataAndBindToChart(selectedYear);
+        }
+        
+
+        // button xem dữ liệu hóa đơn
+        private void btnxemDoanhThu_Click(object sender, RoutedEventArgs e)
+        {
+            HoaDonDAO hoadonDAO = new HoaDonDAO();
+
+            var hoadonItemsSource = hoadonDAO.GetAddHoaDon();
+
+            Dataview.ItemsSource = hoadonItemsSource;
+        }
+
+        private void txtSearchText_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Nếu người dùng nhấn phím Enter trong TextBox, thực hiện tìm kiếm
+                btnTimkiem_Click(sender, e);
+            }
+        }
+
+        private void btnTimkiem_Click(object sender, RoutedEventArgs e)
+        {
+            string searchText = txtSearchText.Text.Trim(); // Lấy văn bản đã nhập từ TextBox
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                // Tạo một đối tượng SupplierDAO
+                HoaDonDAO hoaDonDAO = new HoaDonDAO();
+
+                // Gọi hàm tìm kiếm từ đối tượng SupplierDAO
+                List<HoaDon> timkiem = hoaDonDAO.timkiemthongtin(searchText);
+
+                // Cập nhật ItemsSource của DataGrid với kết quả tìm kiếm
+                Dataview.ItemsSource = timkiem;
+            }
+            else
+            {
+                // Nếu TextBox là trống, hiển thị tất cả Supplier
+                btnxemDoanhThu_Click(sender, e);
+            }
         }
     }
 }

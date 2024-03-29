@@ -18,7 +18,7 @@ namespace loginPage
 
     public partial class MainWindow : Window
     {
-        string connectstring = @"Data Source=THANHHOA\MSSQLSERVER01;Initial Catalog=Quanlynhahang21CN1.1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;
@@ -27,10 +27,23 @@ namespace loginPage
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            // PHI: Gán sự kiện cho việc nhấn phím từ bàn phím
+            this.KeyDown += MainWindow_KeyDown;
+
         }
 
-        
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            //PHI: Kiểm tra nút nhấn có phải là nút Enter không
+            if (e.Key == Key.Enter)
+            {
+                // Thực hiện sự kiện đăng nhập
+                LoginButton_Click(sender, e);
+            }
+        }
+
+
 
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -46,23 +59,23 @@ namespace loginPage
         {
             if (e.ClickCount == 2)
             {
-                
+
                 if (IsMaxximize)
                 {
                     this.WindowState = WindowState.Normal;
                     this.Width = 1024;
                     this.Height = 720;
-                    IsMaxximize = false ;
+                    IsMaxximize = false;
                 }
                 else
                 {
                     this.WindowState = WindowState.Maximized;
-                    IsMaxximize = true ;
+                    IsMaxximize = true;
                 }
             }
         }
 
-        
+
 
 
 
@@ -79,11 +92,11 @@ namespace loginPage
                 using (con = new SqlConnection(connectstring))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(*) FROM QuanLy WHERE TaiKhoan=@Username AND MatKhau=@Password";
+                    string query = "SELECT COUNT(*) FROM Quanly WHERE TaiKhoan=@Username AND MatKhau=@Password";
                     using (cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", txtusername.Text);
-                        cmd.Parameters.AddWithValue("@Password", txtpassword.Password);
+                        cmd.Parameters.AddWithValue("@Password", txtpassword.Text);
 
                         int count = (int)cmd.ExecuteScalar();
                         if (count == 1)
@@ -104,6 +117,8 @@ namespace loginPage
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+
+
         }
 
         private void ForgotpasswordButton(object sender, RoutedEventArgs e)
@@ -114,7 +129,7 @@ namespace loginPage
 
         private void signupButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hiện chưa có tính năng đăng ký","thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show("hiện chưa có tính năng đăng ký", "thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void loginUI_Loaded(object sender, RoutedEventArgs e)
@@ -128,22 +143,8 @@ namespace loginPage
             this.Height = h;
         }
 
-        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            // Kiểm tra xem mật khẩu có rỗng hay không
-            if (sender is PasswordBox passwordBox)
-            {
-                if (passwordBox.SecurePassword.Length > 0)
-                {
-                    // Hiển thị TextBlock khi mật khẩu không rỗng
-                    txtPasswordPlaceholder.Visibility = Visibility.Collapsed;
-                }
-                else
-                {
-                    // Ẩn TextBlock khi mật khẩu rỗng
-                    txtPasswordPlaceholder.Visibility = Visibility.Visible;
-                }
-            }
-        }
+        
+
+        
     }
 }

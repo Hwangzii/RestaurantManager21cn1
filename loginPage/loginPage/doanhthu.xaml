@@ -7,9 +7,12 @@
              xmlns:local="clr-namespace:loginPage"
              mc:Ignorable="d" 
               d:DesignHeight="925.7148" d:DesignWidth="1536" Background="#FFFFFF">
+
+
+    
     <Grid>
         <TabControl>
-            <TabItem Height="40" Width="230">
+            <TabItem Height="40" Width="200">
                 <TabItem.Template>
                     <!-- bo góc khung -->
                     <ControlTemplate TargetType="TabItem">
@@ -17,7 +20,7 @@
                             <ContentPresenter Content="thống kê" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <ContentPresenter.Resources>
                                     <Style TargetType="TextBlock">
-                                        <Setter Property="FontSize" Value="20"/>
+                                        <Setter Property="FontSize" Value="16"/>
                                     </Style>
                                 </ContentPresenter.Resources>
                             </ContentPresenter>
@@ -44,7 +47,7 @@
                         <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Text="Bảng thống kê doanh thu" Margin="0 10 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Roboto Light"/>
+                    <TextBlock Grid.Row="0" Text="Bảng thống kê doanh thu" Margin="20 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" FontFamily="Roboto Light"/>
                     <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0.5" Height="1" Margin="5" />
                     <Grid Grid.Row="2" >
                         <Grid.ColumnDefinitions>
@@ -54,22 +57,51 @@
                         </Grid.ColumnDefinitions>
 
                         <Button Grid.Column="0" Height="40" Name="btnxemDoanhThu"
-                                Margin="10 0 0 0" 
-                                Width="300" BorderBrush="Transparent" 
-                                HorizontalAlignment="Left"
-                                Background="#E5E7E9" Click="btnxemDoanhThu_Click">
-                            <TextBlock Text="xem dữ liệu" FontSize="15" FontFamily="Roboto Light" />
+                    Margin="10 0 0 0" 
+                    Width="200" BorderBrush="Transparent" 
+                    HorizontalAlignment="Left"
+                    Background="#E5E7E9" Click="btnxemDoanhThu_Click">
+                            <TextBlock Text="xem dữ liệu" FontSize="16" FontFamily="Roboto Light" />
                         </Button>
 
-                        <ListBox Grid.Column="2">
-                            
-                        </ListBox>
+                        <TextBox x:Name="txtSearchText" Grid.Column="1" BorderBrush="Gray" BorderThickness="1" Height="40" HorizontalAlignment="Right" Width="500" PreviewKeyDown="txtSearchText_PreviewKeyDown"></TextBox>
+
+                        <Button x:Name="btnTimkiem" Grid.Column="2" Height="40" 
+                    Margin="10 0 0 0" 
+                    Width="150" BorderBrush="Transparent" 
+                    HorizontalAlignment="Left"
+                    Background="#E5E7E9" Click="btnTimkiem_Click">
+                            <TextBlock Text="Tìm kiếm" FontSize="16" FontFamily="Roboto Light" />
+                        </Button>
+
                     </Grid>
-                    <StackPanel Grid.Row="3">
-                        <DataGrid Margin="0 10 0 0" x:Name="Dataview" Background="Transparent" Height="1000" BorderBrush="Transparent"/>
-                    </StackPanel>
+                    <Border Grid.Row="3" Height="650" VerticalAlignment="Top" Margin="10" BorderBrush="Gray" BorderThickness="1">
+                        <ScrollViewer Height="650">
+                            <DataGrid Width="1400" Margin="0 10 0 0" x:Name="Dataview" Background="Transparent" BorderBrush="Transparent" ColumnWidth="*" HorizontalContentAlignment="Center">
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="Background" Value="#007DD4"/>
+                                        <Setter Property="Height" Value="40"/>
+                                        <Setter Property="Foreground" Value="#FFFFFF"/>
+                                        <Setter Property="FontSize" Value="19"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                        <Setter Property="Margin" Value="0"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+
+                                <DataGrid.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="FontSize" Value="18"/>
+                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+
+                                    </Style>
+                                </DataGrid.CellStyle>
+                            </DataGrid>
+                        </ScrollViewer>
+                    </Border>
                     <Border Grid.Row="4" BorderBrush="#A6ACAF" BorderThickness="1" Height="1"/>
-                    <TextBlock Grid.Row="5" VerticalAlignment="Center" Margin="20 0 0 0" Text="Tổng:" FontSize="24"> </TextBlock>
+                    <TextBlock Grid.Row="5" VerticalAlignment="Center" Margin="20 0 0 0" Text="Tổng:" FontSize="24"></TextBlock>
                 </Grid>
             </TabItem>
 
@@ -81,7 +113,7 @@
                             <ContentPresenter Content="biểu đồ" ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <ContentPresenter.Resources>
                                     <Style TargetType="TextBlock">
-                                        <Setter Property="FontSize" Value="20"/>
+                                        <Setter Property="FontSize" Value="16"/>
                                     </Style>
                                 </ContentPresenter.Resources>
                             </ContentPresenter>
@@ -98,11 +130,17 @@
                 </TabItem.Template>
                 
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="9*"/>
+                    </Grid.RowDefinitions>
                     <!--TextBlock Text="Thống kê doanh thu năm"/-->
-                    <ComboBox x:Name="YearComboBox" Width="200" Height="30" SelectionChanged="YearComboBox_SelectionChanged" Margin="1320,0,10,848"/>
+                    <ComboBox Grid.Row="0" x:Name="YearComboBox" Width="200" Height="30" SelectionChanged="YearComboBox_SelectionChanged" HorizontalAlignment="Right" Margin="0 0 50 0"/>
                     <!-- CartesianChart -->
-                    <lvc:CartesianChart x:Name="ColumnChart" Margin="10,121,10,10" >
-                    </lvc:CartesianChart>
+                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" >
+                        <lvc:CartesianChart x:Name="ColumnChart" VerticalAlignment="Top" Width="1600" Height="700"  >
+                        </lvc:CartesianChart>
+                    </ScrollViewer>
                 </Grid>
 
             </TabItem>

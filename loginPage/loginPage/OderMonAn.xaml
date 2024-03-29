@@ -29,11 +29,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Button x:Name="backBtn" Width="100"
-                            BorderBrush="Transparent" HorizontalAlignment="Left" Background="Transparent" Click="backBtn_Click">
-                        <Icon:PackIconMaterial Kind="ArrowLeft" 
-                                               Foreground="#f56b25"
-                                               Height="30" Width="30"/>
+                    <Button x:Name="backBtn" Style="{StaticResource topButton}" HorizontalAlignment="Left" Background="Transparent" Click="backBtn_Click" Width="50" Height="50">
+                        <Icon:PackIconMaterial Kind="ArrowLeft" Style="{StaticResource topButtonIcon}" Height="30" Width="30" Margin="15 0 0 0"/>
                     </Button>
                 </Grid>
             </Grid>
@@ -348,26 +345,32 @@
 
                 <!-- Danh sach oder-->
                 <Grid Grid.Row="0">
+                    
+                    
+                    
                     <ListView x:Name="ListOderBox" Background="#F0F3F4" >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="150" Header="Tên món" DisplayMemberBinding="{Binding Name}"/>
-                                <GridViewColumn Width="70" Header="Số lượng" DisplayMemberBinding="{Binding Qty}"/>
+                                <GridViewColumn Width="150" Header="Tên món"  DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Width="25" Header="SL" DisplayMemberBinding="{Binding Qty}"/>
 
                                 <!-- Hung: Tạo một cột để khởi tạo nút sửa số lượng -->
 
+                                                               
+                                <GridViewColumn Width="120" Header="Giá" DisplayMemberBinding="{Binding Price}"/>
+                                <GridViewColumn Width="70" Header="TG" DisplayMemberBinding="{Binding Time}"/>
                                 <GridViewColumn Header="Sửa" Width="40">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Button Content=". . ." Click="ChangeAmount_Click"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
-                                </GridViewColumn>                                
-                                <GridViewColumn Width="120" Header="Đơn giá" DisplayMemberBinding="{Binding Price}"/>
-                                <GridViewColumn Width="110" Header="Thời gian" DisplayMemberBinding="{Binding Time}"/>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
+                    
+                    
                 </Grid>
 
                 <StackPanel Grid.Row="1" Background="#FFFFFF" Orientation="Horizontal">

@@ -1422,3 +1422,9 @@ D:\Study\HAU\C# & .NET\BCCM0\loginPage\loginPage\obj\Debug\LoginPage.csproj.Core
 D:\Study\HAU\C# & .NET\BCCM0\loginPage\loginPage\obj\Debug\LoginPage.csproj.Up2Date
 D:\Study\HAU\C# & .NET\BCCM0\loginPage\loginPage\obj\Debug\loginPage.exe
 D:\Study\HAU\C# & .NET\BCCM0\loginPage\loginPage\obj\Debug\loginPage.pdb
+D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.dll
+D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.Wpf.dll
+D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.pdb
+D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.xml
+D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.Wpf.pdb
+D:\Chung\JOBS\git\FILE_CHINH\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.Wpf.xml
