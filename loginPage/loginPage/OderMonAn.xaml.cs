@@ -396,75 +396,10 @@ namespace loginPage
         }
 
 
-        // ============ Ngọc: Code nút lưu thông tin vào db ============//
+        // ============ (The mf who will code this function) ============//
         private void luuThongtin_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection conn = new SqlConnection(connectstring);
-            if (ListOderBox.Items.Count == 0)
-            {
-                MessageBox.Show("Chưa có món ăn. Lưu thông tin thất bại");
-            }
-            else
-            {
-                try
-                {
-                    conn.Open();
-
-                    string tenBan = tableNumber.Text;
-                    string findTableID = "select * from BanAn where TenBan = @tenBan";
-                    int banID = 0;
-
-                    SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
-                    cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
-
-                    using (SqlDataReader read = cmdTableID.ExecuteReader())
-                    {
-                        while (read.Read())
-                        {
-                            banID = (int)read["MaBan"];
-                        }
-                    }
-
-                    DateTime ngayAn = DateTime.Now;
-                    double tongTien = 0;
-                    foreach (FoodItem item in ListOderBox.Items)
-                    {
-                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                    }
-                    int soLuongMon = 0;
-                    foreach (FoodItem item in ListOderBox.Items)
-                    {
-                        soLuongMon += item.Qty;
-                    }
-
-                    string insertString = @"
-                    insert into HoaDon
-                    (MaBan, NgayAn, SoLuongMon, TongTien)
-                    values (@maBan, @ngayAn, @soLuongMon, @tongTien)";
-
-                    SqlCommand cmd = new SqlCommand(insertString, conn);
-                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
-                    cmd.Parameters.AddWithValue("@maBan", banID);
-
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Lưu thông tin thành công");
-                }
-                catch (Exception x)
-                {
-                    MessageBox.Show(x.Message);
-                }
-                finally
-                {
-
-                    // Close the connection
-                    if (conn != null)
-                    {
-                        conn.Close();
-                    }
-                }
-            }
+            
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
@@ -531,8 +466,6 @@ namespace loginPage
         }
 
         // Hùng + Phi: 3 chức năng của 3 nút bấm trong bảng thay đổi số lượng
-
-
         private void huyBtn_Click(object sender, RoutedEventArgs e)
         {
             popup.IsOpen = false;
@@ -577,103 +510,6 @@ namespace loginPage
             soluong3 += 1;
             Hienthiso.Text = soluong3.ToString();
 
-        }
-
-        private void thanhtoanBtn_Click(object sender, RoutedEventArgs e)
-        {
-            
-            SqlConnection conn = new SqlConnection(connectstring);
-
-            if (tenktTxtBox.Text != null && sdtkhTxtBox.Text == null)
-            {
-                MessageBox.Show("Vui lòng nhập SĐT của khách hàng");
-            }
-            else if (sdtkhTxtBox.Text != null && tenktTxtBox.Text == null)
-            {
-                MessageBox.Show("Vui lòng nhập tên của khách hàng");
-            }
-            else if (tenktTxtBox.Text != null && sdtkhTxtBox.Text != null)
-            {
-                try
-                {
-                    string tenKH = tenktTxtBox.Text;
-                    string sdtKH = sdtkhTxtBox.Text;
-                    DateTime ngayAn = DateTime.Now;
-                    double tongTien = 0;
-                    foreach (FoodItem item in foodLV.Items)
-                    {
-                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                    }
-                    int soLuongMon = 0;
-                    foreach (FoodItem item in foodLV.Items)
-                    {
-                        soLuongMon += item.Qty;
-                    }
-
-                    conn.Open();
-
-                    string insertString = @"insert into HoaDon (TenKH, SDTKH, NgayAn, SoLuongMon, TongTien) values (@tenKH, @sdtKH, @ngayAn, @soLuongMon, @tongTien)";
-
-                    SqlCommand cmd = new SqlCommand(insertString, conn);
-                    cmd.Parameters.AddWithValue("@tenKH", tenKH);
-                    cmd.Parameters.AddWithValue("@sdtKH", sdtKH);
-                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
-
-                    cmd.ExecuteNonQuery();
-                }
-                finally
-                {
-                    // Close the connection
-                    if (conn != null)
-                    {
-                        conn.Close();
-                    }
-                    this.Close();
-                }
-            }
-            else
-            {
-                try
-                {
-                    DateTime ngayAn = DateTime.Now;
-                    double tongTien = 0;
-                    foreach (FoodItem item in foodLV.Items)
-                    {
-                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                    }
-                    int soLuongMon = 0;
-                    foreach (FoodItem item in foodLV.Items)
-                    {
-                        soLuongMon += item.Qty;
-                    }
-                hienthitongtien.Text = tongTien.ToString();
-
-                    conn.Open();
-
-                    string insertString = @"
-                 insert into HoaDon
-                 (NgayAn, SoLuongMon, TongTien)
-                 values (@ngayAn, @soLuongMon, @tongTien)";
-
-                    SqlCommand cmd = new SqlCommand(insertString, conn);
-                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
-
-                    cmd.ExecuteNonQuery();
-                }
-                finally
-                {
-                    // Close the connection
-                    if (conn != null)
-                    {
-                        conn.Close();
-                    }
-                    this.Close();
-                }
-            }
         }
 
         private void inhoadonBtn_Click(object sender, RoutedEventArgs e)
@@ -777,7 +613,152 @@ namespace loginPage
 
         }
 
+        // ============ Ngọc: Code nút thanh toán phần nhập ttkh và chọn hình thức thanh toán,
+        // ============ lưu hóa đơn vào csdl ============ //
+        private void thanhtoanBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(connectstring);
 
+            if (tenktTxtBox.Text != null && sdtkhTxtBox.Text == null)
+            {
+                MessageBox.Show("Vui lòng nhập sđt của khách hàng");
+            }
+            else if (sdtkhTxtBox.Text != null && tenktTxtBox.Text == null)
+            {
+                MessageBox.Show("Vui lòng nhập tên của khách hàng");
+            }
+            else if (tenktTxtBox.Text != null && sdtkhTxtBox.Text != null)
+            {
+                try
+                {
+                    conn.Open();
+
+                    string tenBan = tableNumber.Text;
+                    string findTableID = "select * from BanAn where TenBan = @tenBan";
+                    int banID = 0;
+
+                    SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
+                    cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
+
+                    using (SqlDataReader read = cmdTableID.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            banID = (int)read["MaBan"];
+                        }
+                    }
+
+                    DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
+                    string tenKH = tenktTxtBox.Text;
+                    string sdtKH = sdtkhTxtBox.Text;
+                    double tongTien = 0;
+                    foreach (FoodItem item in ListOderBox.Items)
+                    {
+                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                    }
+                    int soLuongMon = 0;
+                    foreach (FoodItem item in ListOderBox.Items)
+                    {
+                        soLuongMon += item.Qty;
+                    }
+
+                    string insertString = @"insert into HoaDon
+                    (MaBan, TenKH, SDTKH, NgayAn, SoLuongMon, TongTien)
+                    values (@maBan, @tenKH, @sdtKH, @ngayAn, @soLuongMon, @tongTien)";
+
+                    SqlCommand cmd = new SqlCommand(insertString, conn);
+                    cmd.Parameters.AddWithValue("@maBan", banID);
+                    cmd.Parameters.AddWithValue("@tenKH", tenKH);
+                    cmd.Parameters.AddWithValue("@sdtKH", sdtKH);
+                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
+
+                    cmd.ExecuteNonQuery();
+
+                    if (chuyenkhoanRadioBtn.IsChecked == true)
+                    {
+                        // Phi cho QR vào đây //
+                    }
+                    else
+                    {
+                        // Phi cho window xác nhận vào đây //
+                    }
+                }
+                finally
+                {
+                    // Close the connection
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+
+                    string tenBan = tableNumber.Text;
+                    string findTableID = "select * from BanAn where TenBan = @tenBan";
+                    int banID = 0;
+
+                    SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
+                    cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
+
+                    using (SqlDataReader read = cmdTableID.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            banID = (int)read["MaBan"];
+                        }
+                    }
+
+                    DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
+                    double tongTien = 0;
+                    foreach (FoodItem item in ListOderBox.Items)
+                    {
+                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                    }
+                    int soLuongMon = 0;
+                    foreach (FoodItem item in ListOderBox.Items)
+                    {
+                        soLuongMon += item.Qty;
+                    }
+
+                    string insertString = @"
+                    insert into HoaDon
+                    (MaBan, NgayAn, SoLuongMon, TongTien)
+                    values (@maBan, @ngayAn, @soLuongMon, @tongTien)";
+
+                    SqlCommand cmd = new SqlCommand(insertString, conn);
+                    cmd.Parameters.AddWithValue("@maBan", banID);
+                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
+
+                    cmd.ExecuteNonQuery();
+
+                    if (chuyenkhoanRadioBtn.IsChecked == true)
+                    {
+                        // Phi cho QR vào đây //
+                    }
+                    else
+                    {
+                        // Phi cho window xác nhận vào đây //
+                    }
+                }
+                finally
+                {
+                    // Close the connection
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+        }
     }
 
 }
