@@ -26,7 +26,7 @@ namespace loginPage
 
 
 
-        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=Quanlynhahang21CN111;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
         public Tang2()
         {
             InitializeComponent();
@@ -97,7 +97,7 @@ namespace loginPage
                 orderForm.settext(textBlock.Text);
                 orderForm.Show();
 
-                if (clickedButton.Background == Brushes.Red)
+                if (clickedButton.Background == Brushes.LightSkyBlue)
                 {
                     foreach (FoodItem item in tablebooked.LoadHoadon(textBlock.Text))
                     {

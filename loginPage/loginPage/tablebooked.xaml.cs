@@ -101,7 +101,7 @@ namespace loginPage
             {
                 if (txtb.Text == item.Ban)
                 {
-                    bt.Background = Brushes.Red;
+                    bt.Background = Brushes.LightSkyBlue;
                     break;
                 }
             }

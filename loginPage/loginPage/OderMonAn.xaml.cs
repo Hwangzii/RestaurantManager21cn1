@@ -20,7 +20,7 @@ namespace loginPage
 {
     public partial class OderMonAn : Window
     {//Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False
-        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=Quanlynhahang21CN111;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
         public OderMonAn()
         {
             InitializeComponent();
@@ -393,6 +393,9 @@ namespace loginPage
                 tongtien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
             }
             hienthitongtien.Text = tongtien.ToString("#,##") + " đ";
+
+            hienthitongtien.Foreground = Brushes.Green;
+            hienthitongtien.FontSize = 25;
         }
 
 
@@ -420,7 +423,7 @@ namespace loginPage
                         HDD.Danhsach.Add(item);
                     }
                     tablebooked.LuuHoadon.Add(HDD);
-                    tablebooked.NutDangChon.Background = Brushes.Red;
+                    tablebooked.NutDangChon.Background = Brushes.LightSkyBlue;
                     MessageBox.Show("Luu thanh cong");
                 }
             }
