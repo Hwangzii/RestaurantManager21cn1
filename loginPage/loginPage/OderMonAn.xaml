@@ -555,7 +555,7 @@
                             <TextBlock Text="in hóa đơn" />
                         </Button>
 
-                        <Button x:Name="thanhtoanBtn" Grid.Column="1" Style="{StaticResource buttondeshazi}">
+                        <Button x:Name="thanhtoanBtn" Grid.Column="1" Style="{StaticResource buttondeshazi}" Click="thanhtoanBtn_Click">
                             <TextBlock Text="thanh toán" />
                         </Button>
 

@@ -22,7 +22,7 @@ namespace loginPage
         // Khai báo sự kiện DynamicButtonClicked
         public event EventHandler DynamicButtonClicked;
 
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=Quanlynhahang21CN111;Integrated Security=True;Encrypt=False";
         public Tang1()
         {
             InitializeComponent();
@@ -55,10 +55,9 @@ namespace loginPage
                             dynamicTxtTenBanAn.VerticalAlignment = VerticalAlignment.Center;
                             dynamicTxtTenBanAn.FontSize = 30;
 
-
                             dynamicStp.Children.Add(dynamicTxtTenBanAn);
-
                             dynamicBtn.Background = Brushes.White;
+                            tablebooked.MauKhoiTao(dynamicTxtTenBanAn, dynamicBtn);
                             dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
                             dynamicBtn.Content = dynamicStp;
                             dynamicBtn.Style = (Style)FindResource("buttondes");
@@ -85,12 +84,24 @@ namespace loginPage
             StackPanel stackPanel = clickedButton.Content as StackPanel;
             TextBlock textBlock = stackPanel.Children[0] as TextBlock;
 
+            tablebooked.NutDangChon = sender as Button;
+
             if (textBlock != null)
-            {
+            {              
                 OderMonAn orderForm = new OderMonAn();
                 orderForm.settext(textBlock.Text);
                 orderForm.Show();
+
+                if (clickedButton.Background == Brushes.Red)
+                {
+                    foreach (FoodItem item in tablebooked.LoadHoadon(textBlock.Text))
+                    {
+                        orderForm.ListOderBox.Items.Add(item);
+                    }
+                    orderForm.Tongtien();
+                }
             }
+            //Hùng: lưu nút đang chọn và load hóa đơn nếu có
         }
     }
 }

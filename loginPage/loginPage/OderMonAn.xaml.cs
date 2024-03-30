@@ -19,8 +19,8 @@ using System.Windows.Shapes;
 namespace loginPage
 {
     public partial class OderMonAn : Window
-    {
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+    {//Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False
+        string connectstring = @"Data Source=DESKTOP-ELTO818;Initial Catalog=Quanlynhahang21CN111;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -385,7 +385,7 @@ namespace loginPage
             Tongtien();
         }
 
-        private void Tongtien()
+        public void Tongtien()
         {
             double tongtien = 0;
             foreach (FoodItem item in ListOderBox.Items)
@@ -396,10 +396,35 @@ namespace loginPage
         }
 
 
-        // ============ (The mf who will code this function) ============//
+        // ============ (The mf who will code this function a.k.a Hùng) ============//
         private void luuThongtin_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (ListOderBox.HasItems == true)
+            {
+                int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
+                if (i >= 0)
+                {
+                    tablebooked.LuuHoadon[i].Danhsach.Clear();
+                    foreach (FoodItem item in ListOderBox.Items)
+                    {
+                        tablebooked.LuuHoadon[i].Danhsach.Add(item);
+                    }
+                    MessageBox.Show("Luu thanh cong");
+                }
+                else 
+                {
+                    LuuHoaDon HDD = new LuuHoaDon();
+                    HDD.Ban = tableNumber.Text;
+                    foreach (FoodItem item in ListOderBox.Items)
+                    {
+                        HDD.Danhsach.Add(item);
+                    }
+                    tablebooked.LuuHoadon.Add(HDD);
+                    tablebooked.NutDangChon.Background = Brushes.Red;
+                    MessageBox.Show("Luu thanh cong");
+                }
+            }
+            else { MessageBox.Show("Đề nghị chọn món trước khi lưu"); }
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
@@ -431,9 +456,7 @@ namespace loginPage
         Button TheButton;
         int soluong3;
 
-
         // Hùng: Thêm chức năng để gọi item từ một phần tử của nó
-
         private static T FindAncestor<T>(DependencyObject current) where T : DependencyObject
         {
             do
@@ -458,7 +481,6 @@ namespace loginPage
             string namee = item.Name;
             int Qtyy = item.Qty;
 
-            //popup.visibility = visible
             popup.IsOpen = true;
             Hienthiso.Text = Qtyy.ToString();
             Hienthitenmon.Text = namee;
@@ -576,7 +598,7 @@ namespace loginPage
             popup1.IsOpen = false;
         }
 
-        // === Hùng: Lấ int ID từ tên món để sort ====
+        // === Hùng: Lấy int ID từ tên món để sort ====
         private int GetID(string a)
         {
             int IDD;
@@ -676,13 +698,21 @@ namespace loginPage
 
                     cmd.ExecuteNonQuery();
 
-                    if (chuyenkhoanRadioBtn.IsChecked == true)
+                    if (chuyenkhoanRadioBtn.IsChecked == false && tratienmatRadioBtn.IsChecked == false)
+                    {
+                    
+                        MessageBox.Show("dcmm quen bam a");
+                    }
+                    else if(chuyenkhoanRadioBtn.IsChecked == true)
                     {
                         // Phi cho QR vào đây //
-                    }
-                    else
-                    {
+                        MessageBox.Show("okayChuyenKhoan");
+                        this.Close();
+                    } else
+                    { 
                         // Phi cho window xác nhận vào đây //
+                        MessageBox.Show("okayTienmat");
+                        this.Close();
                     }
                 }
                 finally
@@ -692,6 +722,15 @@ namespace loginPage
                     {
                         conn.Close();
                     }
+                    // Hùng: Thanh toán xong xóa trong cái lưu Tạm
+                    ListOderBox.Items.Clear();
+                    int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
+                    if(i >= 0)
+                    {
+                        tablebooked.LuuHoadon.RemoveAt(i);
+                    }
+                    tablebooked.NutDangChon.Background = Brushes.White;
+
                 }
             }
             else
@@ -740,13 +779,21 @@ namespace loginPage
 
                     cmd.ExecuteNonQuery();
 
-                    if (chuyenkhoanRadioBtn.IsChecked == true)
+                    if (chuyenkhoanRadioBtn.IsChecked == false && tratienmatRadioBtn.IsChecked == false)
+                    {
+                        MessageBox.Show("dcmm quen bam a");
+                    }
+                    else if (chuyenkhoanRadioBtn.IsChecked == true)
                     {
                         // Phi cho QR vào đây //
+                        MessageBox.Show("okayChuyenKhoan");
+                        this.Close();
                     }
                     else
                     {
                         // Phi cho window xác nhận vào đây //
+                        MessageBox.Show("okayTienmat");
+                        this.Close();
                     }
                 }
                 finally
@@ -756,6 +803,14 @@ namespace loginPage
                     {
                         conn.Close();
                     }
+                    // Hùng: Thanh toán xong xóa trong cái lưu Tạm
+                    ListOderBox.Items.Clear();
+                    int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
+                    if (i >= 0)
+                    {
+                        tablebooked.LuuHoadon.RemoveAt(i);
+                    }
+                    tablebooked.NutDangChon.Background = Brushes.White;
                 }
             }
         }

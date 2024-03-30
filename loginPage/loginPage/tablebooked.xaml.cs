@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 
 namespace loginPage
 {
-    
+
     public partial class tablebooked : Window
     {
-        
 
-        
+
+
         public tablebooked()
         {
             InitializeComponent();
@@ -69,6 +69,43 @@ namespace loginPage
             this.Close(); // Đóng cửa sổ hiện tại
         }
 
+        // Hùng: Tạo List Luu hoa don tam thoi
+        public static List<LuuHoaDon> LuuHoadon = new List<LuuHoaDon>();
+
+        // Hùng: Tạo Button để nhớ button bàn đang bấm
+        public static Button NutDangChon = new Button();
+
+        // Hùng: Phương thức load hóa đơn
+        public static List<FoodItem> LoadHoadon(string a)
+        {
+            LuuHoaDon item = LuuHoadon.Find(i => i.Ban == a);
+            return item.Danhsach;
+        }
+
+        // Hùng: Phương thức khi thanh toán
+        public static void ThanhToanXong(string a)
+        {
+            int i = LuuHoadon.FindIndex(i => i.Ban == a);
+            if (i >= 0)
+            {
+                LuuHoadon.RemoveAt(i);
+            }
+            NutDangChon.Background = Brushes.White;
+            MessageBox.Show("Thanh toan thanh cong");
+        }
+
+        // Hùng: Khi khởi tạo, kiểm tra nút
+        public static void MauKhoiTao(TextBlock txtb, Button bt)
+        {
+            foreach(LuuHoaDon item in LuuHoadon)
+            {
+                if (txtb.Text == item.Ban)
+                {
+                    bt.Background = Brushes.Red;
+                    break;
+                }
+            }
+        }
 
     }
 }
