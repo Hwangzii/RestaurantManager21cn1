@@ -189,12 +189,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AmoutFood.xaml.cs">
-      <DependentUpon>AmoutFood.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="BillForm.xaml.cs">
-      <DependentUpon>BillForm.xaml</DependentUpon>
-    </Compile>
     <Compile Include="doanhthu.xaml.cs">
       <DependentUpon>doanhthu.xaml</DependentUpon>
     </Compile>
@@ -213,14 +207,6 @@
     <Compile Include="Tang2.xaml.cs">
       <DependentUpon>Tang2.xaml</DependentUpon>
     </Compile>
-    <Page Include="AmoutFood.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="BillForm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="doanhthu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

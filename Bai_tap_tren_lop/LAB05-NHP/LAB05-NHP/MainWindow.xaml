@@ -1,0 +1,156 @@
+﻿<Window x:Class="LAB05_NHP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAB05_NHP"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="9.2*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text="SUPPLIERS MANAGEMENT" FontSize="40" HorizontalAlignment="Center" Foreground="#0097FF" VerticalAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="7.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8.5*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Vertical" >
+                    <TextBlock Text="Supplier" Height="40" Margin="20 0 0 0" FontSize="25"></TextBlock>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Company Name" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox x:Name="txtBoxCompanyName" Width="250" Height="30" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Contact Name" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox x:Name="txtBoxContactName" Width="250" Height="30" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Contact Title" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtBoxContactTitle" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Address" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtboxAddress"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="City" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtBoxCity"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Region" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtBoxRegion"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Postal Code" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtPastalCode"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Country" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtBoxCountry"/>
+                    </StackPanel>
+
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Phone" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtBoxPhone"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Fax" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtBoxFax"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="10 30 0 0">
+                        <TextBlock VerticalAlignment="Center" Text="Homepage" Width="200" Margin="10 0 0 0 " FontSize="18"/>
+                        <TextBox Width="250" Height="30" Name="txtBoxHomepage"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <Grid Grid.Row="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Name="btnInsert" Background="White" BorderBrush="LightGray" BorderThickness="1" Margin="10" Click="btnInsert_Click">
+                            <TextBlock Text="Insert" FontSize="24"></TextBlock>
+                        </Button>
+
+                        <Button Grid.Column="1" Name="UpdateBtn" Background="White" BorderBrush="LightGray" BorderThickness="1" Margin="10">
+                            <TextBlock Text="Update" FontSize="24"></TextBlock>
+                        </Button>
+
+                        <Button Grid.Column="2" Background="White" Name="btnDelete" BorderBrush="LightGray" BorderThickness="1" Margin="10">
+                            <TextBlock Text="Delete" FontSize="24"></TextBlock>
+                        </Button>
+
+                    </Grid>
+
+                    <Button Grid.Row="1" Background="#0097FF" Margin="10" Name="btnClearForm" BorderBrush="Transparent">
+                        <TextBlock Text="Clear Form" FontSize="24" Foreground="#FFFFFF"/>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="9.5*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="bnLoadData" Click="bnLoadData_Click" Grid.Column="0" Height="30" Width="120">
+                        <TextBlock Text="Load Data" FontSize="16"/>
+                    </Button>
+
+                    <TextBox x:Name="txtSearchText" Grid.Column="1" Width="500" Height="35" HorizontalAlignment="Right" BorderBrush="Gray" BorderThickness="2" PreviewKeyDown="txtSearchText_PreviewKeyDown"/>
+
+                    <Button x:Name="btnSearchName" Click="btnSearchName_Click" Grid.Column="2" Height="30" Width="160">
+                        <TextBlock Text="Sreach Name" FontSize="16"/>
+                    </Button>
+
+                </Grid>
+
+                <ScrollViewer Grid.Row="1">
+                    <DataGrid x:Name="dataGridviewSupplier" SelectionChanged="dataGridviewSupplier_SelectionChanged" />
+                </ScrollViewer>
+                
+            </Grid>
+            
+        </Grid>
+        
+
+    </Grid>
+</Window>

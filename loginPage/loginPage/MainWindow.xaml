@@ -65,12 +65,12 @@
         <!-- Middle Section-->
         <Grid Grid.Row="1">
             <Grid.Background>
-                <SolidColorBrush Color="WhiteSmoke"/>
+                <SolidColorBrush Color="LightGray"/>
             </Grid.Background>
 
             <Grid>
                 <Grid.Background>
-                    <ImageBrush ImageSource="Images/img1.jpg" Opacity="0.5"/>
+                    <ImageBrush ImageSource="Images/img1.jpg" Opacity="0.8"/>
                 </Grid.Background>
             </Grid>
         </Grid>
