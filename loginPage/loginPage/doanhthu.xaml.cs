@@ -47,7 +47,7 @@ namespace loginPage
             var axisX = new Axis
             {
                 Labels = Labels,
-                MinValue = 1,
+                MinValue = 0,
                 MaxValue = 12,
                 Position = AxisPosition.LeftBottom
             };
@@ -59,7 +59,7 @@ namespace loginPage
         
         private void LoadDataAndBindToChart(string year)
         {
-            string connectionString = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+            string connectionString = @"Data Source=THANHHOA\MSSQLSERVER01;Initial Catalog=Quanlynhahang21CN1.1;Integrated Security=True;Encrypt=False";
             string query = @"SELECT MONTH(NgayAn) AS Month, SUM(Tongtien) AS Revenue FROM HoaDon WHERE YEAR(NgayAn) = @Year GROUP BY MONTH(NgayAn) ORDER BY Month";
 
             // Initialize Labels and Revenue array

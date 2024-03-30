@@ -18,7 +18,7 @@ namespace loginPage
 
     public partial class MainWindow : Window
     {
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
+        string connectstring = @"Data Source=THANHHOA\MSSQLSERVER01;Initial Catalog=Quanlynhahang21CN1.1;Integrated Security=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adt;
@@ -77,9 +77,6 @@ namespace loginPage
 
 
 
-
-
-
         private void button_Close(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -96,7 +93,7 @@ namespace loginPage
                     using (cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Username", txtusername.Text);
-                        cmd.Parameters.AddWithValue("@Password", txtpassword.Text);
+                        cmd.Parameters.AddWithValue("@Password", txtpassword.Password);
 
                         int count = (int)cmd.ExecuteScalar();
                         if (count == 1)
@@ -143,8 +140,22 @@ namespace loginPage
             this.Height = h;
         }
 
-        
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            // Lấy PasswordBox từ sự kiện
+            PasswordBox passwordBox = sender as PasswordBox;
 
-        
+            // Kiểm tra xem PasswordBox có rỗng hay không
+            if (string.IsNullOrWhiteSpace(passwordBox.Password))
+            {
+                // Nếu rỗng, hiển thị TextBlock Placeholder
+                txtPasswordPlaceholder.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                // Nếu không rỗng, ẩn TextBlock Placeholder
+                txtPasswordPlaceholder.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }
