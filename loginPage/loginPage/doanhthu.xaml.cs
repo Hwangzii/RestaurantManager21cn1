@@ -59,7 +59,7 @@ namespace loginPage
         
         private void LoadDataAndBindToChart(string year)
         {
-            string connectionString = @"Data Source=THANHHOA\MSSQLSERVER01;Initial Catalog=Quanlynhahang21CN1.1;Integrated Security=True;Encrypt=False";
+            string connectionString = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
             string query = @"SELECT MONTH(NgayAn) AS Month, SUM(Tongtien) AS Revenue FROM HoaDon WHERE YEAR(NgayAn) = @Year GROUP BY MONTH(NgayAn) ORDER BY Month";
 
             // Initialize Labels and Revenue array
