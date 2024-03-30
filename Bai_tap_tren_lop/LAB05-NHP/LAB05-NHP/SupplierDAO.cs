@@ -43,6 +43,16 @@ namespace LAB05_NHP
             }
         }
 
+        private void MouseLeftButtonDown_Click(object sender,MouseButtonEventArgs e)
+        {
+            if (sender is DataGrid dataGrid)
+            {
+                var selectedItem = (dynamic)dataGrid.SelectedItem;
+                int clickedRowID = selectedItem.ID;
+                string clickedRowName = selectedItem.Name;
+            }
+        }
+
         private void txtSearchText_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)

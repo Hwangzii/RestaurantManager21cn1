@@ -195,6 +195,7 @@
     <Compile Include="FoodItem.cs" />
     <Compile Include="HoaDon.cs" />
     <Compile Include="HoaDonDAO.cs" />
+    <Compile Include="LuuTamThoi.cs" />
     <Compile Include="OderMonAn.xaml.cs">
       <DependentUpon>OderMonAn.xaml</DependentUpon>
     </Compile>
