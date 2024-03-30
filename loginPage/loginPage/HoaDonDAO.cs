@@ -6,7 +6,7 @@ namespace loginPage
 {
     internal class HoaDonDAO
     {
-        String connectionString = "Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
+        String connectionString = "Data Source=DESKTOP-BTLUTR6\\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
 
         public HoaDonDAO()
         {

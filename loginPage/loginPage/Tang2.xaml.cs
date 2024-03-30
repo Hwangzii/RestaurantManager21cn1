@@ -26,13 +26,13 @@ namespace loginPage
 
 
 
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
+        string connectstring = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public Tang2()
         {
             InitializeComponent();
             int maBanAn = 0;
             SqlConnection conn = new SqlConnection(connectstring);
-            SqlCommand command = new SqlCommand("select *  from BanAn", conn);
+            SqlCommand command = new SqlCommand("select * from BanAn", conn);
             conn.Open();
 
 

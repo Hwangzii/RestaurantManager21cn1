@@ -20,7 +20,7 @@ namespace loginPage
 {
     public partial class OderMonAn : Window
     {//Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False
-        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True";
+        string connectstring = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -654,169 +654,342 @@ namespace loginPage
             }
             else if (tenktTxtBox.Text != null && sdtkhTxtBox.Text != null)
             {
-                try
+                if (chuyenkhoanRadioBtn.IsChecked == false && tratienmatRadioBtn.IsChecked == false)
                 {
-                    conn.Open();
-
-                    string tenBan = tableNumber.Text;
-                    string findTableID = "select * from BanAn where TenBan = @tenBan";
-                    int banID = 0;
-
-                    SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
-                    cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
-
-                    using (SqlDataReader read = cmdTableID.ExecuteReader())
-                    {
-                        while (read.Read())
-                        {
-                            banID = (int)read["MaBan"];
-                        }
-                    }
-
-                    DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
-                    string tenKH = tenktTxtBox.Text;
-                    string sdtKH = sdtkhTxtBox.Text;
-                    double tongTien = 0;
-                    foreach (FoodItem item in ListOderBox.Items)
-                    {
-                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                    }
-                    int soLuongMon = 0;
-                    foreach (FoodItem item in ListOderBox.Items)
-                    {
-                        soLuongMon += item.Qty;
-                    }
-
-                    string insertString = @"insert into HoaDon
-                    (MaBan, TenKH, SDTKH, NgayAn, SoLuongMon, TongTien)
-                    values (@maBan, @tenKH, @sdtKH, @ngayAn, @soLuongMon, @tongTien)";
-
-                    SqlCommand cmd = new SqlCommand(insertString, conn);
-                    cmd.Parameters.AddWithValue("@maBan", banID);
-                    cmd.Parameters.AddWithValue("@tenKH", tenKH);
-                    cmd.Parameters.AddWithValue("@sdtKH", sdtKH);
-                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
-
-                    cmd.ExecuteNonQuery();
-
-                    if (chuyenkhoanRadioBtn.IsChecked == false && tratienmatRadioBtn.IsChecked == false)
-                    {
-                    
-                        MessageBox.Show("dcmm quen bam a");
-                    }
-                    else if(chuyenkhoanRadioBtn.IsChecked == true)
-                    {
-                        // Phi cho QR vào đây //
-                        MessageBox.Show("okayChuyenKhoan");
-                        this.Close();
-                    } else
-                    { 
-                        // Phi cho window xác nhận vào đây //
-                        MessageBox.Show("okayTienmat");
-                        this.Close();
-                    }
+                    MessageBox.Show("dcmm quen bam a");
                 }
-                finally
+                else if (chuyenkhoanRadioBtn.IsChecked == true)
                 {
-                    // Close the connection
-                    if (conn != null)
+                    try
                     {
-                        conn.Close();
-                    }
-                    // Hùng: Thanh toán xong xóa trong cái lưu Tạm
-                    ListOderBox.Items.Clear();
-                    int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
-                    if(i >= 0)
-                    {
-                        tablebooked.LuuHoadon.RemoveAt(i);
-                    }
-                    tablebooked.NutDangChon.Background = Brushes.White;
+                        conn.Open();
 
+                        string tenBan = tableNumber.Text;
+                        string findTableID = "select * from BanAn where TenBan = @tenBan";
+                        int banID = 0;
+
+                        SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
+                        cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
+
+                        using (SqlDataReader read = cmdTableID.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                banID = (int)read["MaBan"];
+                            }
+                        }
+
+                        DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
+                        string tenKH = tenktTxtBox.Text;
+                        string sdtKH = sdtkhTxtBox.Text;
+                        string insertTTKH = @"insert into KhachHang (TenKH, SDTKH) values (@tenKH, @sdtKH)";
+
+                        SqlCommand cmdTTKH = new SqlCommand(insertTTKH, conn);
+                        cmdTTKH.Parameters.AddWithValue("@tenKH", tenKH);
+                        cmdTTKH.Parameters.AddWithValue("@sdtKH", sdtKH);
+
+                        cmdTTKH.ExecuteNonQuery();
+
+                        string findKHID = @"select * from KhachHang where TenKH = @tenKH and SDTKH = @sdtKH";
+                        int khID = 0;
+
+                        SqlCommand cmdKHID = new SqlCommand(findKHID, conn);
+                        cmdKHID.Parameters.AddWithValue("@tenKH", tenKH);
+                        cmdKHID.Parameters.AddWithValue("@sdtKH", sdtKH);
+
+                        using (SqlDataReader read = cmdKHID.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                khID = (int)read["MaKH"];
+                            }
+                        }
+
+                        double tongTien = 0;
+                        foreach (FoodItem item in ListOderBox.Items)
+                        {
+                            tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                        }
+                        int soLuongMon = 0;
+                        foreach (FoodItem item in ListOderBox.Items)
+                        {
+                            soLuongMon += item.Qty;
+                        }
+
+                        string insertString = @"insert into HoaDon
+                    (MaKH, MaBan, TenKH, SDTKH, NgayAn, SoLuongMon, TongTien)
+                    values (@maKH, @maBan, @tenKH, @sdtKH, @ngayAn, @soLuongMon, @tongTien)";
+
+                        SqlCommand cmd = new SqlCommand(insertString, conn);
+                        cmd.Parameters.AddWithValue("@maKH", khID);
+                        cmd.Parameters.AddWithValue("@maBan", banID);
+                        cmd.Parameters.AddWithValue("@tenKH", tenKH);
+                        cmd.Parameters.AddWithValue("@sdtKH", sdtKH);
+                        cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                        cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                        cmd.Parameters.AddWithValue("@tongTien", tongTien);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    finally
+                    {
+                        // Close the connection
+                        if (conn != null)
+                        {
+                            conn.Close();
+                        }
+                        // Hùng: Thanh toán xong xóa trong cái lưu Tạm
+                        ListOderBox.Items.Clear();
+                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
+                        if (i >= 0)
+                        {
+                            tablebooked.LuuHoadon.RemoveAt(i);
+                        }
+                        tablebooked.NutDangChon.Background = Brushes.White;
+                    }
+
+                    // Phi cho QR vào đây //
+                    MessageBox.Show("okayChuyenKhoan");
+                    this.Close();
+                }
+                else
+                {
+                    try
+                    {
+                        conn.Open();
+
+                        string tenBan = tableNumber.Text;
+                        string findTableID = "select * from BanAn where TenBan = @tenBan";
+                        int banID = 0;
+
+                        SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
+                        cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
+
+                        using (SqlDataReader read = cmdTableID.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                banID = (int)read["MaBan"];
+                            }
+                        }
+
+                        DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
+                        string tenKH = tenktTxtBox.Text;
+                        string sdtKH = sdtkhTxtBox.Text;
+                        string insertTTKH = @"insert into KhachHang (TenKH, SDTKH) values (@tenKH, @sdtKH)";
+
+                        SqlCommand cmdTTKH = new SqlCommand(insertTTKH, conn);
+                        cmdTTKH.Parameters.AddWithValue("@tenKH", tenKH);
+                        cmdTTKH.Parameters.AddWithValue("@sdtKH", sdtKH);
+
+                        cmdTTKH.ExecuteNonQuery();
+
+                        string findKHID = @"select * from KhachHang where TenKH = @tenKH and SDTKH = @sdtKH";
+                        int khID = 0;
+
+                        SqlCommand cmdKHID = new SqlCommand(findKHID, conn);
+                        cmdKHID.Parameters.AddWithValue("@tenKH", tenKH);
+                        cmdKHID.Parameters.AddWithValue("@sdtKH", sdtKH);
+
+                        using (SqlDataReader read = cmdKHID.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                khID = (int)read["MaKH"];
+                            }
+                        }
+
+                        double tongTien = 0;
+                        foreach (FoodItem item in ListOderBox.Items)
+                        {
+                            tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                        }
+                        int soLuongMon = 0;
+                        foreach (FoodItem item in ListOderBox.Items)
+                        {
+                            soLuongMon += item.Qty;
+                        }
+
+                        string insertString = @"insert into HoaDon
+                    (MaKH, MaBan, TenKH, SDTKH, NgayAn, SoLuongMon, TongTien)
+                    values (@maKH, @maBan, @tenKH, @sdtKH, @ngayAn, @soLuongMon, @tongTien)";
+
+                        SqlCommand cmd = new SqlCommand(insertString, conn);
+                        cmd.Parameters.AddWithValue("@maKH", khID);
+                        cmd.Parameters.AddWithValue("@maBan", banID);
+                        cmd.Parameters.AddWithValue("@tenKH", tenKH);
+                        cmd.Parameters.AddWithValue("@sdtKH", sdtKH);
+                        cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                        cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                        cmd.Parameters.AddWithValue("@tongTien", tongTien);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    finally
+                    {
+                        // Close the connection
+                        if (conn != null)
+                        {
+                            conn.Close();
+                        }
+                        // Hùng: Thanh toán xong xóa trong cái lưu Tạm
+                        ListOderBox.Items.Clear();
+                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
+                        if (i >= 0)
+                        {
+                            tablebooked.LuuHoadon.RemoveAt(i);
+                        }
+                        tablebooked.NutDangChon.Background = Brushes.White;
+                    }
+
+                    // Phi cho window xác nhận vào đây //
+                    MessageBox.Show("okayTienmat");
+                    this.Close();
                 }
             }
             else
             {
-                try
+                if (chuyenkhoanRadioBtn.IsChecked == false && tratienmatRadioBtn.IsChecked == false)
                 {
-                    conn.Open();
-
-                    string tenBan = tableNumber.Text;
-                    string findTableID = "select * from BanAn where TenBan = @tenBan";
-                    int banID = 0;
-
-                    SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
-                    cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
-
-                    using (SqlDataReader read = cmdTableID.ExecuteReader())
+                    MessageBox.Show("dcmm quen bam a");
+                }
+                else if (chuyenkhoanRadioBtn.IsChecked == true)
+                {
+                    try
                     {
-                        while (read.Read())
+                        conn.Open();
+
+                        string tenBan = tableNumber.Text;
+                        string findTableID = "select * from BanAn where TenBan = @tenBan";
+                        int banID = 0;
+
+                        SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
+                        cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
+
+                        using (SqlDataReader read = cmdTableID.ExecuteReader())
                         {
-                            banID = (int)read["MaBan"];
+                            while (read.Read())
+                            {
+                                banID = (int)read["MaBan"];
+                            }
                         }
-                    }
 
-                    DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
-                    double tongTien = 0;
-                    foreach (FoodItem item in ListOderBox.Items)
-                    {
-                        tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                    }
-                    int soLuongMon = 0;
-                    foreach (FoodItem item in ListOderBox.Items)
-                    {
-                        soLuongMon += item.Qty;
-                    }
+                        DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
+                        double tongTien = 0;
+                        foreach (FoodItem item in ListOderBox.Items)
+                        {
+                            tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                        }
+                        int soLuongMon = 0;
+                        foreach (FoodItem item in ListOderBox.Items)
+                        {
+                            soLuongMon += item.Qty;
+                        }
 
-                    string insertString = @"
+                        string insertString = @"
                     insert into HoaDon
                     (MaBan, NgayAn, SoLuongMon, TongTien)
                     values (@maBan, @ngayAn, @soLuongMon, @tongTien)";
 
-                    SqlCommand cmd = new SqlCommand(insertString, conn);
-                    cmd.Parameters.AddWithValue("@maBan", banID);
-                    cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                    cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                    cmd.Parameters.AddWithValue("@tongTien", tongTien);
+                        SqlCommand cmd = new SqlCommand(insertString, conn);
+                        cmd.Parameters.AddWithValue("@maBan", banID);
+                        cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                        cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                        cmd.Parameters.AddWithValue("@tongTien", tongTien);
 
-                    cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
+                    }
+                    finally
+                    {
+                        // Close the connection
+                        if (conn != null)
+                        {
+                            conn.Close();
+                        }
+                        // Hùng: Thanh toán xong xóa trong cái lưu Tạm
+                        ListOderBox.Items.Clear();
+                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
+                        if (i >= 0)
+                        {
+                            tablebooked.LuuHoadon.RemoveAt(i);
+                        }
+                        tablebooked.NutDangChon.Background = Brushes.White;
+                    }
 
-                    if (chuyenkhoanRadioBtn.IsChecked == false && tratienmatRadioBtn.IsChecked == false)
-                    {
-                        MessageBox.Show("dcmm quen bam a");
-                    }
-                    else if (chuyenkhoanRadioBtn.IsChecked == true)
-                    {
-                        // Phi cho QR vào đây //
-                        MessageBox.Show("okayChuyenKhoan");
-                        this.Close();
-                    }
-                    else
-                    {
-                        // Phi cho window xác nhận vào đây //
-                        MessageBox.Show("okayTienmat");
-                        this.Close();
-                    }
+                    // Phi cho QR vào đây //
+                    MessageBox.Show("okayChuyenKhoan");
+                    this.Close();
                 }
-                finally
+                else
                 {
-                    // Close the connection
-                    if (conn != null)
+                    try
                     {
-                        conn.Close();
+                        conn.Open();
+
+                        string tenBan = tableNumber.Text;
+                        string findTableID = "select * from BanAn where TenBan = @tenBan";
+                        int banID = 0;
+
+                        SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
+                        cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
+
+                        using (SqlDataReader read = cmdTableID.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                banID = (int)read["MaBan"];
+                            }
+                        }
+
+                        DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
+                        double tongTien = 0;
+                        foreach (FoodItem item in ListOderBox.Items)
+                        {
+                            tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
+                        }
+                        int soLuongMon = 0;
+                        foreach (FoodItem item in ListOderBox.Items)
+                        {
+                            soLuongMon += item.Qty;
+                        }
+
+                        string insertString = @"
+                    insert into HoaDon
+                    (MaBan, NgayAn, SoLuongMon, TongTien)
+                    values (@maBan, @ngayAn, @soLuongMon, @tongTien)";
+
+                        SqlCommand cmd = new SqlCommand(insertString, conn);
+                        cmd.Parameters.AddWithValue("@maBan", banID);
+                        cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
+                        cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
+                        cmd.Parameters.AddWithValue("@tongTien", tongTien);
+
+                        cmd.ExecuteNonQuery();
                     }
-                    // Hùng: Thanh toán xong xóa trong cái lưu Tạm
-                    ListOderBox.Items.Clear();
-                    int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
-                    if (i >= 0)
+                    finally
                     {
-                        tablebooked.LuuHoadon.RemoveAt(i);
+                        // Close the connection
+                        if (conn != null)
+                        {
+                            conn.Close();
+                        }
+                        // Hùng: Thanh toán xong xóa trong cái lưu Tạm
+                        ListOderBox.Items.Clear();
+                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
+                        if (i >= 0)
+                        {
+                            tablebooked.LuuHoadon.RemoveAt(i);
+                        }
+                        tablebooked.NutDangChon.Background = Brushes.White;
                     }
-                    tablebooked.NutDangChon.Background = Brushes.White;
+
+                    // Phi cho window xác nhận vào đây //
+                    MessageBox.Show("okayTienmat");
+                    this.Close();
                 }
             }
         }
     }
-
 }
