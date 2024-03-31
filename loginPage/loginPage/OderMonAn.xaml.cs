@@ -54,7 +54,7 @@ namespace loginPage
                             TextBlock dynamicTxtTenMonAn = new TextBlock();
                             TextBlock dynamicTxtGiaMonAn = new TextBlock();
                             Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/diet.png",i); ///Images/{0}.jpg
+                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i); ///Images/diet.png
                             BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL,UriKind.Relative));
                             dynamicImg.Source=foodImg;
                             dynamicImg.Width= 150;
@@ -120,7 +120,7 @@ namespace loginPage
                             TextBlock dynamicTxtTenMonAn = new TextBlock();
                             TextBlock dynamicTxtGiaMonAn = new TextBlock();
                             Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/diet.png", i);
+                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i);
                             BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
                             dynamicImg.Source = foodImg;
                             dynamicImg.Width = 150;
@@ -186,7 +186,7 @@ namespace loginPage
                             TextBlock dynamicTxtTenMonAn = new TextBlock();
                             TextBlock dynamicTxtGiaMonAn = new TextBlock();
                             Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/diet.png", i);
+                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i);
                             BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
                             dynamicImg.Source = foodImg;
                             dynamicImg.Width = 150;
@@ -252,7 +252,7 @@ namespace loginPage
                             TextBlock dynamicTxtTenMonAn = new TextBlock();
                             TextBlock dynamicTxtGiaMonAn = new TextBlock();
                             Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/diet.png", i);
+                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i);
                             BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
                             dynamicImg.Source = foodImg;
                             dynamicImg.Width = 150;
@@ -318,7 +318,7 @@ namespace loginPage
                             TextBlock dynamicTxtTenMonAn = new TextBlock();
                             TextBlock dynamicTxtGiaMonAn = new TextBlock();
                             Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/diet.png", i);
+                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i);
                             BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
                             dynamicImg.Source = foodImg;
                             dynamicImg.Width = 150;
