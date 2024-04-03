@@ -189,6 +189,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BanAn.cs" />
+    <Compile Include="BanAnDAO.cs" />
     <Compile Include="doanhthu.xaml.cs">
       <DependentUpon>doanhthu.xaml</DependentUpon>
     </Compile>
@@ -196,6 +198,8 @@
     <Compile Include="HoaDon.cs" />
     <Compile Include="HoaDonDAO.cs" />
     <Compile Include="LuuTamThoi.cs" />
+    <Compile Include="MonAn.cs" />
+    <Compile Include="MonAnDAO.cs" />
     <Compile Include="OderMonAn.xaml.cs">
       <DependentUpon>OderMonAn.xaml</DependentUpon>
     </Compile>

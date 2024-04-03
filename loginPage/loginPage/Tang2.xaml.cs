@@ -30,52 +30,10 @@ namespace loginPage
         public Tang2()
         {
             InitializeComponent();
-            int maBanAn = 0;
-            SqlConnection conn = new SqlConnection(connectstring);
-            SqlCommand command = new SqlCommand("select * from BanAn", conn);
-            conn.Open();
 
+            BanAnDAO banAnDAO = new BanAnDAO();
 
-            using (SqlDataReader read = command.ExecuteReader())
-            {
-                while (read.Read())
-                {
-                    maBanAn = (int)read["MaBan"];
-                    for (int i = 1; i <= 40; i++)
-                    {
-
-                        Button dynamicBtn = new Button();
-                        StackPanel dynamicStp = new StackPanel();
-                        TextBlock dynamicTxtTenBanAn = new TextBlock();
-
-                        int row = (i - 1) / 5;
-                        int column = (i - 1) % 5;
-
-                        if (maBanAn == i+20 )
-                        {
-                            dynamicTxtTenBanAn.Text = read["TenBan"].ToString();
-                            dynamicTxtTenBanAn.HorizontalAlignment = HorizontalAlignment.Center;
-                            dynamicTxtTenBanAn.VerticalAlignment = VerticalAlignment.Center;
-                            dynamicTxtTenBanAn.FontSize = 30;
-
-                            dynamicStp.Children.Add(dynamicTxtTenBanAn);
-
-                            dynamicBtn.Background = Brushes.White;
-                            tablebooked.MauKhoiTao(dynamicTxtTenBanAn, dynamicBtn);
-                            dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
-                            dynamicBtn.Content = dynamicStp;
-                            dynamicBtn.Style = (Style)FindResource("buttondes");
-                            dynamicBtn.Click += DynamicBtn_Click;
-
-                            Grid.SetColumn(dynamicBtn, column);
-                            Grid.SetRow(dynamicBtn, row);
-
-                            gridTable1.Children.Add(dynamicBtn);
-                        }
-                    }
-
-                }
-            }
+            banAnDAO.getBanAnTang2(gridTable2);
         }
 
         protected virtual void OnDynamicButtonClicked(EventArgs e)

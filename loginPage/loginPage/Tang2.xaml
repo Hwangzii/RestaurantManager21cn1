@@ -9,7 +9,7 @@
     <Grid>
         <ScrollViewer>
             <StackPanel VerticalAlignment="Top">
-                <Grid x:Name="gridTable1" HorizontalAlignment="Center" >
+                <Grid x:Name="gridTable2" HorizontalAlignment="Center" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="280"/>
                         <ColumnDefinition Width="280"/>

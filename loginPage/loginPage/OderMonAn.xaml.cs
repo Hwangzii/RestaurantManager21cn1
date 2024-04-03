@@ -37,332 +37,32 @@ namespace loginPage
         {
             if (allTabItem.IsSelected)
             {
-                int maMonAn = 0;
-                SqlConnection conn = new SqlConnection(connectstring);
-                SqlCommand command = new SqlCommand("SELECT * FROM MonAn", conn);
-                conn.Open();
-                using(SqlDataReader read = command.ExecuteReader())
-                {
-                    while (read.Read())
-                    {
-                        maMonAn = (int)read["MaMonAn"];
-                        for (int i = 1; i <= 50; i++)
-                        {
-                            Button dynamicBtn = new Button();
-                            StackPanel dynamicStp = new StackPanel();
-                            Border dynamicBorder = new Border();
-                            TextBlock dynamicTxtTenMonAn = new TextBlock();
-                            TextBlock dynamicTxtGiaMonAn = new TextBlock();
-                            Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i); ///Images/diet.png
-                            BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL,UriKind.Relative));
-                            dynamicImg.Source=foodImg;
-                            dynamicImg.Width= 150;
-                            dynamicImg.Height = 150;
-
-                            int row = (i-1)/5;
-                            int column = (i-1)%5;
-
-                            if (maMonAn == i)
-                            {
-                                dynamicTxtTenMonAn.Text = i.ToString() + ".  " + read["TenMon"].ToString();
-                                dynamicTxtTenMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtTenMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtTenMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtTenMonAn.FontSize = 20;
-                                dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
-
-                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";                               
-                                dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtGiaMonAn.FontSize = 16;
-                                dynamicTxtGiaMonAn.Foreground = Brushes.Gray;
-                                dynamicTxtGiaMonAn.TextWrapping = TextWrapping.WrapWithOverflow;
-
-                                dynamicStp.Children.Add(dynamicBorder);
-                                dynamicStp.Children.Add(dynamicImg);
-                                dynamicStp.Children.Add(dynamicTxtTenMonAn);
-                                dynamicStp.Children.Add(dynamicTxtGiaMonAn);
-
-                                dynamicBtn.Background = Brushes.White;
-                                dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
-                                dynamicBtn.Content = dynamicStp;
-                                dynamicBtn.Style = (Style)FindResource("buttondes");
-                                dynamicBtn.Click += DynamicBtn_Click;
-
-                                Grid.SetColumn(dynamicBtn, column);
-                                Grid.SetRow(dynamicBtn, row);
-
-                                allGrid.Children.Add(dynamicBtn);
-                            }
-                        }
-                    }
-                }
+                MonAnDAO monAnDAO = new MonAnDAO();
+                monAnDAO.getAllMonAn(allGrid, allTabItem);
             }
 
             else if (monNuongTabItem.IsSelected)
             {
-                int maMonAn = 0;
-                SqlConnection conn = new SqlConnection(connectstring);
-                SqlCommand command = new SqlCommand("SELECT * FROM MonAn", conn);
-                conn.Open();
-                using (SqlDataReader read = command.ExecuteReader())
-                {
-                    while (read.Read())
-                    {
-                        maMonAn = (int)read["MaMonAn"];
-                        for (int i = 1; i <= 10; i++)
-                        {
-                            Button dynamicBtn = new Button();
-                            StackPanel dynamicStp = new StackPanel();
-                            Border dynamicBorder = new Border();
-                            TextBlock dynamicTxtTenMonAn = new TextBlock();
-                            TextBlock dynamicTxtGiaMonAn = new TextBlock();
-                            Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i);
-                            BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
-                            dynamicImg.Source = foodImg;
-                            dynamicImg.Width = 150;
-                            dynamicImg.Height = 150;
-
-                            int row = (i - 1) / 5;
-                            int column = (i - 1) % 5;
-
-                            if (maMonAn == i)
-                            {
-                                dynamicTxtTenMonAn.Text = i.ToString() + ".  " + read["TenMon"].ToString();
-                                dynamicTxtTenMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtTenMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtTenMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtTenMonAn.FontSize = 20;
-                                dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
-
-                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";
-                                dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtGiaMonAn.FontSize = 16;
-                                dynamicTxtGiaMonAn.Foreground = Brushes.Gray;
-                                dynamicTxtGiaMonAn.TextWrapping = TextWrapping.WrapWithOverflow;
-
-                                dynamicStp.Children.Add(dynamicBorder);
-                                dynamicStp.Children.Add(dynamicImg);
-                                dynamicStp.Children.Add(dynamicTxtTenMonAn);
-                                dynamicStp.Children.Add(dynamicTxtGiaMonAn);
-
-                                dynamicBtn.Background = Brushes.White;
-                                dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
-                                dynamicBtn.Content = dynamicStp;
-                                dynamicBtn.Style = (Style)FindResource("buttondes");
-                                dynamicBtn.Click += DynamicBtn_Click;
-
-                                Grid.SetColumn(dynamicBtn, column);
-                                Grid.SetRow(dynamicBtn, row);
-
-                                monNuongGrid.Children.Add(dynamicBtn);
-                            }
-                        }
-                    }
-                }
+                MonAnDAO monAnDAO = new MonAnDAO();
+                monAnDAO.getMonNuong(monNuongGrid, monNuongTabItem);
             }
 
             else if (monLauTabItem.IsSelected)
             {
-                int maMonAn = 0;
-                SqlConnection conn = new SqlConnection(connectstring);
-                SqlCommand command = new SqlCommand("SELECT * FROM MonAn", conn);
-                conn.Open();
-                using (SqlDataReader read = command.ExecuteReader())
-                {
-                    while (read.Read())
-                    {
-                        maMonAn = (int)read["MaMonAn"];
-                        for (int i = 11; i <= 20; i++)
-                        {
-                            Button dynamicBtn = new Button();
-                            StackPanel dynamicStp = new StackPanel();
-                            Border dynamicBorder = new Border();
-                            TextBlock dynamicTxtTenMonAn = new TextBlock();
-                            TextBlock dynamicTxtGiaMonAn = new TextBlock();
-                            Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i);
-                            BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
-                            dynamicImg.Source = foodImg;
-                            dynamicImg.Width = 150;
-                            dynamicImg.Height = 150;
-
-                            int row = (i - 11) / 5;
-                            int column = (i - 1) % 5;
-
-                            if (maMonAn == i)
-                            {
-                                dynamicTxtTenMonAn.Text = i.ToString() + ".  " + read["TenMon"].ToString();
-                                dynamicTxtTenMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtTenMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtTenMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtTenMonAn.FontSize = 20;
-                                dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
-
-                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";
-                                dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtGiaMonAn.FontSize = 16;
-                                dynamicTxtGiaMonAn.Foreground = Brushes.Gray;
-                                dynamicTxtGiaMonAn.TextWrapping = TextWrapping.WrapWithOverflow;
-
-                                dynamicStp.Children.Add(dynamicBorder);
-                                dynamicStp.Children.Add(dynamicImg);
-                                dynamicStp.Children.Add(dynamicTxtTenMonAn);
-                                dynamicStp.Children.Add(dynamicTxtGiaMonAn);
-
-                                dynamicBtn.Background = Brushes.White;
-                                dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
-                                dynamicBtn.Content = dynamicStp;
-                                dynamicBtn.Style = (Style)FindResource("buttondes");
-                                dynamicBtn.Click += DynamicBtn_Click;
-
-                                Grid.SetColumn(dynamicBtn, column);
-                                Grid.SetRow(dynamicBtn, row);
-
-                                monLauGrid.Children.Add(dynamicBtn);
-                            }
-                        }
-                    }
-                }
+                MonAnDAO monAnDAO = new MonAnDAO();
+                monAnDAO.getMonLau(monLauGrid, monLauTabItem);
             }
 
             else if (monNongTabItem.IsSelected)
             {
-                int maMonAn = 0;
-                SqlConnection conn = new SqlConnection(connectstring);
-                SqlCommand command = new SqlCommand("SELECT * FROM MonAn", conn);
-                conn.Open();
-                using (SqlDataReader read = command.ExecuteReader())
-                {
-                    while (read.Read())
-                    {
-                        maMonAn = (int)read["MaMonAn"];
-                        for (int i = 21; i <= 30; i++)
-                        {
-                            Button dynamicBtn = new Button();
-                            StackPanel dynamicStp = new StackPanel();
-                            Border dynamicBorder = new Border();
-                            TextBlock dynamicTxtTenMonAn = new TextBlock();
-                            TextBlock dynamicTxtGiaMonAn = new TextBlock();
-                            Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i);
-                            BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
-                            dynamicImg.Source = foodImg;
-                            dynamicImg.Width = 150;
-                            dynamicImg.Height = 150;
-
-                            int row = (i - 21) / 5;
-                            int column = (i - 1) % 5;
-
-                            if (maMonAn == i)
-                            {
-                                dynamicTxtTenMonAn.Text = i.ToString() + ".  " + read["TenMon"].ToString();
-                                dynamicTxtTenMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtTenMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtTenMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtTenMonAn.FontSize = 20;
-                                dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
-
-                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";
-                                dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtGiaMonAn.FontSize = 16;
-                                dynamicTxtGiaMonAn.Foreground = Brushes.Gray;
-                                dynamicTxtGiaMonAn.TextWrapping = TextWrapping.WrapWithOverflow;
-
-                                dynamicStp.Children.Add(dynamicBorder);
-                                dynamicStp.Children.Add(dynamicImg);
-                                dynamicStp.Children.Add(dynamicTxtTenMonAn);
-                                dynamicStp.Children.Add(dynamicTxtGiaMonAn);
-
-                                dynamicBtn.Background = Brushes.White;
-                                dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
-                                dynamicBtn.Content = dynamicStp;
-                                dynamicBtn.Style = (Style)FindResource("buttondes");
-                                dynamicBtn.Click += DynamicBtn_Click;
-
-                                Grid.SetColumn(dynamicBtn, column);
-                                Grid.SetRow(dynamicBtn, row);
-
-                                monNongGrid.Children.Add(dynamicBtn);
-                            }
-                        }
-                    }
-                }
+                MonAnDAO monAnDAO = new MonAnDAO();
+                monAnDAO.getMonNong(monNongGrid, monNongTabItem);
             }
 
             else if (doUongTabItem.IsSelected)
             {
-                int maMonAn = 0;
-                SqlConnection conn = new SqlConnection(connectstring);
-                SqlCommand command = new SqlCommand("SELECT * FROM MonAn", conn);
-                conn.Open();
-                using (SqlDataReader read = command.ExecuteReader())
-                {
-                    while (read.Read())
-                    {
-                        maMonAn = (int)read["MaMonAn"];
-                        for (int i = 31; i <= 40; i++)
-                        {
-                            Button dynamicBtn = new Button();
-                            StackPanel dynamicStp = new StackPanel();
-                            Border dynamicBorder = new Border();
-                            TextBlock dynamicTxtTenMonAn = new TextBlock();
-                            TextBlock dynamicTxtGiaMonAn = new TextBlock();
-                            Image dynamicImg = new Image();
-                            string foodImageURL = string.Format(@"/Images/{0}.jpg", i);
-                            BitmapImage foodImg = new BitmapImage(new Uri(foodImageURL, UriKind.Relative));
-                            dynamicImg.Source = foodImg;
-                            dynamicImg.Width = 150;
-                            dynamicImg.Height = 150;
-
-                            int row = (i - 31) / 5;
-                            int column = (i - 1) % 5;
-
-                            if (maMonAn == i)
-                            {
-                                dynamicTxtTenMonAn.Text = i.ToString() + ".  " + read["TenMon"].ToString();
-                                dynamicTxtTenMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtTenMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtTenMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtTenMonAn.FontSize = 20;
-                                dynamicTxtTenMonAn.TextWrapping = TextWrapping.Wrap;
-
-                                dynamicTxtGiaMonAn.Text = ((int)read["GiaTien"]).ToString("#,##") + " vnđ";
-                                dynamicTxtGiaMonAn.HorizontalAlignment = HorizontalAlignment.Center;
-                                dynamicTxtGiaMonAn.VerticalAlignment = VerticalAlignment.Bottom;
-                                dynamicTxtGiaMonAn.Margin = new Thickness(0, 0, 0, 0);
-                                dynamicTxtGiaMonAn.FontSize = 16;
-                                dynamicTxtGiaMonAn.Foreground = Brushes.Gray;
-                                dynamicTxtGiaMonAn.TextWrapping = TextWrapping.WrapWithOverflow;
-
-                                dynamicStp.Children.Add(dynamicBorder);
-                                dynamicStp.Children.Add(dynamicImg);
-                                dynamicStp.Children.Add(dynamicTxtTenMonAn);
-                                dynamicStp.Children.Add(dynamicTxtGiaMonAn);
-
-                                dynamicBtn.Background = Brushes.White;
-                                dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
-                                dynamicBtn.Content = dynamicStp;
-                                dynamicBtn.Style = (Style)FindResource("buttondes");
-                                dynamicBtn.Click += DynamicBtn_Click;
-
-                                Grid.SetColumn(dynamicBtn, column);
-                                Grid.SetRow(dynamicBtn, row);
-
-                                doUongGrid.Children.Add(dynamicBtn);
-                            }
-                        }
-                    }
-                }
+                MonAnDAO monAnDAO = new MonAnDAO();
+                monAnDAO.getDoUong(doUongGrid, doUongTabItem);
             }
         }
 
@@ -640,6 +340,7 @@ namespace loginPage
 
         // ============ Ngọc: Code nút thanh toán phần nhập ttkh và chọn hình thức thanh toán,
         // ============ lưu hóa đơn vào csdl ============ //
+        // ============ Hùng: Code phần xóa dữ liệu tạm thời sau khi thanh toán ============ //
         private void thanhtoanBtn_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection conn = new SqlConnection(connectstring);
@@ -656,98 +357,12 @@ namespace loginPage
             {
                 if (chuyenkhoanRadioBtn.IsChecked == false && tratienmatRadioBtn.IsChecked == false)
                 {
-                    MessageBox.Show("dcmm quen bam a");
+                    MessageBox.Show("Đề nghị chọn phương thức thanh toán");
                 }
                 else if (chuyenkhoanRadioBtn.IsChecked == true)
                 {
-                    try
-                    {
-                        conn.Open();
-
-                        string tenBan = tableNumber.Text;
-                        string findTableID = "select * from BanAn where TenBan = @tenBan";
-                        int banID = 0;
-
-                        SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
-                        cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
-
-                        using (SqlDataReader read = cmdTableID.ExecuteReader())
-                        {
-                            while (read.Read())
-                            {
-                                banID = (int)read["MaBan"];
-                            }
-                        }
-
-                        DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
-                        string tenKH = tenktTxtBox.Text;
-                        string sdtKH = sdtkhTxtBox.Text;
-                        string insertTTKH = @"insert into KhachHang (TenKH, SDTKH) values (@tenKH, @sdtKH)";
-
-                        SqlCommand cmdTTKH = new SqlCommand(insertTTKH, conn);
-                        cmdTTKH.Parameters.AddWithValue("@tenKH", tenKH);
-                        cmdTTKH.Parameters.AddWithValue("@sdtKH", sdtKH);
-
-                        cmdTTKH.ExecuteNonQuery();
-
-                        string findKHID = @"select * from KhachHang where TenKH = @tenKH and SDTKH = @sdtKH";
-                        int khID = 0;
-
-                        SqlCommand cmdKHID = new SqlCommand(findKHID, conn);
-                        cmdKHID.Parameters.AddWithValue("@tenKH", tenKH);
-                        cmdKHID.Parameters.AddWithValue("@sdtKH", sdtKH);
-
-                        using (SqlDataReader read = cmdKHID.ExecuteReader())
-                        {
-                            while (read.Read())
-                            {
-                                khID = (int)read["MaKH"];
-                            }
-                        }
-
-                        double tongTien = 0;
-                        foreach (FoodItem item in ListOderBox.Items)
-                        {
-                            tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                        }
-                        int soLuongMon = 0;
-                        foreach (FoodItem item in ListOderBox.Items)
-                        {
-                            soLuongMon += item.Qty;
-                        }
-
-                        string insertString = @"insert into HoaDon
-                    (MaKH, MaBan, TenKH, SDTKH, NgayAn, SoLuongMon, TongTien)
-                    values (@maKH, @maBan, @tenKH, @sdtKH, @ngayAn, @soLuongMon, @tongTien)";
-
-                        SqlCommand cmd = new SqlCommand(insertString, conn);
-                        cmd.Parameters.AddWithValue("@maKH", khID);
-                        cmd.Parameters.AddWithValue("@maBan", banID);
-                        cmd.Parameters.AddWithValue("@tenKH", tenKH);
-                        cmd.Parameters.AddWithValue("@sdtKH", sdtKH);
-                        cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                        cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                        cmd.Parameters.AddWithValue("@tongTien", tongTien);
-
-                        cmd.ExecuteNonQuery();
-
-                    }
-                    finally
-                    {
-                        // Close the connection
-                        if (conn != null)
-                        {
-                            conn.Close();
-                        }
-                        // Hùng: Thanh toán xong xóa trong cái lưu Tạm
-                        ListOderBox.Items.Clear();
-                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
-                        if (i >= 0)
-                        {
-                            tablebooked.LuuHoadon.RemoveAt(i);
-                        }
-                        tablebooked.NutDangChon.Background = Brushes.White;
-                    }
+                    HoaDonDAO hoaDonDAO = new HoaDonDAO();
+                    hoaDonDAO.insertHoaDonvaKhachHangChuyenKhoan(tableNumber, Thoigian, tenktTxtBox, sdtkhTxtBox, ListOderBox);
 
                     // Phi cho QR vào đây //
                     MessageBox.Show("okayChuyenKhoan");
@@ -755,94 +370,8 @@ namespace loginPage
                 }
                 else
                 {
-                    try
-                    {
-                        conn.Open();
-
-                        string tenBan = tableNumber.Text;
-                        string findTableID = "select * from BanAn where TenBan = @tenBan";
-                        int banID = 0;
-
-                        SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
-                        cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
-
-                        using (SqlDataReader read = cmdTableID.ExecuteReader())
-                        {
-                            while (read.Read())
-                            {
-                                banID = (int)read["MaBan"];
-                            }
-                        }
-
-                        DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
-                        string tenKH = tenktTxtBox.Text;
-                        string sdtKH = sdtkhTxtBox.Text;
-                        string insertTTKH = @"insert into KhachHang (TenKH, SDTKH) values (@tenKH, @sdtKH)";
-
-                        SqlCommand cmdTTKH = new SqlCommand(insertTTKH, conn);
-                        cmdTTKH.Parameters.AddWithValue("@tenKH", tenKH);
-                        cmdTTKH.Parameters.AddWithValue("@sdtKH", sdtKH);
-
-                        cmdTTKH.ExecuteNonQuery();
-
-                        string findKHID = @"select * from KhachHang where TenKH = @tenKH and SDTKH = @sdtKH";
-                        int khID = 0;
-
-                        SqlCommand cmdKHID = new SqlCommand(findKHID, conn);
-                        cmdKHID.Parameters.AddWithValue("@tenKH", tenKH);
-                        cmdKHID.Parameters.AddWithValue("@sdtKH", sdtKH);
-
-                        using (SqlDataReader read = cmdKHID.ExecuteReader())
-                        {
-                            while (read.Read())
-                            {
-                                khID = (int)read["MaKH"];
-                            }
-                        }
-
-                        double tongTien = 0;
-                        foreach (FoodItem item in ListOderBox.Items)
-                        {
-                            tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                        }
-                        int soLuongMon = 0;
-                        foreach (FoodItem item in ListOderBox.Items)
-                        {
-                            soLuongMon += item.Qty;
-                        }
-
-                        string insertString = @"insert into HoaDon
-                    (MaKH, MaBan, TenKH, SDTKH, NgayAn, SoLuongMon, TongTien)
-                    values (@maKH, @maBan, @tenKH, @sdtKH, @ngayAn, @soLuongMon, @tongTien)";
-
-                        SqlCommand cmd = new SqlCommand(insertString, conn);
-                        cmd.Parameters.AddWithValue("@maKH", khID);
-                        cmd.Parameters.AddWithValue("@maBan", banID);
-                        cmd.Parameters.AddWithValue("@tenKH", tenKH);
-                        cmd.Parameters.AddWithValue("@sdtKH", sdtKH);
-                        cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                        cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                        cmd.Parameters.AddWithValue("@tongTien", tongTien);
-
-                        cmd.ExecuteNonQuery();
-
-                    }
-                    finally
-                    {
-                        // Close the connection
-                        if (conn != null)
-                        {
-                            conn.Close();
-                        }
-                        // Hùng: Thanh toán xong xóa trong cái lưu Tạm
-                        ListOderBox.Items.Clear();
-                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
-                        if (i >= 0)
-                        {
-                            tablebooked.LuuHoadon.RemoveAt(i);
-                        }
-                        tablebooked.NutDangChon.Background = Brushes.White;
-                    }
+                    HoaDonDAO hoaDonDAO = new HoaDonDAO();
+                    hoaDonDAO.insertHoaDonvaKhachHangChuyenKhoan(tableNumber, Thoigian, tenktTxtBox, sdtkhTxtBox, ListOderBox);
 
                     // Phi cho window xác nhận vào đây //
                     MessageBox.Show("okayTienmat");
@@ -853,70 +382,12 @@ namespace loginPage
             {
                 if (chuyenkhoanRadioBtn.IsChecked == false && tratienmatRadioBtn.IsChecked == false)
                 {
-                    MessageBox.Show("dcmm quen bam a");
+                    MessageBox.Show("Đề nghị chọn phương thức thanh toán");
                 }
                 else if (chuyenkhoanRadioBtn.IsChecked == true)
                 {
-                    try
-                    {
-                        conn.Open();
-
-                        string tenBan = tableNumber.Text;
-                        string findTableID = "select * from BanAn where TenBan = @tenBan";
-                        int banID = 0;
-
-                        SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
-                        cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
-
-                        using (SqlDataReader read = cmdTableID.ExecuteReader())
-                        {
-                            while (read.Read())
-                            {
-                                banID = (int)read["MaBan"];
-                            }
-                        }
-
-                        DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
-                        double tongTien = 0;
-                        foreach (FoodItem item in ListOderBox.Items)
-                        {
-                            tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                        }
-                        int soLuongMon = 0;
-                        foreach (FoodItem item in ListOderBox.Items)
-                        {
-                            soLuongMon += item.Qty;
-                        }
-
-                        string insertString = @"
-                    insert into HoaDon
-                    (MaBan, NgayAn, SoLuongMon, TongTien)
-                    values (@maBan, @ngayAn, @soLuongMon, @tongTien)";
-
-                        SqlCommand cmd = new SqlCommand(insertString, conn);
-                        cmd.Parameters.AddWithValue("@maBan", banID);
-                        cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                        cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                        cmd.Parameters.AddWithValue("@tongTien", tongTien);
-
-                        cmd.ExecuteNonQuery();
-                    }
-                    finally
-                    {
-                        // Close the connection
-                        if (conn != null)
-                        {
-                            conn.Close();
-                        }
-                        // Hùng: Thanh toán xong xóa trong cái lưu Tạm
-                        ListOderBox.Items.Clear();
-                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
-                        if (i >= 0)
-                        {
-                            tablebooked.LuuHoadon.RemoveAt(i);
-                        }
-                        tablebooked.NutDangChon.Background = Brushes.White;
-                    }
+                    HoaDonDAO hoaDonDAO = new HoaDonDAO();
+                    hoaDonDAO.insertHoaDonvaKhachHangTraTienMat(tableNumber, Thoigian, tenktTxtBox, sdtkhTxtBox, ListOderBox);
 
                     // Phi cho QR vào đây //
                     MessageBox.Show("okayChuyenKhoan");
@@ -924,66 +395,8 @@ namespace loginPage
                 }
                 else
                 {
-                    try
-                    {
-                        conn.Open();
-
-                        string tenBan = tableNumber.Text;
-                        string findTableID = "select * from BanAn where TenBan = @tenBan";
-                        int banID = 0;
-
-                        SqlCommand cmdTableID = new SqlCommand(findTableID, conn);
-                        cmdTableID.Parameters.AddWithValue("@tenBan", tenBan);
-
-                        using (SqlDataReader read = cmdTableID.ExecuteReader())
-                        {
-                            while (read.Read())
-                            {
-                                banID = (int)read["MaBan"];
-                            }
-                        }
-
-                        DateTime ngayAn = DateTime.Parse(Thoigian.Text.Replace("Ngày: ", ""));
-                        double tongTien = 0;
-                        foreach (FoodItem item in ListOderBox.Items)
-                        {
-                            tongTien += double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty;
-                        }
-                        int soLuongMon = 0;
-                        foreach (FoodItem item in ListOderBox.Items)
-                        {
-                            soLuongMon += item.Qty;
-                        }
-
-                        string insertString = @"
-                    insert into HoaDon
-                    (MaBan, NgayAn, SoLuongMon, TongTien)
-                    values (@maBan, @ngayAn, @soLuongMon, @tongTien)";
-
-                        SqlCommand cmd = new SqlCommand(insertString, conn);
-                        cmd.Parameters.AddWithValue("@maBan", banID);
-                        cmd.Parameters.AddWithValue("@ngayAn", ngayAn);
-                        cmd.Parameters.AddWithValue("@soLuongMon", soLuongMon);
-                        cmd.Parameters.AddWithValue("@tongTien", tongTien);
-
-                        cmd.ExecuteNonQuery();
-                    }
-                    finally
-                    {
-                        // Close the connection
-                        if (conn != null)
-                        {
-                            conn.Close();
-                        }
-                        // Hùng: Thanh toán xong xóa trong cái lưu Tạm
-                        ListOderBox.Items.Clear();
-                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
-                        if (i >= 0)
-                        {
-                            tablebooked.LuuHoadon.RemoveAt(i);
-                        }
-                        tablebooked.NutDangChon.Background = Brushes.White;
-                    }
+                    HoaDonDAO hoaDonDAO = new HoaDonDAO();
+                    hoaDonDAO.insertHoaDonvaKhachHangTraTienMat(tableNumber, Thoigian, tenktTxtBox, sdtkhTxtBox, ListOderBox);
 
                     // Phi cho window xác nhận vào đây //
                     MessageBox.Show("okayTienmat");
