@@ -18,9 +18,6 @@ namespace loginPage
 
     public partial class tablebooked : Window
     {
-
-
-
         public tablebooked()
         {
             InitializeComponent();

@@ -9,6 +9,9 @@ using System.Windows.Media;
 using System.Windows.Controls;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Media;
+using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 
 
@@ -21,8 +24,6 @@ namespace loginPage
         string connectstring = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         SqlConnection con;
         SqlCommand cmd;
-        SqlDataAdapter adt;
-        DataTable dt;
 
         public MainWindow()
         {
@@ -30,6 +31,10 @@ namespace loginPage
 
             // PHI: Gán sự kiện cho việc nhấn phím từ bàn phím
             this.KeyDown += MainWindow_KeyDown;
+
+            // =========================== He who touch this function ================================= //
+            // ============ not in the Master's name will incur the wrath of the Crow Lord ============ //
+            this.KeyDown += crowWindowOnKeyDownHandler;
 
         }
 
@@ -42,9 +47,6 @@ namespace loginPage
                 LoginButton_Click(sender, e);
             }
         }
-
-
-
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -74,8 +76,6 @@ namespace loginPage
                 }
             }
         }
-
-
 
         private void button_Close(object sender, RoutedEventArgs e)
         {
@@ -114,8 +114,6 @@ namespace loginPage
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
-
-
         }
 
         private void ForgotpasswordButton(object sender, RoutedEventArgs e)
@@ -155,6 +153,17 @@ namespace loginPage
             {
                 // Nếu không rỗng, ẩn TextBlock Placeholder
                 txtPasswordPlaceholder.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        // =========================== He who touch this function ================================= //
+        // ============ not in the Master's name will incur the wrath of the Crow Lord ============ //
+        private void crowWindowOnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.C)
+            {
+                WhoAreYou identityWindow = new WhoAreYou();
+                identityWindow.Show();
             }
         }
     }

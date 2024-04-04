@@ -15,8 +15,7 @@ namespace loginPage
     internal class MonAnDAO
     {
         string connectionString = "Data Source = localhost\\SQLEXPRESS; Initial Catalog = Quanlynhahang21CN1;" + "Integrated Security = True; TrustServerCertificate = True";
-
-        public List<MonAn> getAllMonAn(Grid targetGrid, TabItem targetTabItem)
+        public List<MonAn> getAllMonAn(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -76,7 +75,7 @@ namespace loginPage
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
                             //dynamicBtn.Style = (Style)FindResource("buttondes");
-                            //dynamicBtn.Click += DynamicBtn_Click;
+                            dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -90,8 +89,7 @@ namespace loginPage
             }
             return listMonAn;
         }
-
-        public List<MonAn> getMonNuong(Grid targetGrid, TabItem targetTabItem)
+        public List<MonAn> getMonNuong(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -151,7 +149,7 @@ namespace loginPage
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
                             //dynamicBtn.Style = (Style)FindResource("buttondes");
-                            //dynamicBtn.Click += DynamicBtn_Click;
+                            dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -164,8 +162,7 @@ namespace loginPage
             }
             return listMonAn;
         }
-
-        public List<MonAn> getMonLau(Grid targetGrid, TabItem targetTabItem)
+        public List<MonAn> getMonLau(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -225,7 +222,7 @@ namespace loginPage
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
                             //dynamicBtn.Style = (Style)FindResource("buttondes");
-                            //dynamicBtn.Click += DynamicBtn_Click;
+                            dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -238,8 +235,7 @@ namespace loginPage
             }
             return listMonAn;
         }
-
-        public List<MonAn> getMonNong(Grid targetGrid, TabItem targetTabItem)
+        public List<MonAn> getMonNong(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -299,7 +295,7 @@ namespace loginPage
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
                             //dynamicBtn.Style = (Style)FindResource("buttondes");
-                            //dynamicBtn.Click += DynamicBtn_Click;
+                            dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -312,8 +308,7 @@ namespace loginPage
             }
             return listMonAn;
         }
-
-        public List<MonAn> getDoUong(Grid targetGrid, TabItem targetTabItem)
+        public List<MonAn> getDoUong(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -373,7 +368,7 @@ namespace loginPage
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
                             //dynamicBtn.Style = (Style)FindResource("buttondes");
-                            //dynamicBtn.Click += DynamicBtn_Click;
+                            dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -386,8 +381,7 @@ namespace loginPage
             }
             return listMonAn;
         }
-
-        public List<MonAn> getMonTrangMieng(Grid targetGrid, TabItem targetTabItem)
+        public List<MonAn> getMonTrangMieng(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -447,7 +441,7 @@ namespace loginPage
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
                             //dynamicBtn.Style = (Style)FindResource("buttondes");
-                            //dynamicBtn.Click += DynamicBtn_Click;
+                            dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);

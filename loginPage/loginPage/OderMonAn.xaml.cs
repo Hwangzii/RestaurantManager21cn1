@@ -38,36 +38,36 @@ namespace loginPage
             if (allTabItem.IsSelected)
             {
                 MonAnDAO monAnDAO = new MonAnDAO();
-                monAnDAO.getAllMonAn(allGrid, allTabItem);
+                monAnDAO.getAllMonAn(allGrid, allTabItem, DynamicBtn_Click);
             }
 
             else if (monNuongTabItem.IsSelected)
             {
                 MonAnDAO monAnDAO = new MonAnDAO();
-                monAnDAO.getMonNuong(monNuongGrid, monNuongTabItem);
+                monAnDAO.getMonNuong(monNuongGrid, monNuongTabItem, DynamicBtn_Click);
             }
 
             else if (monLauTabItem.IsSelected)
             {
                 MonAnDAO monAnDAO = new MonAnDAO();
-                monAnDAO.getMonLau(monLauGrid, monLauTabItem);
+                monAnDAO.getMonLau(monLauGrid, monLauTabItem, DynamicBtn_Click);
             }
 
             else if (monNongTabItem.IsSelected)
             {
                 MonAnDAO monAnDAO = new MonAnDAO();
-                monAnDAO.getMonNong(monNongGrid, monNongTabItem);
+                monAnDAO.getMonNong(monNongGrid, monNongTabItem, DynamicBtn_Click);
             }
 
             else if (doUongTabItem.IsSelected)
             {
                 MonAnDAO monAnDAO = new MonAnDAO();
-                monAnDAO.getDoUong(doUongGrid, doUongTabItem);
+                monAnDAO.getDoUong(doUongGrid, doUongTabItem, DynamicBtn_Click);
             }
         }
 
         // Nam: Thêm thời gian vào column
-        private void DynamicBtn_Click(object sender, RoutedEventArgs e)
+        public void DynamicBtn_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = (Button)sender;
             string foodTime = DateTime.Now.ToString("HH:mm");
@@ -97,7 +97,6 @@ namespace loginPage
             hienthitongtien.Foreground = Brushes.Green;
             hienthitongtien.FontSize = 25;
         }
-
 
         // ============ (The mf who will code this function a.k.a Hùng) ============//
         private void luuThongtin_Click(object sender, RoutedEventArgs e)

@@ -2142,3 +2142,16 @@ D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Lo
 D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\LoginPage.csproj.Up2Date
 D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.exe
 D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.pdb
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\CrowWindow.g.cs
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\TheChild.g.cs
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\UDied.g.cs
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\WhoAreYou.g.cs
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage_Content.g.cs
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\CrowWindow.baml
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\TheChild.baml
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\UDied.baml
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\WhoAreYou.baml
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\Sounds\Crow.wav
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\Sounds\Alt.wav
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\Sounds\Crowrrila.wav
+D:\Homework\CS\Git\new25\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\Sounds\Death.wav

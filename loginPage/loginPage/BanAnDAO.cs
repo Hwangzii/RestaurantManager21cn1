@@ -13,6 +13,7 @@ namespace loginPage
     internal class BanAnDAO
     {
         string connectionString = "Data Source = localhost\\SQLEXPRESS; Initial Catalog = Quanlynhahang21CN1;" + "Integrated Security = True; TrustServerCertificate = True";
+
         public List<BanAn> getBanAnTang1(Grid targetTableGrid)
         {
             List<BanAn> listBanAn = new List<BanAn>();
@@ -50,7 +51,7 @@ namespace loginPage
                             dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
                             dynamicBtn.Content = dynamicStp;
                             //dynamicBtn.Style = (Style)FindResource("buttondes");
-                            //dynamicBtn.Click += DynamicBtn_Click;
+                            dynamicBtn.Click += DynamicBtn_Click;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -102,7 +103,7 @@ namespace loginPage
                             dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
                             dynamicBtn.Content = dynamicStp;
                             //dynamicBtn.Style = (Style)FindResource("buttondes");
-                            //dynamicBtn.Click += DynamicBtn_Click;
+                            dynamicBtn.Click += DynamicBtn_Click;
 
                             Grid.SetColumn(dynamicBtn, column);
                             Grid.SetRow(dynamicBtn, row);
@@ -116,6 +117,31 @@ namespace loginPage
             }
 
             return listBanAn;
+        }
+        public void DynamicBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            StackPanel stackPanel = clickedButton.Content as StackPanel;
+            TextBlock textBlock = stackPanel.Children[0] as TextBlock;
+
+            tablebooked.NutDangChon = sender as Button;
+
+            if (textBlock != null)
+            {
+                OderMonAn orderForm = new OderMonAn();
+                orderForm.settext(textBlock.Text);
+                orderForm.Show();
+
+                if (clickedButton.Background == Brushes.LightSkyBlue)
+                {
+                    foreach (FoodItem item in tablebooked.LoadHoadon(textBlock.Text))
+                    {
+                        orderForm.ListOderBox.Items.Add(item);
+                    }
+                    orderForm.Tongtien();
+                }
+            }
+            //Hùng: lưu nút đang chọn và load hóa đơn nếu có
         }
     }
 }

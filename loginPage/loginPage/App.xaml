@@ -466,8 +466,13 @@
                 </Setter>
             </Style>
 
-
             
+            <!-- Do not touch the Lord's code -->
+            <Style x:Key="identityTxtBox" TargetType="TextBox">
+                <Setter Property="Width" Value="400"/>
+                <Setter Property="Height" Value="40"/>
+            </Style>
+
 
 
 
