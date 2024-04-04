@@ -331,10 +331,57 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Background="#ECF0F1">
-                <TextBlock x:Name="tableNumber" Text="" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" x:Name="tableNumber" Text="" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Button x:Name="btnOption" Grid.Column="1" Style="{StaticResource topButton}" HorizontalAlignment="Center" Background="Transparent" Click="btnOption_Click">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Icon:PackIconMaterial Kind="Menu" Height="25" Width="25" Grid.Row="0"/>
+                        <ContentControl Grid.Row="1">
+                            <Popup x:Name="popupBanAn" PlacementTarget="{Binding ElementName=button}" StaysOpen="False" IsOpen="False">
+                                <ListBox HorizontalAlignment="Left" Width="200">
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <Setter Property="FontSize" Value="20"/>
+                                            <Setter Property="Height" Value="35"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="DeleteOutline" Height="20" Width="20"/>
+                                            <TextBlock Text="xóa bàn" Margin="20 0 0 0"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="AccountConvertOutline" Height="20" Width="20"/>
+                                            <TextBlock Text="chuyển bàn" Margin="20 0 0 0"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+
+                                </ListBox>
+                            </Popup>
+                        </ContentControl>
+
+
+                    </Grid>
+                </Button>
             </Grid>
-            
-            
+
+
             <!-- danh sach oder -->
             <Grid Grid.Row="1" Background="Gray">
                 <Grid.RowDefinitions>

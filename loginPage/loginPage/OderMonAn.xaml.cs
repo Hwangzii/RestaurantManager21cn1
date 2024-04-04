@@ -20,7 +20,7 @@ namespace loginPage
 {
     public partial class OderMonAn : Window
     {//Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False
-        string connectstring = @"Data Source=DESKTOP-BTLUTR6\SQLEXPRESS;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source==HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -402,6 +402,11 @@ namespace loginPage
                     this.Close();
                 }
             }
+        }
+
+        private void btnOption_Click(object sender, RoutedEventArgs e)
+        {
+            popupBanAn.IsOpen = true;
         }
     }
 }

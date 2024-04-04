@@ -14,7 +14,7 @@ namespace loginPage
 {
     internal class MonAnDAO
     {
-        string connectionString = "Data Source = localhost\\SQLEXPRESS; Initial Catalog = Quanlynhahang21CN1;" + "Integrated Security = True; TrustServerCertificate = True";
+        string connectionString = "Data Source = HOANGPHI; Initial Catalog = Quanlynhahang21CN1;" + "Integrated Security = True; TrustServerCertificate = True";
         public List<MonAn> getAllMonAn(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
@@ -89,6 +89,7 @@ namespace loginPage
             }
             return listMonAn;
         }
+
         public List<MonAn> getMonNuong(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
@@ -162,6 +163,7 @@ namespace loginPage
             }
             return listMonAn;
         }
+
         public List<MonAn> getMonLau(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();

@@ -12,7 +12,7 @@ namespace loginPage
 {
     internal class BanAnDAO
     {
-        string connectionString = "Data Source = localhost\\SQLEXPRESS; Initial Catalog = Quanlynhahang21CN1;" + "Integrated Security = True; TrustServerCertificate = True";
+        string connectionString = "Data Source = HOANGPHI; Initial Catalog = Quanlynhahang21CN1;" + "Integrated Security = True; TrustServerCertificate = True";
 
         public List<BanAn> getBanAnTang1(Grid targetTableGrid)
         {
