@@ -20,7 +20,7 @@ namespace loginPage
 {
     public partial class OderMonAn : Window
     {//Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False
-        string connectstring = @"Data Source==HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=""Quanlynhahang21CN1 - Ngoc"";Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -31,6 +31,63 @@ namespace loginPage
         {
             tableNumber.Text = text;
         }
+
+        // Nam: Xóa bill trong bàn       
+        private void deleteBill(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                ListOderBox.Items.Clear();
+                int i = tablebooked.LuuHoadon.FindIndex(item => item.Ban == tableNumber.Text);
+                if (i >= 0)
+                {
+                    tablebooked.LuuHoadon.RemoveAt(i);
+                }
+                tablebooked.NutDangChon.Background = Brushes.White;
+                MessageBox.Show("Xóa hóa đơn thành công");
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
+                MessageBox.Show("Lỗi khi xóa hóa đơn: " + ex.Message);
+            }
+        }
+
+        // Nam: Chuyển bill trong bàn
+        private void moveBill(object sender, MouseButtonEventArgs e)
+        {
+            moveHoaDon.IsOpen = true;
+        }       
+        private void moveBill_Click(object sender, RoutedEventArgs e)
+        {
+            string banNow = tableNumber.Text;
+            string banNext = inputTableNum.Text;
+
+            int iNow = tablebooked.LuuHoadon.FindIndex(i=> i.Ban == banNow);
+            int iNext = tablebooked.LuuHoadon.FindIndex(i => i.Ban == banNext);
+            if(iNow >= 0 && iNext >= 0)
+            {
+                
+                foreach (FoodItem item in tablebooked.LuuHoadon[iNow].Danhsach)
+                {
+                    tablebooked.LuuHoadon[iNext].Danhsach.Add(item);
+                }      
+                tablebooked.LuuHoadon.RemoveAt(iNow);
+                tablebooked.NutDangChon.Background = Brushes.White;
+            }
+            else if (iNow >= 0 && iNext == -1)
+            {
+                LuuHoaDon DMT = tablebooked.LuuHoadon.Find(i => i.Ban == banNow);
+                DMT.Ban = banNext.ToString();
+                tablebooked.NutDangChon.Background = Brushes.White;                
+            }
+            else
+            {
+                MessageBox.Show("that bai");
+            }
+            moveHoaDon.IsOpen = false;
+        }
+
 
         // ============ Ngọc: Tạo các button dựa trên số món ăn có trong database ============ //
         private void goimonTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -99,35 +156,37 @@ namespace loginPage
         }
 
         // ============ (The mf who will code this function a.k.a Hùng) ============//
-        private void luuThongtin_Click(object sender, RoutedEventArgs e)
-        {
-            if (ListOderBox.HasItems == true)
+            private void luuThongtin_Click(object sender, RoutedEventArgs e)
             {
-                int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
-                if (i >= 0)
-                {
-                    tablebooked.LuuHoadon[i].Danhsach.Clear();
-                    foreach (FoodItem item in ListOderBox.Items)
-                    {
-                        tablebooked.LuuHoadon[i].Danhsach.Add(item);
+                
+                    if(ListOderBox.HasItems == true)
+                    { 
+                        int i = tablebooked.LuuHoadon.FindIndex(i => i.Ban == tableNumber.Text);
+                        if (i >= 0)
+                        {
+                            tablebooked.LuuHoadon[i].Danhsach.Clear();
+                            foreach (FoodItem item in ListOderBox.Items)
+                            {
+                                tablebooked.LuuHoadon[i].Danhsach.Add(item);
+                            }
+                            MessageBox.Show("Luu thanh cong");
+                        }
+                        else 
+                        {
+                            LuuHoaDon HDD = new LuuHoaDon();
+                            HDD.Ban = tableNumber.Text;
+                            foreach (FoodItem item in ListOderBox.Items)
+                            {
+                                HDD.Danhsach.Add(item);
+                            }
+                            tablebooked.LuuHoadon.Add(HDD);
+                            tablebooked.NutDangChon.Background = Brushes.LightSkyBlue;
+                            MessageBox.Show("Luu thanh cong");
+                        }
                     }
-                    MessageBox.Show("Luu thanh cong");
-                }
-                else 
-                {
-                    LuuHoaDon HDD = new LuuHoaDon();
-                    HDD.Ban = tableNumber.Text;
-                    foreach (FoodItem item in ListOderBox.Items)
-                    {
-                        HDD.Danhsach.Add(item);
-                    }
-                    tablebooked.LuuHoadon.Add(HDD);
-                    tablebooked.NutDangChon.Background = Brushes.LightSkyBlue;
-                    MessageBox.Show("Luu thanh cong");
-                }
+                else { MessageBox.Show("Đề nghị chọn món trước khi lưu"); }           
+                
             }
-            else { MessageBox.Show("Đề nghị chọn món trước khi lưu"); }
-        }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {

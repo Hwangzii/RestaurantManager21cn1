@@ -71,12 +71,17 @@ namespace loginPage
 
         // Hùng: Tạo Button để nhớ button bàn đang bấm
         public static Button NutDangChon = new Button();
+        
 
         // Hùng: Phương thức load hóa đơn
         public static List<FoodItem> LoadHoadon(string a)
         {
             LuuHoaDon item = LuuHoadon.Find(i => i.Ban == a);
-            return item.Danhsach;
+            if (item != null)
+            {
+                return item.Danhsach;
+            }
+            else { return new List<FoodItem>(); }
         }
 
         // Hùng: Phương thức khi thanh toán

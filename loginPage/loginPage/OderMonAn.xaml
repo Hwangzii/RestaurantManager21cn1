@@ -361,14 +361,14 @@
                                     <ListBoxItem>
                                         <StackPanel Orientation="Horizontal">
                                             <Icon:PackIconMaterial Kind="DeleteOutline" Height="20" Width="20"/>
-                                            <TextBlock Text="xóa bàn" Margin="20 0 0 0"/>
+                                            <TextBlock Text="xóa bàn" Margin="20 0 0 0" MouseDown="deleteBill"/>
                                         </StackPanel>
                                     </ListBoxItem>
 
                                     <ListBoxItem>
                                         <StackPanel Orientation="Horizontal">
                                             <Icon:PackIconMaterial Kind="AccountConvertOutline" Height="20" Width="20"/>
-                                            <TextBlock Text="chuyển bàn" Margin="20 0 0 0"/>
+                                            <TextBlock Text="chuyển bàn" Margin="20 0 0 0" MouseDown="moveBill"/>
                                         </StackPanel>
                                     </ListBoxItem>
 
@@ -615,5 +615,16 @@
             </Border>
         </Popup>
 
+
+        <!-- Nam: Popup chuyển bàn -->
+        <Popup x:Name="moveHoaDon" IsOpen="False" Placement="Center" PlacementTarget="{Binding ElementName=moveBill}">
+            <Grid>
+                <StackPanel Margin="10">
+                    <TextBlock Text="Nhập Số Bàn:"/>
+                    <TextBox x:Name="inputTableNum" Margin="0,5"/>
+                    <Button Content="Xác nhận" Margin="0,10" Click="moveBill_Click"/>
+                </StackPanel>
+            </Grid>
+        </Popup>
     </Grid>
 </Window>
