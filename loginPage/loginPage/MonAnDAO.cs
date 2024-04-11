@@ -14,7 +14,7 @@ namespace loginPage
 {
     internal class MonAnDAO
     {
-        string connectionString = "Data Source = HOANGPHI; Initial Catalog = Quanlynhahang21CN1;" + "Integrated Security = True; TrustServerCertificate = True";
+        string connectionString = "Data Source=PC01\\SQLEXPRESS;Initial Catalog=\"Quanlynhahang21CN1 - Ngoc\";Integrated Security=True;Encrypt=False";
         public List<MonAn> getAllMonAn(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();

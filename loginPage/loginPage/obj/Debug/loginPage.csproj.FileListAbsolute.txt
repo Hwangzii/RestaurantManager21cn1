@@ -689,21 +689,15 @@ E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Ma
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Styles\ComboBoxStyles.baml
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Templates.baml
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\App.baml
-E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\AmoutFood.g.cs
-E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\BillForm.g.cs
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\MainWindow.g.cs
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\OderMonAn.g.cs
-E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\phieuhoadon.g.cs
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\tablebooked.g.cs
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Tang1.g.cs
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Tang2.g.cs
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\App.g.cs
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage_MarkupCompile.cache
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage_MarkupCompile.lref
-E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\AmoutFood.baml
-E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\BillForm.baml
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\OderMonAn.baml
-E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\phieuhoadon.baml
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\tablebooked.baml
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Tang1.baml
 E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\Tang2.baml
@@ -2310,3 +2304,26 @@ D:\Chung\JOBS\git\C#\FILE_2\RestaurantManager21cn1\loginPage\loginPage\obj\Debug
 D:\Chung\JOBS\git\C#\FILE_2\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\LoginPage.csproj.Up2Date
 D:\Chung\JOBS\git\C#\FILE_2\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.exe
 D:\Chung\JOBS\git\C#\FILE_2\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage.pdb
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\CrowWindow.g.cs
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\doanhthu.g.cs
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\TheChild.g.cs
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\UDied.g.cs
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\WhoAreYou.g.cs
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\loginPage_Content.g.cs
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\Sounds\Alt.wav
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\Sounds\Crow.wav
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\Sounds\Crowrrila.wav
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\Sounds\Death.wav
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.dll
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.Wpf.dll
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.pdb
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.xml
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.Wpf.pdb
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\bin\Debug\LiveCharts.Wpf.xml
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\CrowWindow.baml
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\doanhthu.baml
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\TheChild.baml
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\UDied.baml
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\WhoAreYou.baml
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\ChonBan.g.cs
+E:\Git\QLNH\Test project\RestaurantManager21cn1\loginPage\loginPage\obj\Debug\ChonBan.baml

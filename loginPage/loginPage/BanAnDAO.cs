@@ -12,7 +12,7 @@ namespace loginPage
 {
     internal class BanAnDAO
     {
-        string connectionString = "Data Source = HOANGPHI; Initial Catalog = Quanlynhahang21CN1;" + "Integrated Security = True; TrustServerCertificate = True";
+        string connectionString = "Data Source=PC01\\SQLEXPRESS;Initial Catalog=\"Quanlynhahang21CN1 - Ngoc\";Integrated Security=True;Encrypt=False";
 
         public List<BanAn> getBanAnTang1(Grid targetTableGrid)
         {
@@ -132,7 +132,7 @@ namespace loginPage
                 orderForm.settext(textBlock.Text);
                 orderForm.Show();
 
-                if (clickedButton.Background == Brushes.LightSkyBlue)
+                if (tablebooked.LuuHoadon.Exists(i=>i.Ban == textBlock.Text))
                 {
                     foreach (FoodItem item in tablebooked.LoadHoadon(textBlock.Text))
                     {

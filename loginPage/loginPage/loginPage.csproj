@@ -191,6 +191,9 @@
     </ApplicationDefinition>
     <Compile Include="BanAn.cs" />
     <Compile Include="BanAnDAO.cs" />
+    <Compile Include="ChonBan.xaml.cs">
+      <DependentUpon>ChonBan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CrowWindow.xaml.cs">
       <DependentUpon>CrowWindow.xaml</DependentUpon>
     </Compile>
@@ -224,6 +227,10 @@
     <Compile Include="WhoAreYou.xaml.cs">
       <DependentUpon>WhoAreYou.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChonBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CrowWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
