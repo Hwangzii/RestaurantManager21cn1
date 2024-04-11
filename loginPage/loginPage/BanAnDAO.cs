@@ -12,7 +12,7 @@ namespace loginPage
 {
     internal class BanAnDAO
     {
-        string connectionString = "Data Source=PC01\\SQLEXPRESS;Initial Catalog=\"Quanlynhahang21CN1 - Ngoc\";Integrated Security=True;Encrypt=False";
+        string connectionString = "Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
 
         public List<BanAn> getBanAnTang1(Grid targetTableGrid)
         {
@@ -50,7 +50,7 @@ namespace loginPage
                             tablebooked.MauKhoiTao(dynamicTxtTenBanAn, dynamicBtn);
                             dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
                             dynamicBtn.Content = dynamicStp;
-                            //dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Style = (Style)Application.Current.FindResource("buttondes");
                             dynamicBtn.Click += DynamicBtn_Click;
 
                             Grid.SetColumn(dynamicBtn, column);
@@ -102,7 +102,7 @@ namespace loginPage
                             tablebooked.MauKhoiTao(dynamicTxtTenBanAn, dynamicBtn);
                             dynamicBtn.Margin = new Thickness(0, 20, 20, 20);
                             dynamicBtn.Content = dynamicStp;
-                            //dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Style = (Style)Application.Current.FindResource("buttondes");
                             dynamicBtn.Click += DynamicBtn_Click;
 
                             Grid.SetColumn(dynamicBtn, column);

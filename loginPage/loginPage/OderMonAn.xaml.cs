@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +16,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Aspose.Pdf.Text;
 
 namespace loginPage
 {
     public partial class OderMonAn : Window
     {//Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False
-        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=""Quanlynhahang21CN1 - Ngoc"";Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public OderMonAn()
         {
             InitializeComponent();
@@ -45,6 +48,7 @@ namespace loginPage
                 }
                 tablebooked.NutDangChon.Background = Brushes.White;
                 MessageBox.Show("Xóa hóa đơn thành công");
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -463,9 +467,149 @@ namespace loginPage
             }
         }
 
+
+
+
         private void btnOption_Click(object sender, RoutedEventArgs e)
         {
             popupBanAn.IsOpen = true;
+        }
+
+        private void inHoaDonPdf_Click(object sender, RoutedEventArgs e)
+        {
+            PrintInvoiceToPdf(Danhsach);
+        }
+
+        private string GenerateInvoiceCode(string tableNumber)
+        {
+            // Lấy thời gian hiện tại
+            DateTime now = DateTime.Now;
+
+            // Tạo mã hóa đơn dựa trên tên bàn và thời gian
+            // Đảm bảo rằng bạn xử lý tên bàn để loại bỏ các ký tự không hợp lệ trong tên file
+            string formattedTableNumber = tableNumber.Replace(" ", "_"); // Thay thế dấu cách bằng dấu gạch dưới (hoặc bất kỳ phương thức nào khác để loại bỏ ký tự không hợp lệ)
+            string invoiceCode = $"{formattedTableNumber}_{now.ToString("yyyyMMddHHmmss")}"; // Định dạng: TableNumber_YYYYMMDDHHmmss
+
+            return invoiceCode;
+        }
+
+
+        // =====  HOA ==== Làm in hóa đơn PDF
+        private void PrintInvoiceToPdf(List<FoodItem> items)
+        {
+            try
+            {
+                // Lấy mã hóa đơn dựa trên tên bàn và thời gian
+                string invoiceCode = GenerateInvoiceCode(tableNumber.Text);
+
+                // Tạo một đối tượng tài liệu PDF
+                Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
+
+                // Tạo một trang mới trong tài liệu
+                Aspose.Pdf.Page page = pdfDocument.Pages.Add();
+
+                Aspose.Pdf.Text.TextFragment title = new Aspose.Pdf.Text.TextFragment("Hóa Đơn");
+                title.TextState.FontSize = 25;
+                title.TextState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+                title.Position = new Aspose.Pdf.Text.Position(200, 700);
+                page.Paragraphs.Add(title);
+
+                Aspose.Pdf.Text.TextFragment phancach = new Aspose.Pdf.Text.TextFragment("");
+
+                // tạo chuỗi phân cách với 100 dấu -
+                string separator = "";
+
+                for (int i = 0; i < 100; i++)
+                {
+                    separator += "-";
+                }
+
+                // thiết lập văn bản của TextFragment là chuỗi phân cách
+                phancach.Text = separator;
+
+                page.Paragraphs.Add(phancach);
+
+                // Lấy ngày giờ hiện tại
+                DateTime now = DateTime.Now;
+
+                // Tạo một đối tượng TextFragment để chứa thông tin về số bàn và ngày giờ
+                Aspose.Pdf.Text.TextFragment info = new Aspose.Pdf.Text.TextFragment($"\nSố bàn: {tableNumber.Text}\n" +
+                    $"Ngày giờ: {now.ToString()}\n" +
+                    $"Mã hóa đơn: {invoiceCode}");
+
+                info.TextState.FontSize = 16;
+                page.Paragraphs.Add(info);
+
+                // Tạo một đối tượng Table để chứa dữ liệu hóa đơn
+                Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+                Aspose.Pdf.Text.TextState headerState = new Aspose.Pdf.Text.TextState();
+                headerState.FontSize = 14;
+                headerState.FontStyle = Aspose.Pdf.Text.FontStyles.Bold;
+                table.ColumnWidths = "120 30 100 130";
+
+                // Thêm hàng tiêu đề cho bảng
+                Aspose.Pdf.Row headerRow = table.Rows.Add();
+                headerRow.Cells.Add("Tên món").DefaultCellTextState = headerState;
+                headerRow.Cells.Add("SL").DefaultCellTextState = headerState;
+                headerRow.Cells.Add("Đơn giá").DefaultCellTextState = headerState;
+                headerRow.Cells.Add("Thành tiền").DefaultCellTextState = headerState;
+
+
+                Aspose.Pdf.Text.TextState dataState = new Aspose.Pdf.Text.TextState();
+                dataState.FontSize = 14;
+                // Thêm dữ liệu từ danh sách món ăn vào bảng
+                foreach (var item in items)
+                {
+                    Aspose.Pdf.Row dataRow = table.Rows.Add();
+                    dataRow.Cells.Add(item.Name).DefaultCellTextState = dataState;
+                    dataRow.Cells.Add(item.Qty.ToString()).DefaultCellTextState = dataState;
+                    dataRow.Cells.Add(item.Price).DefaultCellTextState = dataState;
+                    double GiaTien = double.Parse(item.Price.Replace(" vnđ", ""));
+                    dataRow.Cells.Add((GiaTien * item.Qty).ToString() + " vnđ").DefaultCellTextState = dataState; ;
+                }
+
+                // Thêm bảng vào trang PDF
+                page.Paragraphs.Add(table);
+
+                page.Paragraphs.Add(phancach);
+
+                // Thêm tổng hóa đơn vào cuối hóa đơn
+                double total = items.Sum(item => double.Parse(item.Price.Replace(" vnđ", "")) * item.Qty);
+                Aspose.Pdf.Text.TextFragment totalText = new Aspose.Pdf.Text.TextFragment($"Tổng tiền: {total.ToString()} vnđ");
+                totalText.TextState.FontSize = 14; // Đặt vị trí tổng hóa đơn
+                page.Paragraphs.Add(totalText);
+
+                // Đường dẫn đầy đủ của thư mục muốn lưu file PDF
+                string folderPath = @"D:\Chung\JOBS\git\C#\FILE_1\RestaurantManager21cn1\loginPage\Bill\HD";
+
+
+
+
+                // === PHI === Lưu tài liệu PDF
+                string fileName = folderPath + invoiceCode + ".pdf";
+                pdfDocument.Save(fileName);
+
+                // mở file hóa đơn đã lưu
+                if (File.Exists(fileName))
+                {
+                    Process.Start(fileName);
+                    popup1.IsOpen = false;
+                }
+                else
+                {
+                    MessageBox.Show("khôn thể mở file hóa đơn.", "lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị MessageBox khi in hóa đơn thất bại và hiển thị thông tin lỗi (nếu có)
+                MessageBox.Show("In hóa đơn thất bại");
+            }
         }
     }
 }

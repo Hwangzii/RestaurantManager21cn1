@@ -54,6 +54,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.PDF, Version=24.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.24.3.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
     </Reference>
@@ -203,6 +206,7 @@
     <Compile Include="FoodItem.cs" />
     <Compile Include="HoaDon.cs" />
     <Compile Include="HoaDonDAO.cs" />
+    <Compile Include="InHoaDon.cs" />
     <Compile Include="LuuTamThoi.cs" />
     <Compile Include="MonAn.cs" />
     <Compile Include="MonAnDAO.cs" />
@@ -332,9 +336,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\diet.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="color.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

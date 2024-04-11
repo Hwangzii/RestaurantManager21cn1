@@ -21,7 +21,7 @@ namespace loginPage
 
     public partial class MainWindow : Window
     {
-        string connectstring = @"Data Source=PC01\SQLEXPRESS;Initial Catalog=""Quanlynhahang21CN1 - Ngoc"";Integrated Security=True;Encrypt=False";
+        string connectstring = @"Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         SqlConnection con;
         SqlCommand cmd;
 

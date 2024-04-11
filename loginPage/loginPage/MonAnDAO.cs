@@ -14,7 +14,7 @@ namespace loginPage
 {
     internal class MonAnDAO
     {
-        string connectionString = "Data Source=PC01\\SQLEXPRESS;Initial Catalog=\"Quanlynhahang21CN1 - Ngoc\";Integrated Security=True;Encrypt=False";
+        string connectionString = "Data Source=HOANGPHI;Initial Catalog=Quanlynhahang21CN1;Integrated Security=True;Encrypt=False";
         public List<MonAn> getAllMonAn(Grid targetGrid, TabItem targetTabItem, RoutedEventHandler targetRoutedEventHandler)
         {
             List<MonAn> listMonAn = new List<MonAn>();
@@ -74,7 +74,7 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
-                            //dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Style = (Style)Application.Current.FindResource("buttondes");
                             dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
@@ -149,7 +149,7 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
-                            //dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Style = (Style)Application.Current.FindResource("buttondes");
                             dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
@@ -223,7 +223,7 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
-                            //dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Style = (Style)Application.Current.FindResource("buttondes");
                             dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
@@ -296,7 +296,7 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
-                            //dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Style = (Style)Application.Current.FindResource("buttondes");
                             dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
@@ -369,7 +369,7 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
-                            //dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Style = (Style)Application.Current.FindResource("buttondes");
                             dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
@@ -442,7 +442,7 @@ namespace loginPage
                             dynamicBtn.Background = Brushes.White;
                             dynamicBtn.Margin = new Thickness(0, 10, 10, 0);
                             dynamicBtn.Content = dynamicStp;
-                            //dynamicBtn.Style = (Style)FindResource("buttondes");
+                            dynamicBtn.Style = (Style)Application.Current.FindResource("buttondes");
                             dynamicBtn.Click += targetRoutedEventHandler;
 
                             Grid.SetColumn(dynamicBtn, column);
